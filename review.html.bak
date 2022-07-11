@@ -46,8 +46,7 @@
 			<div class="nav-switch">
 				<i class="fa fa-bars"></i>
 			</div>
-			<!-- site menu -->
-			<nav class="main-menu">
+			
 				<ul>
 					<li><a href="index.html">Inicio</a></li>
 					<li><a href="review.html">Planos</a></li>
@@ -115,10 +114,10 @@
 				<div class="col-md-6">
 					<div class="review-item">
 						<div class="review-cover set-bg" data-setbg="img/review/6.jpg">
-							<div class="score yellow">9.3</div>
+							<div class="score yellow">100</div>
 						</div>
 						<div class="review-text">
-							<h4>Grand Theft Auto</h4>
+							<h4>Divulgamos a sua live!</h4>
 							<div class="rating">
 								<i class="fa fa-star"></i>
 								<i class="fa fa-star"></i>
@@ -126,7 +125,7 @@
 								<i class="fa fa-star"></i>
 								<i class="fa fa-star is-fade"></i>
 							</div>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit ame. Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit ame.</p>
+							<p>Está sem tempo para compartilhar a sua live? Deixa para nos.</p>
 						</div>
 					</div>
 				</div>
