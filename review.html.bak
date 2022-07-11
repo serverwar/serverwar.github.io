@@ -51,9 +51,8 @@
 				<ul>
 					<li><a href="index.html">Inicio</a></li>
 					<li><a href="review.html">Planos</a></li>
-					<li><a href="categories.html">Blog</a></li>
-					<li><a href="community.html">Forums</a></li>
-					<li><a href="contact.html">Contact</a></li>
+					<li><a href="categories.html">Artes</a></li>
+					
 				</ul>
 			</nav>
 		</div>
@@ -63,7 +62,7 @@
 
 	<!-- Latest news section -->
 	<div class="latest-news-section">
-		<div class="ln-title">Latest News</div>
+		<div class="ln-title">Novidades</div>
 		<div class="news-ticker">
 			<div class="news-ticker-contant">
 				<div class="nt-item"><span class="new">new</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </div>
