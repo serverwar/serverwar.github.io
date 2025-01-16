@@ -1,464 +1,475 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zxx">
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WOW SOURCE</title>
-
-  <!-- 
-    - favicon link
-  -->
-
-
-  <!-- 
-    - custom css link
-  -->
-  <link rel="stylesheet" href="./assets/css/style.css">
-
-  <!-- 
-    - google font link
-  -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Poppins:wght@400;500;700&display=swap"
-    rel="stylesheet">
-</head>
-
-<body id="top">
-
-  <!-- 
-    - #HEADER
-  -->
-
-  <header class="header">
-
-    <!-- 
-      - overlay
-    -->
-    <div class="overlay" data-overlay></div>
-
-    <div class="container">
-
-<a href="#" class="logo">
-  <img src="./assets/images/project-logo.png" alt="Marrocos" class="animated-image" style="width: 150px; height: auto;">
-</a>
-
-      <button class="nav-open-btn" data-nav-open-btn>
-        <ion-icon name="menu-outline"></ion-icon>
-      </button>
-
-      <nav class="navbar" data-nav>
-
-        <div class="navbar-top">
-
-          <a href="#" class="logo">
-            <img src="./assets/images/logo.svg" alt="GameX logo">
-          </a>
-
-          <button class="nav-close-btn" data-nav-close-btn>
-            <ion-icon name="close-outline"></ion-icon>
-          </button>
-
-        </div>
-
-        <ul class="navbar-list">
-
-          <li>
-            <a href="#hero" class="navbar-link">Home</a>
-          </li>
-
-          <li>
-            <a href="#about" class="navbar-link">Quem somos</a>
-          </li>
-
-          <li>
-            <a href="#tournament" class="navbar-link">líderes</a>
-          </li>
-
-          <li>
-            <a href="#team" class="navbar-link">Album</a>
-          </li>
-		  
-		  <li>
-            <a href="#clipes" class="navbar-link"></a>
-          </li>
-
-         
-        </ul>
-
-        <ul class="nav-social-list">
-
-          <li>
-            <a href="#" class="social-link">
-              <ion-icon name="logo-twitter"></ion-icon>
-            </a>
-          </li>
-
-          <li>
-            <a href="#" class="social-link">
-              <ion-icon name="logo-instagram"></ion-icon>
-            </a>
-          </li>
-
-          <li>
-            <a href="#" class="social-link">
-              <ion-icon name="logo-github"></ion-icon>
-            </a>
-          </li>
-
-          <li>
-            <a href="#" class="social-link">
-              <ion-icon name="logo-youtube"></ion-icon>
-            </a>
-          </li>
-
-        </ul>
-
-      </nav>
-
-      <div class="header-actions">
-
-        
-
-
-      </div>
-
-    </div>
-
-  </header>
-
-<style>
-  .discord-container {
-    position: absolute;
-    top: 515%;
-    right: 15px;
-    transform: translateY(-50%);
-  }
-</style>
-
-
-
-  <main>
-    <article>
-
-      <!-- 
-        - #HERO
-      -->
-<!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="description" content="DJoz Template">
+    <meta name="keywords" content="DJoz, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Site com Vídeo e Imagem de Fundo</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WOW SOURCE</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/barfiller.css" type="text/css">
+    <link rel="stylesheet" href="css/nowfont.css" type="text/css">
+    <link rel="stylesheet" href="css/rockville.css" type="text/css">
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header Section Begin -->
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2 col-md-2">
+                    <div class="header__logo">
+                       <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Image</title>
     <style>
-        /* Estilos para a seção do herói */
-        .hero {
-            position: relative;
-            height: 100vh;
-            background: url("./assets/images/CARRO11.jpg") center/cover no-repeat;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        .animated-logo {
+            max-width: 50px;
+            height: auto;
+            animation: grow-shrink 5s infinite;
         }
 
-        .video-wrapper {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-        }
-
-        iframe {
-            width: 100%;
-            height: 100%;
-        }
-
-        .container {
-            text-align: center;
-            z-index: 1;
+        @keyframes grow-shrink {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(4.9);
+            }
         }
     </style>
 </head>
 <body>
-    <section class="hero" id="hero">
-        <div class="video-wrapper">
-<iframe width="866" height="487" src="https://www.youtube.com/embed/6-Wj99h5HGU?autoplay=1&mute=1&controls=0" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-
-        </div>
-        <div class="container">
-            <p class="hero-subtitle"></p>
-            <h2 class="h2 hero-title"></h2>
-            <div class="btn-group">
-                <a href="https://discord.gg/NV2usSC8WN" class="btn btn-primary jump-button">REPACK</a>
-                <a href="https://discord.gg/antarescity" class="btn btn-primary jump-button">VPS PRO</a>
+    <img src="img/logo.png" alt="Logo" class="animated-logo">
+</body>
+</html>
+                    </div>
+                </div>
+                <div class="col-lg-10 col-md-10">
+                    <div class="header__nav">
+                        <nav class="header__menu mobile-menu">
+                            <ul>
+                                <li class="active"><a href="./index.html">INICIO</a></li>
+                                <li><a href="./about.html">VPS - BRASIL</a></li>
+                                <li><a href="./discography.html">REPACK</a></li>
+                                <li><a href="./tours.html">DEMO</a></li>
+                                
+                        </nav>
+                        <div class="header__right__social">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                            
+                        </div>
+                    </div>
+                </div>
             </div>
+            <div id="mobile-menu-wrap"></div>
         </div>
-    </section>
+    </header>
+    <!-- Header Section End -->
+
+<!-- Hero Section Begin -->
+<section class="hero spad set-bg" data-setbg="img/hero-bg.png">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="hero__text">
+                    <span class="animate__animated animate__fadeInDown">BEM VINDO</span>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WOW SOURCE</title>
+  <style>
+    .scale-animation {
+      animation: scaleInOut 8s infinite;
+      font-size: 3em;
+      font-weight: bold;
+      color: #FFD700;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+    }
+
+    @keyframes scaleInOut {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.5);
+      }
+    }
+  </style>
+</head>
+<body>
+  <span class="scale-animation">WOW SOURCE</span>
 </body>
 </html>
 
 
-
-
-
-
-
-
-
-
-
-      <div class="section-wrapper">
-
-        <!-- 
-          - #ABOUT
-        -->
-
-        <section class="about" id="about">
-          <div class="container">
-
-            <figure class="about-banner">
-
-              <img src="./assets/images/about-img.png" alt="M shape" class="about-img">
-
-              
-
-            </figure>
-
-            <div class="about-content">
-
-              <p class="about-subtitle">BEM VINDO</p>
-
-              <h2 class="about-title">WOW <strong>SOURCE</strong> </h2>
-
-              <p class="about-text">
-               "Somos um grupo de amigos focado em diversão. 
-			   Atualmente estamos no servidor Antares City, onde montamos uma facção Marrocos, visando fazer um roleplay de favela."
-              </p>
-
-             
-
+                    <img src="img/logo.png" alt="WOW SOURCE Logo" class="">
+                    <p class="animate__animated animate__fadeIn"></p>
+                </div>
             </div>
+        </div>
+    </div>
+</section>
 
-          </div>
-        </section>
+<!-- CSS Animations and Font Styling -->
+<style>
+@import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+.hero__text {
+    text-align: center;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+.hero__text span {
+    font-size: 50px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.hero__logo {
+    width: 300px;
+    margin: 0 auto 20px;
+}
+
+.hero__text p {
+    font-size: 50px;
+}
+
+.set-bg {
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+</style>
 
 
 
 
 
-        <!-- 
-          - #TOURNAMENT
-        -->
+    <!-- Event Section Begin -->
+    <section class="event spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @keyframes pulsar {
+            0% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.7;
+                transform: scale(1.1);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
 
-        <section class="tournament" id="tournament">
-          <div class="container">
+        h2 {
+            font-size: 36px;
+            font-weight: bold;
+            animation: pulsar 4.9s infinite;
+        }
+    </style>
+    <title>Texto Pulsante</title>
+</head>
+<body>
+    <h2>TEMPLATES - GAMER</h2>
+</body>
+</html>
 
-            <div class="tournament-content">
-
-              <p class="tournament-subtitle">lIDER - AÇOES</p>
-
-              <h2 class="h3 tournament-title">VAGA EM ABERTO</h2>
-
-              <p class="tournament-text">
-                 "Time de Ação, responsável por coordenar ações planejadas, oferecer apoio em tempo real à equipe de resgate e fornecer suporte à comunidade da favela."
-              </p>
-
-             <button class="btn btn-primary jump-button">DISPONIVEL</button>
-
-
+                    </div>
+                </div>
             </div>
+            <div class="row">
+                <div class="event__slider owl-carousel">
+                    <div class="col-lg-4">
+                        <div class="event__item">
+                            <div class="event__item__pic set-bg" data-setbg="img/events/event-1.jpg">
+                                <div class="tag-date">
+                                    <span>01</span>
+                                </div>
+                            </div>
+                            <div class="event__item__text">
+                                <h4>WOW SOURCE</h4>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="event__item">
+                            <div class="event__item__pic set-bg" data-setbg="img/events/event-2.jpg">
+                                <div class="tag-date">
+                                    <span>02</span>
+                                </div>
+                            </div>
+                            <div class="event__item__text">
+                                <h4>WOW SOURCE</h4>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="event__item">
+                            <div class="event__item__pic set-bg" data-setbg="img/events/event-3.jpg">
+                                <div class="tag-date">
+                                    <span>03</span>
+                                </div>
+                            </div>
+                            <div class="event__item__text">
+                                <h4>WOW SOURCE</h4>
+                       
+    </section>
+    <!-- Event Section End -->
 
-            <div class="tournament-prize">
+    <!-- About Section Begin -->
+    <section class="about spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="about__pic">
+                        <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @keyframes pulsarImagem {
+            0% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.7;
+                transform: scale(1.1);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
 
-              <h2 class="h3 tournament-prize-title">Líderes.</h2>
+        img {
+            animation: pulsarImagem 5.5s infinite;
+            width: 300px; /* Tamanho ajustável */
+            height: auto;
+        }
+    </style>
+    <title>Imagem Pulsante</title>
+</head>
+<body>
+    <img src="img/about/about.png" alt="">
+</body>
+</html>
 
-              <data value="80000">SONIC - MELLO - BARRIGA</data>
-
-              
-
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about__text">
+                        <div class="section-title">
+                            <h2>SUPORTE:</h2>
+                            <h1>About me</h1>
+                        </div>
+                        <p>PRECISA DE AJUDA?  SCRIPTS PERSONALIZADOS, REPACKS OU TEMPLATE NOVO?</p>
+                        <a href="#" class="primary-btn">DISCORD</a>
+                    </div>
+                </div>
             </div>
+        </div>
+    </section>
+    <!-- About Section End -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página com Iframe Móvel</title>
+  <style>
+    /* Estilo do iframe para se ajustar ao tamanho da tela */
+    #discord-widget {
+      position: fixed;
+      top: 320px; /* Distância do topo da tela */
+      left: 80%; /* Distância da esquerda em relação à largura da tela */
+      width: 20%; /* Largura de 20% da tela */
+      height: 50vh; /* Altura de 50% da altura da viewport */
+      z-index: 9999; /* Para garantir que o iframe fique acima de outros elementos */
+      cursor: move; /* Muda o cursor para indicar que o iframe pode ser movido */
+      transition: opacity 0.5s ease; /* Suaviza a transição de visibilidade */
+    }
 
-            <div class="tournament-winners">
+    /* Permite mover o iframe pela tela */
+    #discord-widget:active {
+      cursor: grabbing;
+    }
+  </style>
+</head>
+<body>
 
-              <h2 class="h3 tournament-winners-title">GERÊNCIA</h2>
+  <!-- Iframe do Discord -->
+  <iframe id="discord-widget" src="https://discord.com/widget?id=1322574390801731697&theme=dark" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
 
-              <ul class="tournament-winners-list">
+  <script>
+    // Função para permitir que o iframe seja movido pela tela
+    const iframe = document.getElementById('discord-widget');
+    let isDragging = false;
+    let offsetX, offsetY;
 
-                <li>
-                  <div class="winner-card">
+    iframe.addEventListener('mousedown', (e) => {
+      isDragging = true;
+      offsetX = e.clientX - iframe.offsetLeft;
+      offsetY = e.clientY - iframe.offsetTop;
+      iframe.style.cursor = 'grabbing';
+    });
 
+    document.addEventListener('mousemove', (e) => {
+      if (isDragging) {
+        iframe.style.left = e.clientX - offsetX + 'px';
+        iframe.style.top = e.clientY - offsetY + 'px';
+      }
+    });
 
-                    <h3 class="h5 card-title">MK BRAÇO DIREITO - BH.</h3>
+    document.addEventListener('mouseup', () => {
+      isDragging = false;
+      iframe.style.cursor = 'move';
+    });
 
-                  </div>
-                </li>
+    // Função para esconder o iframe quando a rolagem for para baixo
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) { // Se a rolagem for maior que 100px
+        iframe.style.opacity = 0; // Esconde o iframe
+      } else {
+        iframe.style.opacity = 1; // Mostra o iframe quando estiver no topo
+      }
+    });
+  </script>
 
-                <li>
-                  <div class="winner-card">
+</body>
+</html>
+    <!-- Countdown Section Begin -->
+    <section class="countdown spad set-bg" data-setbg="img/countdown-bg.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="countdown__text">
+                       <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demonstração Website</title>
+    <style>
+        h4 {
+            color: yellow; /* Define a cor do texto como amarelo */
+            font-weight: bold; /* Torna o texto mais forte */
+            text-align: center; /* Centraliza o texto */
+        }
+    </style>
+</head>
+<body>
+    
+    <h4>BEM VINDO, UM NOVO MUNDO SE INICIA</h4>
+</body>
+</html>
 
-                 
-
-                    
-
-                  </div>
-                </li>
-
-              </ul>
-
+                    </div>
+                    <div class="countdown__timer" id="countdown-time">
+                        <div class="countdown__item">
+                            <span>100</span>
+                            <p>days</p>
+                        </div>
+                        <div class="countdown__item">
+                            <span>45</span>
+                            <p>hours</p>
+                        </div>
+                        <div class="countdown__item">
+                            <span>18</span>
+                            <p>minutes</p>
+                        </div>
+                        <div class="countdown__item">
+                            <span>09</span>
+                            <p>seconds</p>
+                        </div>
+                    </div>
+                    <div class="buy__tickets">
+                        <a href="#" class="primary-btn">CRIAR CONTA</a>
+                    </div>
+                </div>
             </div>
+        </div>
+    </section>
+    <!-- Countdown Section End -->
 
-          </div>
-        </section>
+    <!-- Footer Section Begin -->
+    <footer class="footer spad set-bg" data-setbg="img/footer-bg.png">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                  
+                </div>
+                <div class="col-lg-4 offset-lg-1 col-md-6">
+                    <div class="footer__social">
+                        <h2>WOW SOURCE</h2>
+                        <div class="footer__social__links">
+                            <a href="https://www.facebook.com/sourcewow"><i class="fa fa-facebook"></i></a>
+                            
+                            <a href="https://www.instagram.com/WOWSOURCEE"><i class="fa fa-instagram"></i></a>
+                            
+                        </div>
+                    </div>
+               
+                </div>
+            </div>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+			<div class="footer__copyright__text">
+				<p>Copyright &copy; <script>document.write(new Date().getFullYear());</script> All rights reserved | WOW SOURCE <i class="fa fa-heart" aria-hidden="true"></i> - <a href="" target="_blank">WOWSOURCE</a></p>
+			</div>
+			<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+        </div>
+    </footer>
+    <!-- Footer Section End -->
 
+    <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/jquery.nicescroll.min.js"></script>
+    <script src="js/jquery.barfiller.js"></script>
+    <script src="js/jquery.countdown.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
 
-
-        <section class="team" id="team">
-          <div class="container">
-
-
-            
-
-            </ul>
-
-            <button class="btn btn-primary">Galeria Imagens</button>
-
-          </div>
-        </section>
-
-
-
-        <!-- 
-          - #GALLERY
-        -->
-
-        <section class="gallery">
-          <div class="container">
-
-            <ul class="gallery-list has-scrollbar">
-
-              <li>
-                <figure class="gallery-item">
-                  <img src="./assets/images/gallery-img-1.jpeg" alt="Gallery image">
-                </figure>
-              </li>
-
-              
-
-              <li>
-                <figure class="gallery-item">
-                  <img src="./assets/images/gallery-img-3.jpg" alt="Gallery image">
-                </figure>
-              </li>
-
-              <li>
-                <figure class="gallery-item">
-                  <img src="./assets/images/festa_2.png" alt="Gallery image">
-                </figure>
-              </li>
-			  <li>
-                <figure class="gallery-item">
-                  <img src="./assets/images/festa3.png" alt="Gallery image">
-                </figure>
-              </li>
-			  <li>
-                <figure class="gallery-item">
-                  <img src="./assets/images/festa4.png" alt="Gallery image">
-                </figure>
-              </li>
-			  <li>
-                <figure class="gallery-item">
-                  <img src="./assets/images/festa_9.png" alt="Gallery image">
-                </figure>
-              </li>
-
-            </ul>
-
-          </div>
-        </section>
-
-
-
-
-
-        <!-- 
-          - #TEAM
-        -->
-
-        <section class="team" id="team">
-          <div class="container">
-
-            <h2 class="h2 section-title">RP HISTÓRIA  - MARROCOS - DISCORD</h2>
-			<div class="b-advantages-content">
-
-
-  </ul>
-
-           
-			
-			</ul>
-
-
-
-          </div>
-        </section>
-
-  
-
-
-          </div>
-        </section>
-
-      </div>
-
-    </article>
-  </main>
-
-
-
-
-
- 
-
-    <div class="footer-bottom">
-      <div class="container">
-        <p class="copyright">
-          Copyright &copy; 2023 <a href="#">marrocosrp</a>. all rights reserved
-        </p>
-
-        <
-
-
-
-
-  <!-- 
-    - #GO TO TOP
-  -->
-
-  <a href="#top" class="btn btn-primary go-top" data-go-top>
-    <ion-icon name="chevron-up-outline"></ion-icon>
-  </a>
-
-
-
-
-
-  <!-- 
-    - custom js link
-  -->
-  <script src="./assets/js/script.js"></script>
-
-  <!-- 
-    - ionicon link
-  -->
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
+    <!-- Music Plugin -->
+    <script src="js/jquery.jplayer.min.js"></script>
+    <script src="js/jplayerInit.js"></script>
 </body>
 
 </html>
