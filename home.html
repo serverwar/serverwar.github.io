@@ -203,101 +203,88 @@
 </body>
 </html>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galeria Gamer</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #000;
-            color: #fff;
-        }
-
-        .event__slider {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-        }
-
-        .event__item img {
-            width: 300px;
-            height: auto;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
-
-        .event__item img:hover {
-            transform: scale(1.05);
-        }
-
-        .lightbox {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            display: none;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-        }
-
-        .lightbox img {
-            max-width: 90%;
-            max-height: 90%;
-            border-radius: 10px;
-        }
-
-        .lightbox:target {
-            display: flex;
-        }
-    </style>
-</head>
-<body>
-
-<h2 style="text-align: center;">Galeria Gamer</h2>
-
-<div class="event__slider">
-    <!-- Item 1 -->
-    <div class="event__item">
-        <a href="#lightbox1"><img src="img/events/event-1.jpg" alt="Evento 1"></a>
+                 <div class="row">
+    <div class="event__slider owl-carousel">
+        <!-- Template 1 -->
+        <div class="col-lg-4">
+            <div class="event__item">
+                <div class="event__item__pic set-bg" data-setbg="img/events/event-1.jpg">
+                    <div class="tag-date">
+                        <span>01</span>
+                    </div>
+                </div>
+                <div class="event__item__text">
+                    <h4>WEBGAMER</h4>
+                </div>
+            </div>
+        </div>
+        <!-- Template 2 -->
+        <div class="col-lg-4">
+            <div class="event__item">
+                <div class="event__item__pic set-bg" data-setbg="img/events/event-2.jpg">
+                    <div class="tag-date">
+                        <span>02</span>
+                    </div>
+                </div>
+                <div class="event__item__text">
+                    <h4>INAUGURAÇÃO</h4>
+                </div>
+            </div>
+        </div>
+        <!-- Template 3 -->
+        <div class="col-lg-4">
+            <div class="event__item">
+                <div class="event__item__pic set-bg" data-setbg="img/events/contas.jpg">
+                    <div class="tag-date">
+                        <span>03</span>
+                    </div>
+                </div>
+                <div class="event__item__text">
+                    <h4>REGISTRO</h4>
+                </div>
+            </div>
+        </div>
+        <!-- Template 4 -->
+        <div class="col-lg-4">
+            <div class="event__item">
+                <div class="event__item__pic set-bg" data-setbg="img/events/game-event1.jpg">
+                    <div class="tag-date">
+                        <span>04</span>
+                    </div>
+                </div>
+                <div class="event__item__text">
+                    <h4>TORNEIO GAMER</h4>
+                </div>
+            </div>
+        </div>
+        <!-- Template 5 -->
+        <div class="col-lg-4">
+            <div class="event__item">
+                <div class="event__item__pic set-bg" data-setbg="img/events/game-event2.jpg">
+                    <div class="tag-date">
+                        <span>05</span>
+                    </div>
+                </div>
+                <div class="event__item__text">
+                    <h4>LANÇAMENTO DE JOGO</h4>
+                </div>
+            </div>
+        </div>
+        <!-- Template 6 -->
+        <div class="col-lg-4">
+            <div class="event__item">
+                <div class="event__item__pic set-bg" data-setbg="img/events/game-event3.jpg">
+                    <div class="tag-date">
+                        <span>06</span>
+                    </div>
+                </div>
+                <div class="event__item__text">
+                    <h4>COMPETIÇÃO ONLINE</h4>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <!-- Item 2 -->
-    <div class="event__item">
-        <a href="#lightbox2"><img src="img/events/event-2.jpg" alt="Evento 2"></a>
-    </div>
-
-    <!-- Item 3 -->
-    <div class="event__item">
-        <a href="#lightbox3"><img src="img/events/event-3.jpg" alt="Evento 3"></a>
-    </div>
 </div>
-
-<!-- Lightboxes -->
-<div id="lightbox1" class="lightbox">
-    <a href="#"><img src="img/events/event-1.jpg" alt="Evento 1 Ampliado"></a>
-</div>
-
-<div id="lightbox2" class="lightbox">
-    <a href="#"><img src="img/events/event-2.jpg" alt="Evento 2 Ampliado"></a>
-</div>
-
-<div id="lightbox3" class="lightbox">
-    <a href="#"><img src="img/events/event-3.jpg" alt="Evento 3 Ampliado"></a>
-</div>
-
-</body>
-</html>
-
 
                        
     </section>
