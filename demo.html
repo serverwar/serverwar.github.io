@@ -43,7 +43,7 @@
                     <div class="header__nav">
                         <nav class="header__menu mobile-menu">
                             <ul>
-                                <li class="active"><a href="./index.html">INICIO</a></li>
+                                <li class="active"><a href="./index.html">INICIOo</a></li>
                                 <li><a href="./vps.html">VPS - BRASIL</a></li>
                                 <li><a href="./repack.html">REPACK</a></li>
                                 <li><a href="./demo.html">DEMO</a></li>
@@ -114,7 +114,7 @@
                         </div>
                     </div>
                     <div class="buy__tickets">
-                        <a href="#" class="primary-btn">REGISTRO</a>
+                        <a href="#" class="primary-btn">REGISTRO</a> <a href="#" class="primary-btn">BAIXAR</a>
                     </div>
                 </div>
             </div>
@@ -238,6 +238,91 @@
         </div>
     </section>
     <!-- Countdown Section End -->
+ <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Conta</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('img/panda.webp') no-repeat center center fixed;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+        }
+
+        .custom-container {
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-end;
+            height: 100vh;
+            padding: 20px;
+        }
+
+        .custom-account-form {
+            width: 300px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .custom-account-form h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .custom-account-form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .custom-account-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4B0082;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .custom-account-form button:hover {
+            background-color: #3a006b;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="custom-container">
+        <div class="custom-account-form">
+            <h2>Criar Conta</h2>
+            <form action="#" method="post">
+                <label for="username">Usuário</label>
+                <input type="text" id="username" name="username" placeholder="Digite seu usuário" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Digite seu email" required>
+
+                <label for="password">Senha</label>
+                <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
+
+                <label for="confirm-password">Confirmar Senha</label>
+                <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirme sua senha" required>
+
+                <button type="submit">Criar Conta</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
+
  
     <!-- Footer Section Begin -->
     <footer class="footer footer--normal spad set-bg" data-setbg="img/footer-bg.png">
