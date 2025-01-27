@@ -494,7 +494,7 @@
         <a href="https://www.facebook.com/sourcewow" target="_blank" title="Facebook">
             <i class="fab fa-facebook-f"></i>
         </a>
-      <!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
@@ -555,8 +555,11 @@
       }, 10000); // 10 segundos
     }
 
-    // Mostra a mensagem a cada 15 segundos
-    setInterval(showWhatsAppMessage, 15000);
+    // Função que permite tocar o som após a interação do usuário
+    document.body.addEventListener('click', () => {
+      // Mostra a mensagem a cada 15 segundos
+      setInterval(showWhatsAppMessage, 15000);
+    });
   </script>
 </body>
 </html>
