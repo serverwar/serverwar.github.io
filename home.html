@@ -494,8 +494,60 @@
         <a href="https://www.facebook.com/sourcewow" target="_blank" title="Facebook">
             <i class="fab fa-facebook-f"></i>
         </a>
-        <a href="https://wa.me/555195991640" target="_blank" title="WhatsApp">
-            <i class="fab fa-whatsapp"></i>
+        <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WhatsApp Notificação</title>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    .whatsapp-message {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      font-size: 16px;
+      font-family: Arial, sans-serif;
+      z-index: 1000;
+    }
+    .whatsapp-message a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .whatsapp-message i {
+      margin-right: 5px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Container para a mensagem do WhatsApp -->
+  <div id="whatsappMessage" class="whatsapp-message">
+    Fale comigo agora mesmo <a href="https://wa.me/555195991640" target="_blank" title="WhatsApp">
+      <i class="fab fa-whatsapp"></i> Clique aqui!
+    </a>
+  </div>
+
+  <script>
+    // Função para exibir a mensagem
+    function showWhatsAppMessage() {
+      const message = document.getElementById('whatsappMessage');
+      message.style.display = 'block';
+
+      // Oculta a mensagem após 10 segundos
+      setTimeout(() => {
+        message.style.display = 'none';
+      }, 10000); // 10 segundos
+    }
+
+    // Mostra a mensagem a cada 15 segundos
+    setInterval(showWhatsAppMessage, 15000);
+  </script>
+</body>
         </a>
     </div>
 
