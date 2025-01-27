@@ -555,11 +555,10 @@
       }, 10000); // 10 segundos
     }
 
-    // Função que permite tocar o som após a interação do usuário
-    document.body.addEventListener('click', () => {
-      // Mostra a mensagem a cada 15 segundos
+    // Mostra a mensagem e toca o som imediatamente após o carregamento da página
+    window.onload = function() {
       setInterval(showWhatsAppMessage, 15000);
-    });
+    };
   </script>
 </body>
 </html>
