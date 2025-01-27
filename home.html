@@ -487,14 +487,14 @@
 </head>
 <body>
 
-    <div class="social-icons">
+    <div class="">
         <a href="https://www.instagram.com/wowsourcee" target="_blank" title="Instagram">
             <i class="fab fa-instagram"></i>
         </a>
         <a href="https://www.facebook.com/sourcewow" target="_blank" title="Facebook">
             <i class="fab fa-facebook-f"></i>
         </a>
-        <!DOCTYPE html>
+      <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
@@ -534,11 +534,20 @@
     </a>
   </div>
 
+  <!-- Som de notificação -->
+  <audio id="notificationSound" src="https://www.soundjay.com/button/beep-07.wav" preload="auto"></audio>
+
   <script>
-    // Função para exibir a mensagem
+    // Função para exibir a mensagem e tocar o som
     function showWhatsAppMessage() {
       const message = document.getElementById('whatsappMessage');
+      const notificationSound = document.getElementById('notificationSound');
+
+      // Exibe a mensagem
       message.style.display = 'block';
+
+      // Toca o som de notificação
+      notificationSound.play();
 
       // Oculta a mensagem após 10 segundos
       setTimeout(() => {
@@ -549,11 +558,5 @@
     // Mostra a mensagem a cada 15 segundos
     setInterval(showWhatsAppMessage, 15000);
   </script>
-</body>
-</html>
-
-        </a>
-    </div>
-
 </body>
 </html>
