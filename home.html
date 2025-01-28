@@ -404,6 +404,101 @@
         </div>
     </section>
     <!-- Countdown Section End -->
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Avisos</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000; /* Fundo preto */
+            color: #fff; /* Texto branco */
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9); /* Fundo do popup mais escuro */
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .popup-content {
+            background: #1c1c1c; /* Fundo do conteúdo do popup */
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            max-width: 400px;
+            width: 90%;
+        }
+        h3 {
+            color: #ff5722; /* Cor do título */
+            margin-bottom: 15px;
+        }
+        p {
+            color: #fff; /* Texto branco */
+            margin-bottom: 20px;
+        }
+        .close-btn {
+            background: #ff5722; /* Cor do botão de fechar */
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .close-btn:hover {
+            background: #e64a19; /* Cor do botão ao passar o mouse */
+        }
+        .btn-leia-mais {
+            background: #2196F3; /* Cor do botão "Leia Mais" */
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .btn-leia-mais:hover {
+            background: #1976D2; /* Cor do botão ao passar o mouse */
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="popup" id="newsPopup">
+        <div class="popup-content">
+            <article>
+                <h3>🔥 VPS COM PROTEÇÃO DDOS Disponível!</h3>
+                <p>Monte o seu servidor com ping 30 -50.</p>
+                <a href="https://wowsource.shop/vps.html" class="btn-leia-mais">Contratar</a>
+            </article>
+            <button class="close-btn" id="closePopup">Fechar</button>
+        </div>
+    </div>
+    
+    <script>
+        const closePopup = document.getElementById('closePopup');
+        const newsPopup = document.getElementById('newsPopup');
+
+        closePopup.addEventListener('click', () => {
+            newsPopup.style.display = 'none';
+        });
+
+        // Abrir o pop-up automaticamente após 30 segundos (30000 milissegundos)
+        setTimeout(() => {
+            newsPopup.style.display = 'flex';
+        }, 30000);
+    </script>
+</body>
+</html>
 
     <!-- Footer Section Begin -->
     <footer class="footer spad set-bg" data-setbg="img/footer-bg.png">
