@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html  >
 <head>
-  <!-- Site made with Mobirise Website Builder v6.0.1, https://mobirise.com -->
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Mobirise v6.0.1, mobirise.com">
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-  <link rel="shortcut icon" href="assets/images/logo.png" type="image/x-icon">
-  <meta name="description" content="">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Umbanda">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="description" content="Site dedicado às tradições espirituais afro-brasileiras. Axé, Oxalá, Nação, Quimbanda e Umbanda. Conhecimento e respeito às religiões de matriz africana">
+<meta name="keywords" content="Oxalá, Nação, Quimbanda, Umbanda, axé, orixás, espiritualidade afro-brasileira">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
   
   
   <title>localizacao</title>
@@ -24,97 +24,353 @@
   
   
   
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cristian D'Oxalá - Localização</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary-color: #6a4c93;
+      --secondary-color: #8a5a44;
+      --dark-color: #1a1a2e;
+      --light-color: #f8f9fa;
+      --accent-color: #fca311;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f5f5f5;
+      color: var(--dark-color);
+    }
+    
+    .navbar {
+      background: linear-gradient(135deg, var(--dark-color) 0%, var(--primary-color) 100%);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      padding: 1rem 0;
+    }
+    
+    .navbar-brand a {
+      font-weight: 700;
+      font-size: 1.8rem;
+      background: linear-gradient(to right, #fff 0%, var(--accent-color) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-decoration: none;
+    }
+    
+    .nav-link {
+      font-weight: 500;
+      margin: 0 0.5rem;
+      position: relative;
+    }
+    
+    .nav-link:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: var(--accent-color);
+      transition: width 0.3s ease;
+    }
+    
+    .nav-link:hover:after {
+      width: 100%;
+    }
+    
+    .hamburger span {
+      background-color: white;
+      height: 3px;
+      width: 25px;
+      margin: 4px 0;
+      display: block;
+      transition: all 0.3s ease;
+    }
+    
+    .navbar-toggler[aria-expanded="true"] .hamburger span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    .navbar-toggler[aria-expanded="true"] .hamburger span:nth-child(2) {
+      opacity: 0;
+    }
+    
+    .navbar-toggler[aria-expanded="true"] .hamburger span:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -6px);
+    }
+    
+    .btn-primary {
+      background-color: var(--primary-color);
+      border: none;
+      padding: 0.6rem 1.5rem;
+      border-radius: 50px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-primary:hover {
+      background-color: var(--dark-color);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(106, 76, 147, 0.3);
+    }
+    
+    .btn-white-outline {
+      border: 2px solid white;
+      color: white;
+      padding: 0.6rem 1.5rem;
+      border-radius: 50px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-white-outline:hover {
+      background-color: white;
+      color: var(--dark-color);
+      transform: translateY(-2px);
+    }
+    
+    #contacts3-18 {
+      padding: 5rem 0;
+      background-color: white;
+    }
+    
+    .mbr-section-title {
+      font-weight: 700;
+      color: var(--dark-color);
+      margin-bottom: 1.5rem;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .mbr-section-title:after {
+      content: '';
+      position: absolute;
+      width: 50%;
+      height: 4px;
+      bottom: -10px;
+      left: 25%;
+      background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+      border-radius: 2px;
+    }
+    
+    .mbr-section-subtitle {
+      color: #666;
+      font-weight: 400;
+    }
+    
+    .card {
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+      padding: 2rem;
+      margin-bottom: 2rem;
+      transition: transform 0.3s ease;
+    }
+    
+    .card:hover {
+      transform: translateY(-10px);
+    }
+    
+    .card-wrapper {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+    
+    .image-wrapper {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 1rem;
+      color: white;
+      font-size: 1.5rem;
+    }
+    
+    .text-wrapper h6 {
+      font-weight: 600;
+      color: var(--dark-color);
+      margin-bottom: 0.3rem;
+    }
+    
+    .text-wrapper p {
+      color: #666;
+      margin-bottom: 0;
+    }
+    
+    .text-wrapper a {
+      color: var(--primary-color);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .text-wrapper a:hover {
+      color: var(--accent-color);
+    }
+    
+    .map-wrapper {
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+      height: 400px;
+    }
+    
+    .google-map {
+      width: 100%;
+      height: 100%;
+    }
+    
+    .google-map iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    
+    footer {
+      background: linear-gradient(135deg, var(--dark-color) 0%, var(--primary-color) 100%);
+      color: white;
+      padding: 2rem 0;
+      text-align: center;
+    }
+    
+    footer p {
+      margin: 0;
+      font-size: 0.9rem;
+    }
+    
+    @media (max-width: 768px) {
+      .navbar-brand a {
+        font-size: 1.5rem;
+      }
+      
+      #contacts3-18 {
+        padding: 3rem 0;
+      }
+      
+      .mbr-section-title {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
 </head>
 <body>
   
-  <section data-bs-version="5.1" class="menu menu1 cid-sFGMsvHDIa" once="menu" id="menu1-14">
-    
-
-    <nav class="navbar navbar-dropdown navbar-expand-lg">
-        <div class="container">
-            <div class="navbar-brand">
-                
-                <span class="navbar-caption-wrap"><a class="navbar-caption text-white text-primary display-7">Cristian D'Oxalá</a></span>
-            </div>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-           </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true"><li class="nav-item"><a class="nav-link link text-white text-primary display-7" href="index.html">Inicio</a></li><li class="nav-item"><a class="nav-link link text-white text-primary display-7" href="index.html#features12-6">História</a></li>
-                    <li class="nav-item"><a class="nav-link link text-white text-primary display-7" href="album.html">Albúm</a></li></ul>
-                
-                <div class="navbar-buttons mbr-section-btn"><a class="btn btn-primary display-4" href="contato.html">Contato</a> <a class="btn btn-white-outline display-4" href="localizacao.html">Localização</a></div>
-            </div>
+  <!-- Menu Modernizado -->
+  <header class="sticky-top">
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <div class="navbar-brand">
+          <span class="navbar-caption-wrap">
+            <a class="navbar-caption display-7">Cristian D'Oxalá</a>
+          </span>
         </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#features12-6">História</a></li>
+            <li class="nav-item"><a class="nav-link" href="album.html">Álbum</a></li>
+          </ul>
+          <div class="d-flex ms-lg-3 mt-3 mt-lg-0">
+            <a class="btn btn-primary me-2" href="contato.html">Contato</a>
+            <a class="btn btn-white-outline" href="localizacao.html">Localização</a>
+          </div>
+        </div>
+      </div>
     </nav>
-</section>
+  </header>
 
-<section data-bs-version="5.1" class="contacts3 map1 cid-uH4eFDaQeZ" id="contacts3-18">
-
-    
-
-    
-    
+  <!-- Seção de Localização Modernizada -->
+  <section class="contacts3 map1" id="contacts3-18">
     <div class="container">
-        <div class="mbr-section-head">
-            <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2"><strong>Localização</strong></h3>
-            <h4 class="mbr-section-subtitle mbr-fonts-style align-center mb-0 mt-2 display-7">18040 Rod. Tapir Rocha
-<div>Águas Claras, Rio Grande do Sul - Viamão</div></h4>
-        </div>
-        <div class="row justify-content-center mt-4">
-            <div class="card col-12 col-md-6">
-                <div class="card-wrapper">
-                    <div class="image-wrapper">
-                        <span class="mbr-iconfont socicon-whatsapp socicon"></span>
-                    </div>
-                    <div class="text-wrapper">
-                        <h6 class="card-title mbr-fonts-style mb-1 display-5">
-                            <strong>CEL</strong></h6>
-                        <p class="mbr-text mbr-fonts-style display-7">
-                            <a href="https://api.whatsapp.com/send/?phone=555182700595&text=Oi%2C+Tudo+bem%3F&type=phone_number&app_absent=0" class="text-primary">+55 51 8270-0595</a>
-                        </p>
-                    </div>
-                </div>
-                <div class="card-wrapper">
-                    <div class="image-wrapper">
-                        <a href="https://www.instagram.com/pai.cristian?igsh=MWNjcmRmNmwwbnFw"><span class="mbr-iconfont socicon-instagram socicon"></span></a>
-                    </div>
-                    <div class="text-wrapper">
-                        <h6 class="card-title mbr-fonts-style mb-1 display-5">
-                            <strong>INSTAGRAM</strong></h6>
-                        <p class="mbr-text mbr-fonts-style display-7">@pai.cristian</p>
-                    </div>
-                </div>
-            </div>
-            <div class="map-wrapper col-12 col-md-6">
-                <div class="google-map"><iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed?pb=!4v1743463122034!6m8!1m7!1spg5BP-Qj5k0VnrAIBfs-iw!2m2!1d-30.14007530545896!2d-50.89765999493807!3f4.4!4f-3.450000000000003!5f0.4000000000000002" allowfullscreen=""></iframe></div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section data-bs-version="5.1" class="footer7 cid-sFGSOnwtIp" once="footers" id="footer7-15">
-
-    
-
-    
-
-    <div class="container">
-        <div class="media-container-row align-center mbr-white">
-            <div class="col-12">
-                <p class="mbr-text mb-0 mbr-fonts-style display-7">
-                    © Copyright 2025 Cristian D'Oxalá - All Rights Reserved
+      <div class="text-center mb-5">
+        <h2 class="mbr-section-title mb-4">Localização</h2>
+        <p class="mbr-section-subtitle">18040 Rod. Tapir Rocha<br>Águas Claras, Rio Grande do Sul - Viamão</p>
+      </div>
+      
+      <div class="row justify-content-center">
+        <div class="col-lg-5 col-md-6 mb-4 mb-md-0">
+          <div class="card h-100">
+            <div class="card-wrapper">
+              <div class="image-wrapper">
+                <i class="fab fa-whatsapp"></i>
+              </div>
+              <div class="text-wrapper">
+                <h6>CELULAR</h6>
+                <p>
+                  <a href="https://api.whatsapp.com/send/?phone=555182700595&text=Oi%2C+Tudo+bem%3F&type=phone_number&app_absent=0">+55 51 8270-0595</a>
                 </p>
+              </div>
             </div>
+            
+            <div class="card-wrapper">
+              <div class="image-wrapper">
+                <a href="https://www.instagram.com/pai.cristian?igsh=MWNjcmRmNmwwbnFw" class="text-white">
+                  <i class="fab fa-instagram"></i>
+                </a>
+              </div>
+              <div class="text-wrapper">
+                <h6>INSTAGRAM</h6>
+                <p>@pai.cristian</p>
+              </div>
+            </div>
+          </div>
         </div>
+        
+        <div class="col-lg-7 col-md-6">
+          <div class="map-wrapper h-100">
+            <div class="google-map">
+              <iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed?pb=!4v1743463122034!6m8!1m7!1spg5BP-Qj5k0VnrAIBfs-iw!2m2!1d-30.14007530545896!2d-50.89765999493807!3f4.4!4f-3.450000000000003!5f0.4000000000000002" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-</section><section class="display-7" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem;"><a href="" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;"><img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a><p style="margin: 0;text-align: center;" class="display-7">&#8204;</p><a style="z-index:1" href=""></a></section><script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/ytplayer/index.js"></script>  <script src="assets/dropdown/js/navbar-dropdown.js"></script>  <script src="assets/theme/js/script.js"></script>  
-  
-  
+  </section>
+
+  <!-- Rodapé Modernizado -->
+  <footer class="footer7">
+    <div class="container">
+      <div class="text-center">
+        <p class="mb-0">
+          © Copyright 2025 Cristian D'Oxalá - Todos os direitos reservados
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"></script>
+  <script>
+    // Ativa tooltips
+    const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    const tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+      return new bootstrap.Tooltip(tooltipTriggerEl)
+    });
+    
+    // Animação suave para links internos
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
 </body>
 </html>
