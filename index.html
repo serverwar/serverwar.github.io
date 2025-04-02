@@ -153,7 +153,7 @@
       justify-content: center;
       color: white;
       text-align: center;
-      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('assets/images/468510407-598113969842311-1547415659768119646-n.jpg') no-repeat center center;
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('assets/images/hero-bg.png') no-repeat center center;
       background-size: cover;
       margin-bottom: 3rem;
     }
@@ -407,6 +407,34 @@
       margin: 0;
       font-size: 0.9rem;
     }
+
+    /* Seletor de Idiomas */
+    .language-selector {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+      display: flex;
+      gap: 5px;
+      background-color: rgba(255,255,255,0.8);
+      padding: 5px;
+      border-radius: 5px;
+    }
+    .language-flag {
+      width: 30px;
+      height: 20px;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: transform 0.3s;
+      border: 2px solid transparent;
+    }
+    .language-flag:hover {
+      transform: scale(1.1);
+    }
+    .language-flag.active {
+      border: 2px solid #fca311;
+      box-shadow: 0 0 5px rgba(252, 163, 17, 0.5);
+    }
     
     /* Responsividade */
     @media (max-width: 768px) {
@@ -433,18 +461,28 @@
       body {
         background-attachment: scroll;
       }
+
+      .language-selector {
+        top: 10px;
+        right: 10px;
+      }
+      .language-flag {
+        width: 25px;
+        height: 15px;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="content-wrapper">
+ 
+
     <!-- Menu -->
     <header class="sticky-top">
       <nav class="navbar navbar-expand-lg">
         <div class="container">
           <div class="navbar-brand">
             <span class="navbar-caption-wrap">
-              <a class="navbar-caption">Cristian D'Oxalá</a>
+              <a class="navbar-caption" data-translate="site_title">Cristian D'Oxalá</a>
             </span>
           </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -453,29 +491,43 @@
               <span></span>
               <span></span>
             </div>
+			
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-              <li class="nav-item"><a class="nav-link active" href="index.html">Início</a></li>
-              <li class="nav-item"><a class="nav-link" href="index.html#features12-6">História</a></li>
-              <li class="nav-item"><a class="nav-link" href="album.html">Álbum</a></li>
-              <li class="nav-item"><a class="nav-link" href="reflexao.html">Reflexão</a></li>
+              <li class="nav-item"><a class="nav-link active" href="index.html" data-translate="menu_home">Início</a></li>
+              <li class="nav-item"><a class="nav-link" href="index.html#features12-6" data-translate="menu_history">História</a></li>
+              <li class="nav-item"><a class="nav-link" href="album.html" data-translate="menu_album">Álbum</a></li>
+              <li class="nav-item"><a class="nav-link" href="reflexao.html" data-translate="menu_reflection">Reflexão</a></li>
             </ul>
             <div class="d-flex ms-lg-3 mt-3 mt-lg-0">
-              <a class="btn btn-primary me-2" href="contato.html">Contato</a>
-              <a class="btn btn-white-outline" href="localizacao.html">Localização</a>
+              <a class="btn btn-primary me-2" href="contato.html" data-translate="menu_contact">Contato</a>
+              <a class="btn btn-white-outline" href="localizacao.html" data-translate="menu_location">Localização</a>
             </div>
           </div>
         </div>
       </nav>
     </header>
+<div class="content-wrapper">
+    <!-- Seletor de Idiomas -->
+    <div class="language-selector">
+      <div class="language-flag active" data-lang="pt" title="Português (Brasil)">
+        <img src="https://flagcdn.com/w20/br.png" srcset="https://flagcdn.com/w40/br.png 2x" style="width:20px; height:15px; object-fit:cover;" alt="Brasil">
+      </div>
+      <div class="language-flag" data-lang="es-uy" title="Español (Uruguay)">
+        <img src="https://flagcdn.com/w20/uy.png" srcset="https://flagcdn.com/w40/uy.png 2x" style="width:20px; height:15px; object-fit:cover;" alt="Uruguay">
+      </div>
+      <div class="language-flag" data-lang="es-py" title="Español (Paraguay)">
+        <img src="https://flagcdn.com/w20/py.png" srcset="https://flagcdn.com/w40/py.png 2x" style="width:20px; height:15px; object-fit:cover;" alt="Paraguay">
+      </div>
+    </div>
 
     <!-- Hero Section -->
     <section class="hero-section">
       <div class="hero-content">
         <div class="container">
-          <h1 class="hero-title">Cristian D'Oxalá</h1>
-          <h2 class="hero-subtitle">Nação - Umbanda - Quimbanda</h2>
+          <h1 class="hero-title" data-translate="hero_title">Cristian D'Oxalá</h1>
+          <h2 class="hero-subtitle" data-translate="hero_subtitle">Nação - Umbanda - Quimbanda</h2>
         </div>
       </div>
     </section>
@@ -485,11 +537,11 @@
       <section class="content-section" id="features12-6">
         <div class="row align-items-center">
           <div class="col-lg-8">
-            <h2 class="section-title">NAÇÃO</h2>
+            <h2 class="section-title" data-translate="section_nation_title">NAÇÃO</h2>
             <div class="section-content">
-              <p><strong>Babalorixá Cristian d'Oxalá teve seu início religioso em 2005, quando teve o primeiro contato com a Umbanda, dando início à sua jornada espiritual.</strong></p>
-              <p><strong>No mesmo ano, ingressou na Quimbanda e também na Nação de Oyó, onde foi iniciado pela Iyálorixá Irede de Oxum docô, vinculada à Bacia da Vó Olga de Xapanã Onibarú.</strong></p>
-              <p><strong>Na Nação de Oyó, ele recebeu importantes fundamentos e ensinamentos ritualísticos, consolidando sua formação. Ao longo de sua trajetória, seu Orixá o conduziu por outros axés, onde absorveu conhecimentos e experiências enriquecedoras, ampliando sua sabedoria e conexão espiritual.</strong></p>
+              <p data-translate="nation_paragraph1"><strong>Babalorixá Cristian d'Oxalá teve seu início religioso em 2005, quando teve o primeiro contato com a Umbanda, dando início à sua jornada espiritual.</strong></p>
+              <p data-translate="nation_paragraph2"><strong>No mesmo ano, ingressou na Quimbanda e também na Nação de Oyó, onde foi iniciado pela Iyálorixá Irede de Oxum docô, vinculada à Bacia da Vó Olga de Xapanã Onibarú.</strong></p>
+              <p data-translate="nation_paragraph3"><strong>Na Nação de Oyó, ele recebeu importantes fundamentos e ensinamentos ritualísticos, consolidando sua formação. Ao longo de sua trajetória, seu Orixá o conduziu por outros axés, onde absorveu conhecimentos e experiências enriquecedoras, ampliando sua sabedoria e conexão espiritual.</strong></p>
             </div>
           </div>
           <div class="col-lg-4 mt-4 mt-lg-0">
@@ -502,11 +554,11 @@
       <section class="content-section">
         <div class="row align-items-center">
           <div class="col-lg-8 order-lg-1 order-2">
-            <h2 class="section-title">UMBANDA</h2>
+            <h2 class="section-title" data-translate="section_umbanda_title">UMBANDA</h2>
             <div class="section-content">
-              <p>Na <strong>Umbanda</strong>, meu cacicamento ocorreu em 28/01/2008, marcando um momento importante na minha caminhada espiritual. Minha coroação foi realizada sob a vibração de Pai Xangô da Pedreira, que guia e fortalece minha missão.</p>
-              <p>Sou filho de <strong>Preto Velho</strong>, com a bênção e sabedoria de <strong>Vovô Benedito</strong> das Almas, que me ensina a humildade e a cura. Também sou filho de <strong>Cosme</strong>, representado pela inocência e alegria de Luizinho - 3 anos, e filho de Cigano, sob a orientação de <strong>Cigano Cortez</strong> e <strong>Cigana Carmensita</strong>, que trazem luz e direção em minha jornada.</p>
-              <p>Essas entidades, cada uma em sua essência, formam a base do meu trabalho espiritual, equilibrando conhecimento, amor e firmeza na prática da Umbanda.</p>
+              <p data-translate="umbanda_paragraph1">Na <strong>Umbanda</strong>, meu cacicamento ocorreu em 28/01/2008, marcando um momento importante na minha caminhada espiritual. Minha coroação foi realizada sob a vibração de Pai Xangô da Pedreira, que guia e fortalece minha missão.</p>
+              <p data-translate="umbanda_paragraph2">Sou filho de <strong>Preto Velho</strong>, com a bênção e sabedoria de <strong>Vovô Benedito</strong> das Almas, que me ensina a humildade e a cura. Também sou filho de <strong>Cosme</strong>, representado pela inocência e alegria de Luizinho - 3 anos, e filho de Cigano, sob a orientação de <strong>Cigano Cortez</strong> e <strong>Cigana Carmensita</strong>, que trazem luz e direção em minha jornada.</p>
+              <p data-translate="umbanda_paragraph3">Essas entidades, cada uma em sua essência, formam a base do meu trabalho espiritual, equilibrando conhecimento, amor e firmeza na prática da Umbanda.</p>
             </div>
           </div>
           <div class="col-lg-4 order-lg-2 order-1 mb-4 mb-lg-0">
@@ -519,10 +571,10 @@
       <section class="content-section">
         <div class="row align-items-center">
           <div class="col-lg-8">
-            <h2 class="section-title">QUIMBANDA</h2>
+            <h2 class="section-title" data-translate="section_quimbanda_title">QUIMBANDA</h2>
             <div class="section-content">
-              <p><strong>Na Quimbanda, recebi o Abassê de Exu Rei das 7 Encruzilhadas e Rainha das 7 Encruzilhadas, entidades poderosas que regem os caminhos e abrem os mistérios da vida.</strong></p>
-              <p><strong>Minha feitura foi realizada em 30/07/2007, um marco sagrado que consagrou minha ligação com as forças da esquerda e minha missão dentro dessa corrente espiritual.</strong></p>
+              <p data-translate="quimbanda_paragraph1"><strong>Na Quimbanda, recebi o Abassê de Exu Rei das 7 Encruzilhadas e Rainha das 7 Encruzilhadas, entidades poderosas que regem os caminhos e abrem os mistérios da vida.</strong></p>
+              <p data-translate="quimbanda_paragraph2"><strong>Minha feitura foi realizada em 30/07/2007, um marco sagrado que consagrou minha ligação com as forças da esquerda e minha missão dentro dessa corrente espiritual.</strong></p>
             </div>
           </div>
           <div class="col-lg-4 mt-4 mt-lg-0">
@@ -531,12 +583,13 @@
         </div>
       </section>
     </div>
+	
 
     <!-- Rodapé -->
     <footer>
       <div class="container">
         <div class="text-center">
-          <p class="mb-0">
+          <p class="mb-0" data-translate="footer_copyright">
             © Copyright 2025 Cristian D'Oxalá - Todos os direitos reservados
           </p>
         </div>
@@ -563,9 +616,9 @@
     </div>
     
     <div class="chat-bubble" id="chatBubble">
-      <p>Oi! Filho Como posso te ajudar?</p>
+      <p data-translate="chat_message">Oi! Filho Como posso te ajudar?</p>
       <button class="whatsapp-chat-btn" id="startChat">
-        <i class="fab fa-whatsapp"></i> Iniciar Conversa
+        <i class="fab fa-whatsapp"></i> <span data-translate="chat_button">Iniciar Conversa</span>
       </button>
     </div>
   </div>
@@ -621,7 +674,7 @@
     startChat.addEventListener('click', function(e) {
       createRipple(e);
       const phone = '555182700595';
-      const message = 'Oi, Tudo bem?';
+      const message = getTranslation('whatsapp_message', currentLanguage);
       window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, '_blank');
       chatBubble.classList.remove('active');
     });
@@ -654,6 +707,124 @@
         circle.remove();
       }, 600);
     }
+
+    // Sistema de Tradução
+    const translations = {
+      pt: {
+        site_title: "Cristian D'Oxalá",
+        menu_home: "Início",
+        menu_history: "História",
+        menu_album: "Álbum",
+        menu_reflection: "Reflexão",
+        menu_contact: "Contato",
+        menu_location: "Localização",
+        hero_title: "Cristian D'Oxalá",
+        hero_subtitle: "Nação - Umbanda - Quimbanda",
+        section_nation_title: "NAÇÃO",
+        nation_paragraph1: "Babalorixá Cristian d'Oxalá teve seu início religioso em 2005, quando teve o primeiro contato com a Umbanda, dando início à sua jornada espiritual.",
+        nation_paragraph2: "No mesmo ano, ingressou na Quimbanda e também na Nação de Oyó, onde foi iniciado pela Iyálorixá Irede de Oxum docô, vinculada à Bacia da Vó Olga de Xapanã Onibarú.",
+        nation_paragraph3: "Na Nação de Oyó, ele recebeu importantes fundamentos e ensinamentos ritualísticos, consolidando sua formação. Ao longo de sua trajetória, seu Orixá o conduziu por outros axés, onde absorveu conhecimentos e experiências enriquecedoras, ampliando sua sabedoria e conexão espiritual.",
+        section_umbanda_title: "UMBANDA",
+        umbanda_paragraph1: "Na Umbanda, meu cacicamento ocorreu em 28/01/2008, marcando um momento importante na minha caminhada espiritual. Minha coroação foi realizada sob a vibração de Pai Xangô da Pedreira, que guia e fortalece minha missão.",
+        umbanda_paragraph2: "Sou filho de Preto Velho, com a bênção e sabedoria de Vovô Benedito das Almas, que me ensina a humildade e a cura. Também sou filho de Cosme, representado pela inocência e alegria de Luizinho - 3 anos, e filho de Cigano, sob a orientação de Cigano Cortez e Cigana Carmensita, que trazem luz e direção em minha jornada.",
+        umbanda_paragraph3: "Essas entidades, cada uma em sua essência, formam a base do meu trabalho espiritual, equilibrando conhecimento, amor e firmeza na prática da Umbanda.",
+        section_quimbanda_title: "QUIMBANDA",
+        quimbanda_paragraph1: "Na Quimbanda, recebi o Abassê de Exu Rei das 7 Encruzilhadas e Rainha das 7 Encruzilhadas, entidades poderosas que regem os caminhos e abrem os mistérios da vida.",
+        quimbanda_paragraph2: "Minha feitura foi realizada em 30/07/2007, um marco sagrado que consagrou minha ligação com as forças da esquerda e minha missão dentro dessa corrente espiritual.",
+        footer_copyright: "© Copyright 2025 Cristian D'Oxalá - Todos os direitos reservados",
+        chat_message: "Oi! Filho Como posso te ajudar?",
+        chat_button: "Iniciar Conversa",
+        whatsapp_message: "Oi, Tudo bem?"
+      },
+      "es-uy": {
+        site_title: "Cristian D'Oxalá",
+        menu_home: "Inicio",
+        menu_history: "Historia",
+        menu_album: "Álbum",
+        menu_reflection: "Reflexión",
+        menu_contact: "Contacto",
+        menu_location: "Ubicación",
+        hero_title: "Cristian D'Oxalá",
+        hero_subtitle: "Nación - Umbanda - Quimbanda",
+        section_nation_title: "NACIÓN",
+        nation_paragraph1: "Babalorixá Cristian d'Oxalá comenzó su camino religioso en 2005, cuando tuvo su primer contacto con la Umbanda, iniciando así su jornada espiritual.",
+        nation_paragraph2: "Ese mismo año, ingresó a la Quimbanda y también a la Nación de Oyó, donde fue iniciado por la Iyálorixá Irede de Oxum docô, vinculada a la Bacia de Vó Olga de Xapanã Onibarú.",
+        nation_paragraph3: "En la Nación de Oyó, recibió importantes fundamentos y enseñanzas rituales, consolidando su formación. A lo largo de su trayectoria, su Orixá lo guió por otros axés, donde absorbió conocimientos y experiencias enriquecedoras, ampliando su sabiduría y conexión espiritual.",
+        section_umbanda_title: "UMBANDA",
+        umbanda_paragraph1: "En la Umbanda, mi cacicazgo ocurrió el 28/01/2008, marcando un momento importante en mi camino espiritual. Mi coronación fue realizada bajo la vibración de Pai Xangô da Pedreira, quien guía y fortalece mi misión.",
+        umbanda_paragraph2: "Soy hijo de Preto Velho, con la bendición y sabiduría de Vovô Benedito das Almas, quien me enseña humildad y curación. También soy hijo de Cosme, representado por la inocencia y alegría de Luizinho - 3 años, e hijo de Gitano, bajo la orientación de Gitano Cortez y Gitana Carmensita, quienes traen luz y dirección en mi jornada.",
+        umbanda_paragraph3: "Estas entidades, cada una en su esencia, forman la base de mi trabajo espiritual, equilibrando conocimiento, amor y firmeza en la práctica de la Umbanda.",
+        section_quimbanda_title: "QUIMBANDA",
+        quimbanda_paragraph1: "En la Quimbanda, recibí el Abassê de Exu Rei das 7 Encruzilhadas y Rainha das 7 Encruzilhadas, entidades poderosas que rigen los caminos y abren los misterios de la vida.",
+        quimbanda_paragraph2: "Mi iniciación se realizó el 30/07/2007, un momento sagrado que consagró mi conexión con las fuerzas de la izquierda y mi misión dentro de esta corriente espiritual.",
+        footer_copyright: "© Copyright 2025 Cristian D'Oxalá - Todos los derechos reservados",
+        chat_message: "¡Hola! Hijo, ¿cómo puedo ayudarte?",
+        chat_button: "Iniciar Conversación",
+        whatsapp_message: "Hola, ¿cómo estás?"
+      },
+      "es-py": {
+        site_title: "Cristian D'Oxalá",
+        menu_home: "Inicio",
+        menu_history: "Historia",
+        menu_album: "Álbum",
+        menu_reflection: "Reflexión",
+        menu_contact: "Contacto",
+        menu_location: "Ubicación",
+        hero_title: "Cristian D'Oxalá",
+        hero_subtitle: "Nación - Umbanda - Quimbanda",
+        section_nation_title: "NACIÓN",
+        nation_paragraph1: "Babalorixá Cristian d'Oxalá comenzó su camino religioso en 2005, cuando tuvo su primer contacto con la Umbanda, iniciando así su jornada espiritual.",
+        nation_paragraph2: "Ese mismo año, ingresó a la Quimbanda y también a la Nación de Oyó, donde fue iniciado por la Iyálorixá Irede de Oxum docô, vinculada a la Bacia de Vó Olga de Xapanã Onibarú.",
+        nation_paragraph3: "En la Nación de Oyó, recibió importantes fundamentos y enseñanzas rituales, consolidando su formación. A lo largo de su trayectoria, su Orixá lo guió por otros axés, donde absorbió conocimientos y experiencias enriquecedoras, ampliando su sabiduría y conexión espiritual.",
+        section_umbanda_title: "UMBANDA",
+        umbanda_paragraph1: "En la Umbanda, mi cacicazgo ocurrió el 28/01/2008, marcando un momento importante en mi camino espiritual. Mi coronación fue realizada bajo la vibración de Pai Xangô da Pedreira, quien guía y fortalece mi misión.",
+        umbanda_paragraph2: "Soy hijo de Preto Velho, con la bendición y sabiduría de Vovô Benedito das Almas, quien me enseña humildad y curación. También soy hijo de Cosme, representado por la inocencia y alegría de Luizinho - 3 años, e hijo de Gitano, bajo la orientación de Gitano Cortez y Gitana Carmensita, quienes traen luz y dirección en mi jornada.",
+        umbanda_paragraph3: "Estas entidades, cada una en su esencia, forman la base de mi trabajo espiritual, equilibrando conocimiento, amor y firmeza en la práctica de la Umbanda.",
+        section_quimbanda_title: "QUIMBANDA",
+        quimbanda_paragraph1: "En la Quimbanda, recibí el Abassê de Exu Rei das 7 Encruzilhadas y Rainha das 7 Encruzilhadas, entidades poderosas que rigen los caminos y abren los misterios de la vida.",
+        quimbanda_paragraph2: "Mi iniciación se realizó el 30/07/2007, un momento sagrado que consagró mi conexión con las fuerzas de la izquierda y mi misión dentro de esta corriente espiritual.",
+        footer_copyright: "© Copyright 2025 Cristian D'Oxalá - Todos los derechos reservados",
+        chat_message: "¡Hola! Hijo, ¿cómo puedo ayudarte?",
+        chat_button: "Iniciar Conversación",
+        whatsapp_message: "Hola, ¿cómo estás?"
+      }
+    };
+
+    let currentLanguage = 'pt';
+
+    // Função para obter tradução
+    function getTranslation(key, lang) {
+      return translations[lang][key] || translations['pt'][key] || key;
+    }
+
+    // Função para traduzir a página
+    function translatePage(lang) {
+      currentLanguage = lang;
+      document.querySelectorAll('[data-translate]').forEach(element => {
+        const key = element.getAttribute('data-translate');
+        element.textContent = getTranslation(key, lang);
+      });
+      
+      // Atualizar a classe ativa das bandeiras
+      document.querySelectorAll('.language-flag').forEach(flag => {
+        if (flag.getAttribute('data-lang') === lang) {
+          flag.classList.add('active');
+        } else {
+          flag.classList.remove('active');
+        }
+      });
+    }
+
+    // Configurar eventos dos botões de idioma
+    document.querySelectorAll('.language-flag').forEach(flag => {
+      flag.addEventListener('click', function() {
+        const lang = this.getAttribute('data-lang');
+        translatePage(lang);
+      });
+    });
+
+    // Inicializar a página em português
+    translatePage('pt');
   </script>
 </body>
 </html>
