@@ -500,27 +500,142 @@
               <li class="nav-item"><a class="nav-link" href="album.html" data-translate="menu_album">Álbum</a></li>
               <li class="nav-item"><a class="nav-link" href="reflexao.html" data-translate="menu_reflection">Reflexão</a></li>
             </ul>
+
+            
             <div class="d-flex ms-lg-3 mt-3 mt-lg-0">
               <a class="btn btn-primary me-2" href="contato.html" data-translate="menu_contact">Contato</a>
               <a class="btn btn-white-outline" href="localizacao.html" data-translate="menu_location">Localização</a>
             </div>
-          </div>
+            <div class="language-selector-nav">
+              <div class="language-dropdown">
+                <div class="language-current" id="currentLanguage">
+                  <img src="https://flagcdn.com/w20/br.png" alt="Português">
+                  <span>PT</span>
+                </div>
+                <div class="language-dropdown-content">
+                  <div class="language-option" data-lang="pt">
+                    <img src="https://flagcdn.com/w20/br.png" alt="Português">
+                    <span>Português (BR)</span>
+                  </div>
+                  <div class="language-option" data-lang="es-uy">
+                    <img src="https://flagcdn.com/w20/uy.png" alt="Español (UY)">
+                    <span>Español (UY)</span>
+                  </div>
+                  <div class="language-option" data-lang="es-py">
+                    <img src="https://flagcdn.com/w20/ar.png" alt="Español (AR)">
+                    <span>Español (AR)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
         </div>
       </nav>
     </header>
 <div class="content-wrapper">
-    <!-- Seletor de Idiomas -->
-    <div class="language-selector">
-      <div class="language-flag active" data-lang="pt" title="Português (Brasil)">
-        <img src="https://flagcdn.com/w20/br.png" srcset="https://flagcdn.com/w40/br.png 2x" style="width:20px; height:15px; object-fit:cover;" alt="Brasil">
-      </div>
-      <div class="language-flag" data-lang="es-uy" title="Español (Uruguay)">
-        <img src="https://flagcdn.com/w20/uy.png" srcset="https://flagcdn.com/w40/uy.png 2x" style="width:20px; height:15px; object-fit:cover;" alt="Uruguay">
-      </div>
-      <div class="language-flag" data-lang="es-py" title="Español (Paraguay)">
-        <img src="https://flagcdn.com/w20/py.png" srcset="https://flagcdn.com/w40/py.png 2x" style="width:20px; height:15px; object-fit:cover;" alt="Paraguay">
-      </div>
-    </div>
+    
+  <style>
+    /* Novo Seletor de Idiomas */
+.language-selector-nav {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-left: 15px;
+  position: relative;
+}
+
+.language-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.language-current {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 20px;
+  background-color: rgba(255,255,255,0.1);
+  transition: all 0.3s ease;
+}
+
+.language-current:hover {
+  background-color: rgba(255,255,255,0.2);
+}
+
+.language-current img {
+  width: 20px;
+  height: 15px;
+  border-radius: 2px;
+  margin-right: 5px;
+}
+
+.language-current span {
+  color: white;
+  font-size: 0.9rem;
+}
+
+.language-dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: rgba(26,26,46,0.95);
+  min-width: 120px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  border-radius: 8px;
+  z-index: 1;
+  overflow: hidden;
+  transform-origin: top;
+  animation: growDown 0.3s ease forwards;
+}
+
+@keyframes growDown {
+  0% { transform: scaleY(0) }
+  80% { transform: scaleY(1.1) }
+  100% { transform: scaleY(1) }
+}
+
+.language-dropdown:hover .language-dropdown-content {
+  display: block;
+}
+
+.language-option {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.language-option:hover {
+  background-color: rgba(124, 77, 19, 0.7);
+}
+
+.language-option img {
+  width: 20px;
+  height: 15px;
+  border-radius: 2px;
+  margin-right: 8px;
+}
+
+.language-option span {
+  color: white;
+  font-size: 0.85rem;
+}
+
+/* Responsivo */
+@media (max-width: 992px) {
+  .language-selector-nav {
+    margin-left: 0;
+    margin-top: 15px;
+    justify-content: center;
+  }
+  
+  .language-dropdown-content {
+    right: auto;
+    left: 0;
+  }
+}
+  </style>
 
     <!-- Hero Section -->
     <section class="hero-section">
@@ -534,51 +649,51 @@
 
     <div class="container">
       <!-- Seção Nação -->
-      <section class="content-section" id="features12-6">
+      <section class="content-section card p-4 mb-4" id="features12-6">
         <div class="row align-items-center">
           <div class="col-lg-8">
-            <h2 class="section-title" data-translate="section_nation_title">NAÇÃO</h2>
-            <div class="section-content">
+            <h2 class="section-title text-center text-lg-start" data-translate="section_nation_title">NAÇÃO</h2>
+            <div class="section-content text-center text-lg-start">
               <p data-translate="nation_paragraph1"><strong>Babalorixá Cristian d'Oxalá teve seu início religioso em 2005, quando teve o primeiro contato com a Umbanda, dando início à sua jornada espiritual.</strong></p>
               <p data-translate="nation_paragraph2"><strong>No mesmo ano, ingressou na Quimbanda e também na Nação de Oyó, onde foi iniciado pela Iyálorixá Irede de Oxum docô, vinculada à Bacia da Vó Olga de Xapanã Onibarú.</strong></p>
               <p data-translate="nation_paragraph3"><strong>Na Nação de Oyó, ele recebeu importantes fundamentos e ensinamentos ritualísticos, consolidando sua formação. Ao longo de sua trajetória, seu Orixá o conduziu por outros axés, onde absorveu conhecimentos e experiências enriquecedoras, ampliando sua sabedoria e conexão espiritual.</strong></p>
             </div>
           </div>
-          <div class="col-lg-4 mt-4 mt-lg-0">
-            <img src="assets/images/486574925-694731536847220-5955591081140017417-n.jpg" alt="Nação de Oyó" class="img-fluid section-image">
+          <div class="col-lg-4 mt-4 mt-lg-0 d-flex justify-content-center">
+            <img src="assets/images/486574925-694731536847220-5955591081140017417-n.jpg" alt="Nação de Oyó" class="img-fluid section-image rounded">
           </div>
         </div>
       </section>
-
+    
       <!-- Seção Umbanda -->
-      <section class="content-section">
+      <section class="content-section card p-4 mb-4">
         <div class="row align-items-center">
           <div class="col-lg-8 order-lg-1 order-2">
-            <h2 class="section-title" data-translate="section_umbanda_title">UMBANDA</h2>
-            <div class="section-content">
+            <h2 class="section-title text-center text-lg-start" data-translate="section_umbanda_title">UMBANDA</h2>
+            <div class="section-content text-center text-lg-start">
               <p data-translate="umbanda_paragraph1">Na <strong>Umbanda</strong>, meu cacicamento ocorreu em 28/01/2008, marcando um momento importante na minha caminhada espiritual. Minha coroação foi realizada sob a vibração de Pai Xangô da Pedreira, que guia e fortalece minha missão.</p>
               <p data-translate="umbanda_paragraph2">Sou filho de <strong>Preto Velho</strong>, com a bênção e sabedoria de <strong>Vovô Benedito</strong> das Almas, que me ensina a humildade e a cura. Também sou filho de <strong>Cosme</strong>, representado pela inocência e alegria de Luizinho - 3 anos, e filho de Cigano, sob a orientação de <strong>Cigano Cortez</strong> e <strong>Cigana Carmensita</strong>, que trazem luz e direção em minha jornada.</p>
               <p data-translate="umbanda_paragraph3">Essas entidades, cada uma em sua essência, formam a base do meu trabalho espiritual, equilibrando conhecimento, amor e firmeza na prática da Umbanda.</p>
             </div>
           </div>
-          <div class="col-lg-4 order-lg-2 order-1 mb-4 mb-lg-0">
-            <img src="assets/images/screenshot-1.png" alt="Umbanda" class="img-fluid section-image">
+          <div class="col-lg-4 order-lg-2 order-1 mb-4 mb-lg-0 d-flex justify-content-center">
+            <img src="assets/images/screenshot-1.png" alt="Umbanda" class="img-fluid section-image rounded">
           </div>
         </div>
       </section>
-
+    
       <!-- Seção Quimbanda -->
-      <section class="content-section">
+      <section class="content-section card p-4 mb-4">
         <div class="row align-items-center">
           <div class="col-lg-8">
-            <h2 class="section-title" data-translate="section_quimbanda_title">QUIMBANDA</h2>
-            <div class="section-content">
+            <h2 class="section-title text-center text-lg-start" data-translate="section_quimbanda_title">QUIMBANDA</h2>
+            <div class="section-content text-center text-lg-start">
               <p data-translate="quimbanda_paragraph1"><strong>Na Quimbanda, recebi o Abassê de Exu Rei das 7 Encruzilhadas e Rainha das 7 Encruzilhadas, entidades poderosas que regem os caminhos e abrem os mistérios da vida.</strong></p>
               <p data-translate="quimbanda_paragraph2"><strong>Minha feitura foi realizada em 30/07/2007, um marco sagrado que consagrou minha ligação com as forças da esquerda e minha missão dentro dessa corrente espiritual.</strong></p>
             </div>
           </div>
-          <div class="col-lg-4 mt-4 mt-lg-0">
-            <img src="assets/images/481263616-677203905266650-4580296693924310123-n.jpeg" alt="Quimbanda" class="img-fluid section-image">
+          <div class="col-lg-4 mt-4 mt-lg-0 d-flex justify-content-center">
+            <img src="assets/images/481263616-677203905266650-4580296693924310123-n.jpeg" alt="Quimbanda" class="img-fluid section-image rounded">
           </div>
         </div>
       </section>
@@ -816,12 +931,41 @@
     }
 
     // Configurar eventos dos botões de idioma
-    document.querySelectorAll('.language-flag').forEach(flag => {
-      flag.addEventListener('click', function() {
-        const lang = this.getAttribute('data-lang');
-        translatePage(lang);
-      });
-    });
+document.querySelectorAll('.language-option').forEach(option => {
+  option.addEventListener('click', function() {
+    const lang = this.getAttribute('data-lang');
+    translatePage(lang);
+    
+    // Atualiza o seletor atual
+    const flagImg = this.querySelector('img').src;
+    const langText = this.querySelector('span').textContent;
+    const currentLang = document.getElementById('currentLanguage');
+    currentLang.querySelector('img').src = flagImg;
+    currentLang.querySelector('span').textContent = langText.split(' ')[0].substring(0,2).toUpperCase();
+  });
+});
+
+// Função para traduzir a página
+function translatePage(lang) {
+  currentLanguage = lang;
+  document.querySelectorAll('[data-translate]').forEach(element => {
+    const key = element.getAttribute('data-translate');
+    element.textContent = getTranslation(key, lang);
+  });
+  
+  // Atualizar a bandeira atual baseada no idioma
+  const currentLangElement = document.getElementById('currentLanguage');
+  const flagMap = {
+    'pt': { src: 'https://flagcdn.com/w20/br.png', text: 'PT' },
+    'es-uy': { src: 'https://flagcdn.com/w20/uy.png', text: 'ES' },
+    'es-py': { src: 'https://flagcdn.com/w20/py.png', text: 'ES' }
+  };
+  
+  if (flagMap[lang]) {
+    currentLangElement.querySelector('img').src = flagMap[lang].src;
+    currentLangElement.querySelector('span').textContent = flagMap[lang].text;
+  }
+}
 
     // Inicializar a página em português
     translatePage('pt');
