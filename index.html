@@ -502,143 +502,7 @@
               <li class="nav-item"><a class="nav-link" href="reflexao.html" data-translate="menu_reflection">Reflexão</a></li>
 			  <li class="nav-item"><a class="nav-link" href="agradecimento.html" data-translate="Agradecimentos">Agradecimentos</a></li>
             </ul>
-
-            
-            <div class="d-flex ms-lg-3 mt-3 mt-lg-0">
-              <a class="btn btn-primary me-2" href="contato.html" data-translate="menu_contact">Contato</a>
-              <a class="btn btn-white-outline" href="localizacao.html" data-translate="menu_location">Localização</a>
-            </div>
-            <div class="language-selector-nav">
-              <div class="language-dropdown">
-                <div class="language-current" id="currentLanguage">
-                  <img src="https://flagcdn.com/w20/br.png" alt="Português">
-                  <span>PT</span>
-                </div>
-                <div class="language-dropdown-content">
-                  <div class="language-option" data-lang="pt">
-                    <img src="https://flagcdn.com/w20/br.png" alt="Português">
-                    <span>Português (BR)</span>
-                  </div>
-                  <div class="language-option" data-lang="es-uy">
-                    <img src="https://flagcdn.com/w20/uy.png" alt="Español (UY)">
-                    <span>Español (UY)</span>
-                  </div>
-                  <div class="language-option" data-lang="es-py">
-                    <img src="https://flagcdn.com/w20/ar.png" alt="Español (AR)">
-                    <span>Español (AR)</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-        </div>
-      </nav>
-    </header>
-<div class="content-wrapper">
-    
-  <style>
-    /* Novo Seletor de Idiomas */
-.language-selector-nav {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  margin-left: 15px;
-  position: relative;
-}
-
-.language-dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.language-current {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  padding: 5px 10px;
-  border-radius: 20px;
-  background-color: rgba(255,255,255,0.1);
-  transition: all 0.3s ease;
-}
-
-.language-current:hover {
-  background-color: rgba(255,255,255,0.2);
-}
-
-.language-current img {
-  width: 20px;
-  height: 15px;
-  border-radius: 2px;
-  margin-right: 5px;
-}
-
-.language-current span {
-  color: white;
-  font-size: 0.9rem;
-}
-
-.language-dropdown-content {
-  display: none;
-  position: absolute;
-  right: 0;
-  background-color: rgba(26,26,46,0.95);
-  min-width: 120px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-  border-radius: 8px;
-  z-index: 1;
-  overflow: hidden;
-  transform-origin: top;
-  animation: growDown 0.3s ease forwards;
-}
-
-@keyframes growDown {
-  0% { transform: scaleY(0) }
-  80% { transform: scaleY(1.1) }
-  100% { transform: scaleY(1) }
-}
-
-.language-dropdown:hover .language-dropdown-content {
-  display: block;
-}
-
-.language-option {
-  display: flex;
-  align-items: center;
-  padding: 8px 12px;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-
-.language-option:hover {
-  background-color: rgba(124, 77, 19, 0.7);
-}
-
-.language-option img {
-  width: 20px;
-  height: 15px;
-  border-radius: 2px;
-  margin-right: 8px;
-}
-
-.language-option span {
-  color: white;
-  font-size: 0.85rem;
-}
-
-/* Responsivo */
-@media (max-width: 992px) {
-  .language-selector-nav {
-    margin-left: 0;
-    margin-top: 15px;
-    justify-content: center;
-  }
-  
-  .language-dropdown-content {
-    right: auto;
-    left: 0;
-  }
-}
-  </style>
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aviso - Ogum Guerreiro</title>
@@ -794,6 +658,142 @@
             }, 300);
         });
     </script>
+            
+            <div class="d-flex ms-lg-3 mt-3 mt-lg-0">
+              <a class="btn btn-primary me-2" href="contato.html" data-translate="menu_contact">Contato</a>
+              <a class="btn btn-white-outline" href="localizacao.html" data-translate="menu_location">Localização</a>
+            </div>
+            <div class="language-selector-nav">
+              <div class="language-dropdown">
+                <div class="language-current" id="currentLanguage">
+                  <img src="https://flagcdn.com/w20/br.png" alt="Português">
+                  <span>PT</span>
+                </div>
+                <div class="language-dropdown-content">
+                  <div class="language-option" data-lang="pt">
+                    <img src="https://flagcdn.com/w20/br.png" alt="Português">
+                    <span>Português (BR)</span>
+                  </div>
+                  <div class="language-option" data-lang="es-uy">
+                    <img src="https://flagcdn.com/w20/uy.png" alt="Español (UY)">
+                    <span>Español (UY)</span>
+                  </div>
+                  <div class="language-option" data-lang="es-py">
+                    <img src="https://flagcdn.com/w20/ar.png" alt="Español (AR)">
+                    <span>Español (AR)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+      </nav>
+    </header>
+<div class="content-wrapper">
+    
+  <style>
+    /* Novo Seletor de Idiomas */
+.language-selector-nav {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-left: 15px;
+  position: relative;
+}
+
+.language-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.language-current {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 20px;
+  background-color: rgba(255,255,255,0.1);
+  transition: all 0.3s ease;
+}
+
+.language-current:hover {
+  background-color: rgba(255,255,255,0.2);
+}
+
+.language-current img {
+  width: 20px;
+  height: 15px;
+  border-radius: 2px;
+  margin-right: 5px;
+}
+
+.language-current span {
+  color: white;
+  font-size: 0.9rem;
+}
+
+.language-dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: rgba(26,26,46,0.95);
+  min-width: 120px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  border-radius: 8px;
+  z-index: 1;
+  overflow: hidden;
+  transform-origin: top;
+  animation: growDown 0.3s ease forwards;
+}
+
+@keyframes growDown {
+  0% { transform: scaleY(0) }
+  80% { transform: scaleY(1.1) }
+  100% { transform: scaleY(1) }
+}
+
+.language-dropdown:hover .language-dropdown-content {
+  display: block;
+}
+
+.language-option {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.language-option:hover {
+  background-color: rgba(124, 77, 19, 0.7);
+}
+
+.language-option img {
+  width: 20px;
+  height: 15px;
+  border-radius: 2px;
+  margin-right: 8px;
+}
+
+.language-option span {
+  color: white;
+  font-size: 0.85rem;
+}
+
+/* Responsivo */
+@media (max-width: 992px) {
+  .language-selector-nav {
+    margin-left: 0;
+    margin-top: 15px;
+    justify-content: center;
+  }
+  
+  .language-dropdown-content {
+    right: auto;
+    left: 0;
+  }
+}
+  </style>
+  
 
     <!-- Hero Section -->
     <section class="hero-section">
