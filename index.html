@@ -638,6 +638,162 @@
   }
 }
   </style>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aviso - Ogum Guerreiro</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+        
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0,0,0,0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            animation: fadeIn 0.5s;
+        }
+        
+        .modal-content {
+            background: linear-gradient(135deg, #1a1a1a 0%, #000 100%);
+            color: #fff;
+            border: 2px solid #e63946;
+            border-radius: 16px;
+            padding: 20px;
+            width: 85%;
+            max-width: 300px;
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+            box-shadow: 0 10px 25px rgba(230, 57, 70, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .modal-content::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(230,57,70,0.1) 0%, rgba(0,0,0,0) 70%);
+            animation: pulse 6s infinite;
+        }
+        
+        .modal-header {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #e63946;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .sao-jorge-img {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 10px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #e63946;
+        }
+        
+        .modal-body {
+            margin-bottom: 15px;
+            line-height: 1.5;
+            font-size: 0.9rem;
+        }
+        
+        .highlight {
+            color: #e63946;
+            font-weight: 600;
+        }
+        
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #e63946, transparent);
+            margin: 10px 0;
+        }
+        
+        .countdown {
+            position: absolute;
+            top: 8px;
+            right: 12px;
+            color: rgba(255,255,255,0.6);
+            font-size: 0.7rem;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes fadeOut {
+            from { opacity: 1; }
+            to { opacity: 0; }
+        }
+        
+        @keyframes pulse {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="modal-overlay" id="ogumModal">
+        <div class="modal-content">
+            <div class="countdown" id="countdown">10s</div>
+            <img src="https://i.imgur.com/Si0CkfR.jpeg" alt="São Jorge" class="sao-jorge-img">
+            <div class="modal-header">Homenagem ao Pai Ogum Guerreiro</div>
+            <div class="modal-body">
+                <p>Sessão em homenagem com<br><span class="highlight">Cristian de Oxalá • 20:00</span></p>
+                
+                <div class="divider"></div>
+                
+                <p><span class="highlight">17/04 • Quinta</span><br>Início: 20:00</p>
+                
+                <div class="divider"></div>
+                
+                <p>Águas Claras<br>
+                <small>Rod. Tapir Rocha, 18040</small><br>
+                <small>Pda (80) - Viamão-RS</small></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let seconds = 10;
+        const countdownEl = document.getElementById('countdown');
+        const modal = document.getElementById('ogumModal');
+        
+        // Atualiza o contador
+        const timer = setInterval(() => {
+            seconds--;
+            countdownEl.textContent = `${seconds}s`;
+            
+            if(seconds <= 0) {
+                clearInterval(timer);
+                modal.style.animation = 'fadeOut 0.5s';
+                setTimeout(() => {
+                    modal.style.display = 'none';
+                }, 500);
+            }
+        }, 1000);
+        
+        // Fecha ao clicar em qualquer área
+        modal.addEventListener('click', () => {
+            clearInterval(timer);
+            modal.style.animation = 'fadeOut 0.3s';
+            setTimeout(() => {
+                modal.style.display = 'none';
+            }, 300);
+        });
+    </script>
 
     <!-- Hero Section -->
     <section class="hero-section">
