@@ -491,17 +491,15 @@
       
       let currentDate = new Date();
       
-      // Eventos do terreiro (pode ser substituído por dados de uma API)
-      const terreiroEvents = [
-        {
-          date: new Date(currentDate.getFullYear(), currentDate.getMonth(), 17),
-          title: "Cancelado ",
-          time: "Cancelado",
-          description: "Breve Nova data Pai Cristian D’Oxalá.",
-          type: "important"
-        },
-        
-      ];
+   const terreiroEvents = [
+  {
+    date: new Date(currentDate.getFullYear(), 4, 16), // Maio é mês 4 (zero-based)
+    title: "Sessão de Caboclos",
+    time: "20 horas",
+    description: "Sessão Homenagem ao Pai Ogum Aos Pretos velhos.",
+    type: "important"
+  },
+];
       
       // Renderizar calendário
       function renderCalendar() {
