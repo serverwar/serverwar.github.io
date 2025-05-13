@@ -157,13 +157,21 @@
       margin-bottom: 2rem;
     }
     
+    .gallery-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    
     .gallery-item {
-      margin-bottom: 2rem;
-      transition: transform 0.3s ease;
+      position: relative;
       border-radius: 10px;
       overflow: hidden;
       box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      position: relative;
+      transition: transform 0.3s ease;
+      aspect-ratio: 1/1;
+      background-color: #f8f9fa;
+      cursor: pointer;
     }
     
     .gallery-item:hover {
@@ -171,9 +179,18 @@
       box-shadow: 0 15px 30px rgba(0,0,0,0.2);
     }
     
+    .gallery-img-container {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+    
     .gallery-item img {
       width: 100%;
-      height: 250px;
+      height: 100%;
       object-fit: cover;
       transition: transform 0.5s ease;
     }
@@ -248,6 +265,26 @@
       opacity: 1;
     }
     
+    /* Estilos para vídeos */
+    .video-item {
+      aspect-ratio: 16/9;
+    }
+    
+    .video-item .ratio {
+      background-color: #000;
+    }
+    
+    .video-caption {
+      background-color: white;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+    }
+    
+    .video-title {
+      font-size: 1.1rem;
+      margin-bottom: 0.3rem;
+    }
+    
     /* Footer */
     footer {
       background: linear-gradient(135deg, var(--dark-color) 0%, var(--primary-color) 100%);
@@ -275,8 +312,14 @@
         font-size: 1.8rem;
       }
       
-      .gallery-item img {
-        height: 200px;
+      .gallery-container {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .gallery-container {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
       }
     }
   </style>
@@ -304,7 +347,7 @@
             <li class="nav-item"><a class="nav-link" href="home.html">Início</a></li>
             <li class="nav-item"><a class="nav-link" href="home.html#features12-6">História</a></li>
             <li class="nav-item"><a class="nav-link active" href="agradecimento.html">Agradecimentos</a></li>
-			<li class="nav-item"><a class="nav-link active" href="reflexao.html">Reflexão</a></li>
+            <li class="nav-item"><a class="nav-link active" href="reflexao.html">Reflexão</a></li>
           </ul>
           <div class="d-flex ms-lg-3 mt-3 mt-lg-0">
             <a class="btn btn-primary me-2" href="contato.html">Contato</a>
@@ -323,45 +366,45 @@
         <p class="section-subtitle">Cristian D'Oxalá - <strong>Nação</strong></p>
       </div>
       
-      <div class="row">
-        <div class="col-md-6 col-lg-3">
-          <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal" data-bs-slide-to="0">
+      <div class="gallery-container">
+        <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal" data-bs-slide-to="0">
+          <div class="gallery-img-container">
             <img src="assets/images/486574925-694731536847220-5955591081140017417-n.jpg" alt="Família Demacei - Nação">
-            <div class="gallery-overlay">
-              <p>Família Demacei - Nação</p>
-            </div>
-            <span class="gallery-category">Nação</span>
           </div>
+          <div class="gallery-overlay">
+            <p>Família Demacei - Nação</p>
+          </div>
+          <span class="gallery-category">Nação</span>
         </div>
         
-        <div class="col-md-6 col-lg-3">
-          <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal" data-bs-slide-to="1">
+        <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal" data-bs-slide-to="1">
+          <div class="gallery-img-container">
             <img src="assets/images/463485705-553627470957628-369894609255745025-n.jpg" alt="Família Demacei - Nação">
-            <div class="gallery-overlay">
-              <p>Família Demacei - Nação</p>
-            </div>
-            <span class="gallery-category">Nação</span>
           </div>
+          <div class="gallery-overlay">
+            <p>Família Demacei - Nação</p>
+          </div>
+          <span class="gallery-category">Nação</span>
         </div>
         
-        <div class="col-md-6 col-lg-3">
-          <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal" data-bs-slide-to="2">
+        <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal" data-bs-slide-to="2">
+          <div class="gallery-img-container">
             <img src="assets/images/463612820-553627644290944-166701118566471723-n.jpg" alt="Família Demacei - Nação">
-            <div class="gallery-overlay">
-              <p>Família Demacei - Nação</p>
-            </div>
-            <span class="gallery-category">Nação</span>
           </div>
+          <div class="gallery-overlay">
+            <p>Família Demacei - Nação</p>
+          </div>
+          <span class="gallery-category">Nação</span>
         </div>
         
-        <div class="col-md-6 col-lg-3">
-          <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal" data-bs-slide-to="3">
+        <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal" data-bs-slide-to="3">
+          <div class="gallery-img-container">
             <img src="assets/images/463054918-550663134587395-899692459768842767-n.jpg" alt="Família Demacei - Nação">
-            <div class="gallery-overlay">
-              <p>Família Demacei - Nação</p>
-            </div>
-            <span class="gallery-category">Nação</span>
           </div>
+          <div class="gallery-overlay">
+            <p>Família Demacei - Nação</p>
+          </div>
+          <span class="gallery-category">Nação</span>
         </div>
       </div>
     </div>
@@ -370,45 +413,45 @@
   <!-- Galeria Nação 2 -->
   <section class="gallery-section bg-light">
     <div class="container">
-      <div class="row">
-        <div class="col-md-6 col-lg-3">
-          <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal2" data-bs-slide-to="0">
+      <div class="gallery-container">
+        <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal2" data-bs-slide-to="0">
+          <div class="gallery-img-container">
             <img src="assets/images/486513747-692177947102579-2099737963152282118-n.jpg" alt="Família Demacei - Nação">
-            <div class="gallery-overlay">
-              <p>Família Demacei - Nação</p>
-            </div>
-            <span class="gallery-category">Nação</span>
           </div>
+          <div class="gallery-overlay">
+            <p>Família Demacei - Nação</p>
+          </div>
+          <span class="gallery-category">Nação</span>
         </div>
         
-        <div class="col-md-6 col-lg-3">
-          <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal2" data-bs-slide-to="1">
+        <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal2" data-bs-slide-to="1">
+          <div class="gallery-img-container">
             <img src="assets/images/486549201-692333607087013-3276834808003886182-n.jpg" alt="Família Demacei - Nação">
-            <div class="gallery-overlay">
-              <p>Família Demacei - Nação</p>
-            </div>
-            <span class="gallery-category">Nação</span>
           </div>
+          <div class="gallery-overlay">
+            <p>Família Demacei - Nação</p>
+          </div>
+          <span class="gallery-category">Nação</span>
         </div>
         
-        <div class="col-md-6 col-lg-3">
-          <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal2" data-bs-slide-to="2">
+        <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal2" data-bs-slide-to="2">
+          <div class="gallery-img-container">
             <img src="assets/images/486061168-692178633769177-1727297987620627382-n.jpg" alt="Família Demacei - Nação">
-            <div class="gallery-overlay">
-              <p>Família Demacei - Nação</p>
-            </div>
-            <span class="gallery-category">Nação</span>
           </div>
+          <div class="gallery-overlay">
+            <p>Família Demacei - Nação</p>
+          </div>
+          <span class="gallery-category">Nação</span>
         </div>
         
-        <div class="col-md-6 col-lg-3">
-          <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal2" data-bs-slide-to="3">
+        <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal2" data-bs-slide-to="3">
+          <div class="gallery-img-container">
             <img src="assets/images/486215992-692177763769264-647958983033004627-n.jpg" alt="Família Demacei - Nação">
-            <div class="gallery-overlay">
-              <p>Família Demacei - Nação</p>
-            </div>
-            <span class="gallery-category">Nação</span>
           </div>
+          <div class="gallery-overlay">
+            <p>Família Demacei - Nação</p>
+          </div>
+          <span class="gallery-category">Nação</span>
         </div>
       </div>
     </div>
@@ -422,45 +465,45 @@
         <p class="section-subtitle">Cristian D'Oxalá - <strong>Umbanda</strong></p>
       </div>
       
-      <div class="row">
-        <div class="col-md-6 col-lg-3">
-          <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal3" data-bs-slide-to="0">
+      <div class="gallery-container">
+        <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal3" data-bs-slide-to="0">
+          <div class="gallery-img-container">
             <img src="assets/images/471403694-616336434686731-7642115108091024141-n.jpg" alt="Família Demacei - Umbanda">
-            <div class="gallery-overlay">
-              <p>Família Demacei - Umbanda</p>
-            </div>
-            <span class="gallery-category">Umbanda</span>
           </div>
+          <div class="gallery-overlay">
+            <p>Família Demacei - Umbanda</p>
+          </div>
+          <span class="gallery-category">Umbanda</span>
         </div>
         
-        <div class="col-md-6 col-lg-3">
-          <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal3" data-bs-slide-to="1">
+        <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal3" data-bs-slide-to="1">
+          <div class="gallery-img-container">
             <img src="assets/images/470496557-616336118020096-6063056580558806347-n.jpg" alt="Família Demacei - Umbanda">
-            <div class="gallery-overlay">
-              <p>Família Demacei - Umbanda</p>
-            </div>
-            <span class="gallery-category">Umbanda</span>
           </div>
+          <div class="gallery-overlay">
+            <p>Família Demacei - Umbanda</p>
+          </div>
+          <span class="gallery-category">Umbanda</span>
         </div>
         
-        <div class="col-md-6 col-lg-3">
-          <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal3" data-bs-slide-to="2">
+        <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal3" data-bs-slide-to="2">
+          <div class="gallery-img-container">
             <img src="assets/images/468510407-598113969842311-1547415659768119646-n.jpg" alt="Família Demacei - Umbanda">
-            <div class="gallery-overlay">
-              <p>Família Demacei - Umbanda</p>
-            </div>
-            <span class="gallery-category">Umbanda</span>
           </div>
+          <div class="gallery-overlay">
+            <p>Família Demacei - Umbanda</p>
+          </div>
+          <span class="gallery-category">Umbanda</span>
         </div>
         
-        <div class="col-md-6 col-lg-3">
-          <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal3" data-bs-slide-to="3">
+        <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal3" data-bs-slide-to="3">
+          <div class="gallery-img-container">
             <img src="assets/images/471697238-616336088020099-558378576874810532-n.jpg" alt="Família Demacei - Umbanda">
-            <div class="gallery-overlay">
-              <p>Família Demacei - Umbanda</p>
-            </div>
-            <span class="gallery-category">Umbanda</span>
           </div>
+          <div class="gallery-overlay">
+            <p>Família Demacei - Umbanda</p>
+          </div>
+          <span class="gallery-category">Umbanda</span>
         </div>
       </div>
     </div>
@@ -474,45 +517,45 @@
         <p class="section-subtitle">Cristian D'Oxalá - <strong>Quimbanda</strong></p>
       </div>
       
-      <div class="row">
-        <div class="col-md-6 col-lg-3">
-          <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal4" data-bs-slide-to="0">
+      <div class="gallery-container">
+        <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal4" data-bs-slide-to="0">
+          <div class="gallery-img-container">
             <img src="assets/images/482220335-650862927594053-2966921591575085821-n.jpg-506x380.jpg" alt="Família Demacei - Quimbanda">
-            <div class="gallery-overlay">
-              <p>Família Demacei - Quimbanda</p>
-            </div>
-            <span class="gallery-category">Quimbanda</span>
           </div>
+          <div class="gallery-overlay">
+            <p>Família Demacei - Quimbanda</p>
+          </div>
+          <span class="gallery-category">Quimbanda</span>
         </div>
         
-        <div class="col-md-6 col-lg-3">
-          <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal4" data-bs-slide-to="1">
+        <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal4" data-bs-slide-to="1">
+          <div class="gallery-img-container">
             <img src="assets/images/482012600-650862924260720-2642327156286324936-n.jpg-506x234.jpg" alt="Família Demacei - Quimbanda">
-            <div class="gallery-overlay">
-              <p>Família Demacei - Quimbanda</p>
-            </div>
-            <span class="gallery-category">Quimbanda</span>
           </div>
+          <div class="gallery-overlay">
+            <p>Família Demacei - Quimbanda</p>
+          </div>
+          <span class="gallery-category">Quimbanda</span>
         </div>
         
-        <div class="col-md-6 col-lg-3">
-          <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal4" data-bs-slide-to="2">
+        <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal4" data-bs-slide-to="2">
+          <div class="gallery-img-container">
             <img src="assets/images/481263616-677203905266650-4580296693924310123-n.jpg-506x1097.jpeg" alt="Família Demacei - Quimbanda">
-            <div class="gallery-overlay">
-              <p>Família Demacei - Quimbanda</p>
-            </div>
-            <span class="gallery-category">Quimbanda</span>
           </div>
+          <div class="gallery-overlay">
+            <p>Família Demacei - Quimbanda</p>
+          </div>
+          <span class="gallery-category">Quimbanda</span>
         </div>
         
-        <div class="col-md-6 col-lg-3">
-          <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal4" data-bs-slide-to="3">
+        <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal4" data-bs-slide-to="3">
+          <div class="gallery-img-container">
             <img src="assets/images/482027918-677205151933192-6597086896102947225-n.jpg-506x233.jpg" alt="Família Demacei - Quimbanda">
-            <div class="gallery-overlay">
-              <p>Família Demacei - Quimbanda</p>
-            </div>
-            <span class="gallery-category">Quimbanda</span>
           </div>
+          <div class="gallery-overlay">
+            <p>Família Demacei - Quimbanda</p>
+          </div>
+          <span class="gallery-category">Quimbanda</span>
         </div>
       </div>
     </div>
@@ -521,51 +564,84 @@
   <!-- Galeria Quimbanda 2 -->
   <section class="gallery-section">
     <div class="container">
-      <div class="row">
-        <div class="col-md-6 col-lg-3">
-          <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal5" data-bs-slide-to="0">
+      <div class="gallery-container">
+        <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal5" data-bs-slide-to="0">
+          <div class="gallery-img-container">
             <img src="assets/images/481787861-677205821933125-4856573704552493338-n.jpg-506x1097.jpeg" alt="Família Demacei - Quimbanda">
-            <div class="gallery-overlay">
-              <p>Família Demacei - Quimbanda</p>
-            </div>
-            <span class="gallery-category">Quimbanda</span>
           </div>
+          <div class="gallery-overlay">
+            <p>Família Demacei - Quimbanda</p>
+          </div>
+          <span class="gallery-category">Quimbanda</span>
         </div>
         
-        <div class="col-md-6 col-lg-3">
-          <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal5" data-bs-slide-to="1">
+        <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal5" data-bs-slide-to="1">
+          <div class="gallery-img-container">
             <img src="assets/images/screenshot-12.png-1-332x198.png" alt="Família Demacei - Quimbanda">
-            <div class="gallery-overlay">
-              <p>Família Demacei - Quimbanda</p>
-            </div>
-            <span class="gallery-category">Quimbanda</span>
           </div>
+          <div class="gallery-overlay">
+            <p>Família Demacei - Quimbanda</p>
+          </div>
+          <span class="gallery-category">Quimbanda</span>
         </div>
         
-        <div class="col-md-6 col-lg-3">
-          <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal5" data-bs-slide-to="2">
+        <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal5" data-bs-slide-to="2">
+          <div class="gallery-img-container">
             <img src="assets/images/screenshot-10.png-424x476.png" alt="Família Demacei - Quimbanda">
-            <div class="gallery-overlay">
-              <p>Família Demacei - Quimbanda</p>
-            </div>
-            <span class="gallery-category">Quimbanda</span>
           </div>
+          <div class="gallery-overlay">
+            <p>Família Demacei - Quimbanda</p>
+          </div>
+          <span class="gallery-category">Quimbanda</span>
         </div>
         
-        <div class="col-md-6 col-lg-3">
-          <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal5" data-bs-slide-to="3">
+        <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal5" data-bs-slide-to="3">
+          <div class="gallery-img-container">
             <img src="assets/images/482011126-650859964261016-5918478056186885255-n.jpg-506x1096.jpeg" alt="Família Demacei - Quimbanda">
-            <div class="gallery-overlay">
-              <p>Família Demacei - Quimbanda</p>
-            </div>
-            <span class="gallery-category">Quimbanda</span>
           </div>
+          <div class="gallery-overlay">
+            <p>Família Demacei - Quimbanda</p>
+          </div>
+          <span class="gallery-category">Quimbanda</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Galeria: Obrigações Filhos da Casa - ATUALIZADA -->
+  <section class="gallery-section text-center">
+    <div class="container">
+      <h2 class="section-title">Obrigações Filhos da Casa</h2>
+      <p class="section-subtitle"></p>
+      <div class="gallery-container">
+        <!-- Item da Galeria 1 -->
+        <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal6" data-bs-slide-to="0">
+          <div class="gallery-img-container">
+            <img src="assets/images/20.jpg" alt="Foto 1 de obrigação">
+          </div>
+          <div class="gallery-overlay">Júlia de Ogum Onirá</div>
+          <div class="gallery-category">Iniciação da filha</div>
+        </div>
+        <!-- Item da Galeria 2 -->
+        <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal6" data-bs-slide-to="1">
+          <div class="gallery-img-container">
+            <img src="assets/images/21.jpg" alt="Foto 2 de obrigação">
+          </div>
+          <div class="gallery-overlay">Júlia de Ogum Onirá</div>
+          <div class="gallery-category">Iniciação da filha</div>
+        </div>
+        <!-- Item da Galeria 3 -->
+        <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal6" data-bs-slide-to="2">
+          <div class="gallery-img-container">
+            <img src="assets/images/22.jpg" alt="Foto 3 de obrigação">
+          </div>
+          <div class="gallery-overlay">Júlia de Ogum Onirá</div>
+          <div class="gallery-category">Iniciação da filha</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Modals -->
   <!-- Modal Nação 1 -->
   <div class="modal fade" id="galleryModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
@@ -639,130 +715,133 @@
       </div>
     </div>
   </div>
-<!-- Seção de Vídeos - Com seu vídeo específico -->
-<section class="gallery-section">
-  <div class="container">
-    <div class="text-center mb-5">
-      <h2 class="section-title">Vídeos I</h2>
-      <p class="section-subtitle">Momentos especiais - Trabalhos - Visitas</p>
-    </div>
-    
-    <div class="row g-4">
-      <!-- Seu Vídeo -->
-      <div class="col-md-6 col-lg-4">
-        <div class="gallery-item video-item">
-          <div class="ratio ratio-16x9">
-            <iframe src="https://www.youtube.com/embed/cHBYsjuINpM" 
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen></iframe>
-          </div>
-          <div class="video-caption p-3">
-            <h3 class="video-title">Momento Espiritual</h3>
-            <p class="video-date small text-muted mb-0">@caroline_oya9</p>
-          </div>
-          <span class="gallery-category">Vídeo</span>
-        </div>
+  
+  <!-- Seção de Vídeos - Com seu vídeo específico -->
+  <section class="gallery-section">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="section-title">Vídeos I</h2>
+        <p class="section-subtitle">Momentos especiais - Trabalhos - Visitas</p>
       </div>
       
-      <!-- Vídeo 2 (adicione mais conforme necessário) -->
-      <div class="col-md-6 col-lg-4">
-        <div class="gallery-item video-item">
-          <div class="ratio ratio-16x9">
-            <iframe src="https://www.youtube.com/embed/WVsWkpGkJI8" 
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen></iframe>
+      <div class="row g-4">
+        <!-- Seu Vídeo -->
+        <div class="col-md-6 col-lg-4">
+          <div class="gallery-item video-item">
+            <div class="ratio ratio-16x9">
+              <iframe src="https://www.youtube.com/embed/cHBYsjuINpM" 
+                      frameborder="0" 
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                      allowfullscreen></iframe>
+            </div>
+            <div class="video-caption p-3">
+              <h3 class="video-title">Momento Espiritual</h3>
+              <p class="video-date small text-muted mb-0">@caroline_oya9</p>
+            </div>
+            <span class="gallery-category">Vídeo</span>
           </div>
-          <div class="video-caption p-3">
-            <h3 class="video-title">Cruzamento - Praia</h3>
-            <p class="video-date small text-muted mb-0">22/04/2025</p>
-          </div>
-          <span class="gallery-category">Vídeo</span>
         </div>
-      </div>
-      
-      <!-- Vídeo 3 (adicione mais conforme necessário) -->
-      <div class="col-md-6 col-lg-4">
-        <div class="gallery-item video-item">
-          <div class="ratio ratio-16x9">
-            <iframe src="https://www.youtube.com/embed/1n6CAuo7kYQ" 
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen></iframe>
+        
+        <!-- Vídeo 2 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="gallery-item video-item">
+            <div class="ratio ratio-16x9">
+              <iframe src="https://www.youtube.com/embed/WVsWkpGkJI8" 
+                      frameborder="0" 
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                      allowfullscreen></iframe>
+            </div>
+            <div class="video-caption p-3">
+              <h3 class="video-title">Cruzamento - Praia</h3>
+              <p class="video-date small text-muted mb-0">22/04/2025</p>
+            </div>
+            <span class="gallery-category">Vídeo</span>
           </div>
-          <div class="video-caption p-3">
-            <h3 class="video-title">Batismo - Cristian D'Oxalá</h3>
-            <p class="video-date small text-muted mb-0">20/04/2025</p>
-          </div>
-          <span class="gallery-category">Vídeo</span>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- Seção de Vídeos - Com seu vídeo específico -->
-<section class="gallery-section">
-  <div class="container">
-    <div class="text-center mb-5">
-      <h2 class="section-title">Vídeos II</h2>
-      <p class="section-subtitle">Momentos especiais - Trabalhos - Visitas</p>
-    </div>
-    
-    <div class="row g-4">
-      <!-- Seu Vídeo -->
-      <div class="col-md-6 col-lg-4">
-        <div class="gallery-item video-item">
-          <div class="ratio ratio-16x9">
-            <iframe src="https://www.youtube.com/embed/V_1509BoK3A" 
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen></iframe>
+        
+        <!-- Vídeo 3 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="gallery-item video-item">
+            <div class="ratio ratio-16x9">
+              <iframe src="https://www.youtube.com/embed/1n6CAuo7kYQ" 
+                      frameborder="0" 
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                      allowfullscreen></iframe>
+            </div>
+            <div class="video-caption p-3">
+              <h3 class="video-title">Batismo - Cristian D'Oxalá</h3>
+              <p class="video-date small text-muted mb-0">20/04/2025</p>
+            </div>
+            <span class="gallery-category">Vídeo</span>
           </div>
-          <div class="video-caption p-3">
-            <h3 class="video-title">Momento Espiritual</h3>
-            <p class="video-date small text-muted mb-0">Umbanda</p>
-          </div>
-          <span class="gallery-category">Vídeo</span>
-        </div>
-      </div>
-      
-      <!-- Vídeo 2 (adicione mais conforme necessário) -->
-      <div class="col-md-6 col-lg-4">
-        <div class="gallery-item video-item">
-          <div class="ratio ratio-16x9">
-            <iframe src="https://www.youtube.com/embed/0k0J9REQotU" 
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen></iframe>
-          </div>
-          <div class="video-caption p-3">
-            <h3 class="video-title">Segue o Axé</h3>
-            <p class="video-date small text-muted mb-0">Nação</p>
-          </div>
-          <span class="gallery-category">Vídeo</span>
-        </div>
-      </div>
-      
-      <!-- Vídeo 3 (adicione mais conforme necessário) -->
-      <div class="col-md-6 col-lg-4">
-        <div class="gallery-item video-item">
-          <div class="ratio ratio-16x9">
-            <iframe src="https://www.youtube.com/embed/hMgE6V50C7M" 
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen></iframe>
-          </div>
-          <div class="video-caption p-3">
-            <h3 class="video-title">Homenagem ao Ogum</h3>
-            <p class="video-date small text-muted mb-0">19/04/2025</p>
-          </div>
-          <span class="gallery-category">Vídeo</span>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+  
+  <!-- Seção de Vídeos - Com seu vídeo específico -->
+  <section class="gallery-section">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="section-title">Vídeos II</h2>
+        <p class="section-subtitle">Momentos especiais - Trabalhos - Visitas</p>
+      </div>
+      
+      <div class="row g-4">
+        <!-- Seu Vídeo -->
+        <div class="col-md-6 col-lg-4">
+          <div class="gallery-item video-item">
+            <div class="ratio ratio-16x9">
+              <iframe src="https://www.youtube.com/embed/V_1509BoK3A" 
+                      frameborder="0" 
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                      allowfullscreen></iframe>
+            </div>
+            <div class="video-caption p-3">
+              <h3 class="video-title">Momento Espiritual</h3>
+              <p class="video-date small text-muted mb-0">Umbanda</p>
+            </div>
+            <span class="gallery-category">Vídeo</span>
+          </div>
+        </div>
+        
+        <!-- Vídeo 2 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="gallery-item video-item">
+            <div class="ratio ratio-16x9">
+              <iframe src="https://www.youtube.com/embed/0k0J9REQotU" 
+                      frameborder="0" 
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                      allowfullscreen></iframe>
+            </div>
+            <div class="video-caption p-3">
+              <h3 class="video-title">Segue o Axé</h3>
+              <p class="video-date small text-muted mb-0">Nação</p>
+            </div>
+            <span class="gallery-category">Vídeo</span>
+          </div>
+        </div>
+        
+        <!-- Vídeo 3 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="gallery-item video-item">
+            <div class="ratio ratio-16x9">
+              <iframe src="https://www.youtube.com/embed/hMgE6V50C7M" 
+                      frameborder="0" 
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                      allowfullscreen></iframe>
+            </div>
+            <div class="video-caption p-3">
+              <h3 class="video-title">Homenagem ao Ogum</h3>
+              <p class="video-date small text-muted mb-0">19/04/2025</p>
+            </div>
+            <span class="gallery-category">Vídeo</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Modal Umbanda -->
   <div class="modal fade" id="galleryModal3" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
@@ -846,4 +925,117 @@
         </div>
         <div class="modal-body">
           <div id="carouselQuimbanda2" class="carousel slide" data-bs-ride="carousel">
-            <div class="car<div class="carousel-inner"> <div class="carousel-item active"> <img src="assets/images/481787861-677205821933125-4856573704552493338-n.jpg-506x1097.jpeg" class="d-block w-100" alt="Família Demacei - Quimbanda"> </div> <div class="carousel-item"> <img src="assets/images/screenshot-12.png-1-332x198.png" class="d-block w-100" alt="Família Demacei - Quimbanda"> </div> <div class="carousel-item"> <img src="assets/images/screenshot-10.png-424x476.png" class="d-block w-100" alt="Família Demacei - Quimbanda"> </div> <div class="carousel-item"> <img src="assets/images/482011126-650859964261016-5918478056186885255-n.jpg-506x1096.jpeg" class="d-block w-100" alt="Família Demacei - Quimbanda"> </div> </div> <button class="carousel-control-prev" type="button" data-bs-target="#carouselQuimbanda2" data-bs-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="visually-hidden">Anterior</span> </button> <button class="carousel-control-next" type="button" data-bs-target="#carouselQuimbanda2" data-bs-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="visually-hidden">Próximo</span> </button> </div> </div> </div> </div> </div> <!-- Rodapé --> <footer> <div class="container"> <div class="text-center"> <p class="mb-0"> © Copyright 2025 Cristian D'Oxalá - Todos os direitos reservados </p> </div> </div> </footer> <!-- Bootstrap JS --> <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> <script> // Inicializa os tooltips const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]')) const tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) { return new bootstrap.Tooltip(tooltipTriggerEl) }); // Animação suave para links internos document.querySelectorAll('a[href^="#"]').forEach(anchor => { anchor.addEventListener('click', function (e) { e.preventDefault(); document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' }); }); }); // Configura os carrosséis dos modais document.querySelectorAll('.gallery-item').forEach((item, index) => { item.addEventListener('click', function() { const slideTo = this.getAttribute('data-bs-slide-to'); const modalId = this.getAttribute('data-bs-target'); const modal = document.querySelector(modalId); const carousel = modal.querySelector('.carousel'); const bsCarousel = new bootstrap.Carousel(carousel); bsCarousel.to(slideTo); }); }); // Adiciona efeito de fade aos carrosséis document.querySelectorAll('.carousel').forEach(carousel => { new bootstrap.Carousel(carousel, { interval: 5000, ride: 'carousel', wrap: true, pause: 'hover' }); }); </script></body> </html> ```
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="assets/images/481787861-677205821933125-4856573704552493338-n.jpg-506x1097.jpeg" class="d-block w-100" alt="Família Demacei - Quimbanda">
+              </div>
+              <div class="carousel-item">
+                <img src="assets/images/screenshot-12.png-1-332x198.png" class="d-block w-100" alt="Família Demacei - Quimbanda">
+              </div>
+              <div class="carousel-item">
+                <img src="assets/images/screenshot-10.png-424x476.png" class="d-block w-100" alt="Família Demacei - Quimbanda">
+              </div>
+              <div class="carousel-item">
+                <img src="assets/images/482011126-650859964261016-5918478056186885255-n.jpg-506x1096.jpeg" class="d-block w-100" alt="Família Demacei - Quimbanda">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselQuimbanda2" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselQuimbanda2" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Próximo</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Obrigações Filhos da Casa - NOVO -->
+  <div class="modal fade" id="galleryModal6" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div id="carouselObrigacoes" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="assets/images/20.jpg" class="d-block w-100" alt="Foto 1 de obrigação">
+              </div>
+              <div class="carousel-item">
+                <img src="assets/images/21.jpg" class="d-block w-100" alt="Foto 2 de obrigação">
+              </div>
+              <div class="carousel-item">
+                <img src="assets/images/22.jpg" class="d-block w-100" alt="Foto 3 de obrigação">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselObrigacoes" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselObrigacoes" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Próximo</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Rodapé -->
+  <footer>
+    <div class="container">
+      <div class="text-center">
+        <p class="mb-0">© Copyright 2025 Cristian D'Oxalá - Todos os direitos reservados</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Inicializa os tooltips
+    const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    const tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+      return new bootstrap.Tooltip(tooltipTriggerEl)
+    });
+
+    // Animação suave para links internos
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Configura os carrosséis dos modais
+    document.querySelectorAll('.gallery-item').forEach((item, index) => {
+      item.addEventListener('click', function() {
+        const slideTo = this.getAttribute('data-bs-slide-to');
+        const modalId = this.getAttribute('data-bs-target');
+        const modal = document.querySelector(modalId);
+        const carousel = modal.querySelector('.carousel');
+        const bsCarousel = new bootstrap.Carousel(carousel);
+        bsCarousel.to(slideTo);
+      });
+    });
+
+    // Adiciona efeito de fade aos carrosséis
+    document.querySelectorAll('.carousel').forEach(carousel => {
+      new bootstrap.Carousel(carousel, {
+        interval: 5000,
+        ride: 'carousel',
+        wrap: true,
+        pause: 'hover'
+      });
+    });
+  </script>
+</body>
+</html>
