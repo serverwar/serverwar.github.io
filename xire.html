@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Xirê em homenagem a Pai Oxalá Alufá Orumilaia - 08/11/2025 - 21 horas. Registro completo por Loxe Fotografia.">
+  <meta name="keywords" content="Oxalá, Xirê, Alufá Orumilaia, Festa de Orixá, Terreiro, Loxe Fotografia, religião afro-brasileira">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <title>Xirê do Pai Oxalá Alufá Orumilaia - 08/11/2025 - 21 horas</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Bellota+Text:wght@300;400;700&family=Marcellus&display=swap" rel="stylesheet">
+  <!-- Lightbox2 CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary-color: #7e4a13;
+      --dark-color: #121212;
+      --light-color: #ffffff;
+      --accent-color: #fca311;
+    }
+
+    body {
+      font-family: 'Bellota Text', sans-serif;
+      background: linear-gradient(135deg, #f2f2f2 0%, #e8e6e3 100%);
+      color: var(--dark-color);
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    /* Navbar */
+    .navbar {
+      background: linear-gradient(135deg, var(--dark-color) 0%, var(--primary-color) 100%);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      padding: 1rem 0;
+      backdrop-filter: blur(10px);
+    }
+
+    .navbar-brand a {
+      font-family: 'Marcellus', serif;
+      font-weight: 700;
+      font-size: 1.8rem;
+      background: linear-gradient(to right, #fff 0%, var(--accent-color) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-decoration: none;
+    }
+
+    .nav-link {
+      color: white !important;
+      margin: 0 0.5rem;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--accent-color) !important;
+    }
+
+    /* Hero */
+    .hero-section {
+      text-align: center;
+      background: linear-gradient(120deg, var(--dark-color) 0%, var(--primary-color) 100%);
+      color: white;
+      padding: 5rem 1rem;
+      background-attachment: fixed;
+      box-shadow: inset 0 0 60px rgba(0,0,0,0.4);
+    }
+
+    .hero-section h1 {
+      font-family: 'Marcellus', serif;
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-section p {
+      font-size: 1.2rem;
+      color: #eee;
+    }
+
+    /* Galeria */
+    .gallery-section {
+      padding: 4rem 1rem;
+      background: linear-gradient(135deg, #ffffff 0%, #f6f6f6 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .gallery-section h2 {
+      text-align: center;
+      font-family: 'Marcellus', serif;
+      color: var(--primary-color);
+      font-size: 2.2rem;
+      margin: 3rem 0 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+      gap: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .gallery a {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 240px;
+      background: rgba(250, 248, 245, 0.8);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(180,180,180,0.3);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+      transition: transform 0.35s ease, box-shadow 0.35s ease, background 0.3s ease;
+    }
+
+    .gallery a:hover {
+      transform: scale(1.04);
+      box-shadow: 0 12px 35px rgba(0,0,0,0.25);
+      background: rgba(255, 255, 255, 0.95);
+    }
+
+    .gallery a img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top; /* Mostra mais a parte superior (evita cortar cabeça) */
+      background: #f7f7f7;
+      border-radius: 14px;
+      padding: 6px;
+      transition: opacity 0.4s ease-in;
+      z-index: 1;
+    }
+
+    /* Ícones pombo */
+    .gallery a::before,
+    .gallery a::after {
+      content: "";
+      position: absolute;
+      background: url('assets/icons/pombo-oxala.png') no-repeat center center;
+      background-size: contain;
+      width: 45px;
+      height: 45px;
+      opacity: 0.7;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .gallery a::before {
+      top: 8px;
+      left: 8px;
+      transform: rotate(-10deg);
+    }
+
+    .gallery a::after {
+      bottom: 8px;
+      right: 8px;
+      transform: rotate(15deg);
+    }
+
+    footer {
+      background: linear-gradient(135deg, var(--dark-color) 0%, var(--primary-color) 100%);
+      color: white;
+      padding: 2.5rem 0;
+      text-align: center;
+      font-size: 0.95rem;
+      letter-spacing: 0.5px;
+    }
+
+    @media (max-width: 576px) {
+      .hero-section h1 { font-size: 1.9rem; }
+      .gallery a { height: 190px; }
+      .gallery a::before, .gallery a::after {
+        width: 30px; height: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <header class="sticky-top">
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <div class="navbar-brand"><a>Cristian D'Oxalá</a></div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="home.html">Início</a></li>
+            <li class="nav-item"><a class="nav-link" href="album.html">Álbum</a></li>
+            <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero-section">
+    <h1>Xirê do Pai Oxalá Alufá Orumilaia</h1>
+    <p>08 de Novembro de 2025 — 21 horas</p>
+    <p>Nosso coração se enche de alegria e gratidão a todos que estiveram presentes no Xirê em homenagem ao Pai Oxalá.</p>
+  </section>
+
+  <!-- Galeria -->
+  <section class="gallery-section">
+    <div class="container">
+      <h2>Dedicação & Amor - Xirê</h2>
+      <div class="gallery" id="galeria-comidas"></div>
+
+      <h2>Filhos & Amigos - Xirê</h2>
+      <div class="gallery" id="galeria-geral"></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 Cristian D'Oxalá — Todos os direitos reservados</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox-plus-jquery.min.js"></script>
+
+  <script>
+    const comidas = document.getElementById('galeria-comidas');
+    const geral = document.getElementById('galeria-geral');
+    const totalFotos = 565;
+    const removidas = [221,1,4,3,62,106,163,168,149,103,66,227,119,231,242,244,246,253,267,349,387,397,399,418,423,430,458,511,514,518,532,545,556,562,55,67,74,79,80,91,92,95,105,107,114,115,113,120,122,134,133,136,137,141,142,147,150,154,157,158,170,186,190,195,197,205,206,211,215,219,225,229,234,236,248,250,257,277,279,285,315,366,379,382,393,442,454,485,496,519,520,528,537,549,550,551,563,16,17];
+
+    for (let i = 1; i <= totalFotos; i++) {
+      if (removidas.includes(i)) continue;
+
+      const link = document.createElement('a');
+      link.href = `assets/images/loxefotografia-${i}.jpg`;
+      link.setAttribute('data-lightbox', 'xire');
+      link.setAttribute('data-title', `Loxe Fotografia ${i}`);
+      const img = document.createElement('img');
+      img.src = `assets/images/loxefotografia-${i}.jpg`;
+      img.alt = `Loxe Fotografia ${i}`;
+      link.appendChild(img);
+
+   // Separa as fotos 19, 20, 21 ... até 56 como "Comidas"
+      if ([19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 
+           35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 49, 50, 18,  
+           51, 52, 53, 54, 55, 56].includes(i)) {
+        comidas.appendChild(link);
+      } else {
+        geral.appendChild(link);
+      }
+    }
+
+    lightbox.option({
+      resizeDuration: 200,
+      fadeDuration: 200,
+      imageFadeDuration: 300,
+      alwaysShowNavOnTouchDevices: true,
+      wrapAround: true
+    });
+  </script>
+</body>
+</html>
