@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Agradecimento | Pai Oxalá</title>
+  <title>Limpeza de Final de Ano | Pai Cristian d'Oxalá</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     * {
@@ -14,8 +14,8 @@
     }
 
     body {
-      background: linear-gradient(135deg, #fff, #f6f2e9);
-      color: #4d3b20;
+      background: linear-gradient(135deg, #ffffff, #e7f7e7);
+      color: #173f19;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -28,7 +28,7 @@
       background: #fff;
       padding: 1.8rem;
       border-radius: 15px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
       animation: fadeIn 1.2s ease;
     }
 
@@ -45,31 +45,30 @@
 
     h1 {
       font-size: 2rem;
-      background: linear-gradient(to right, #d4af37, #f1c40f);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: #0a5c0a;
+      font-weight: bold;
       margin-bottom: 0.6rem;
     }
 
     .subtitle {
-      font-size: 1.2rem;
-      color: #5a4a21;
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: #0f3f0f;
       margin-bottom: 0.8rem;
-      font-style: italic;
     }
 
     .message {
       font-size: 1.1rem;
       line-height: 1.6;
-      color: #4b3b1e;
+      color: #1a2d1a;
       margin-top: 1rem;
     }
 
     .highlight {
       font-size: 1.3rem;
       font-weight: bold;
-      color: #b88a28;
-      margin: 0.8rem 0;
+      color: #0a7a0a;
+      margin: 1rem 0;
     }
 
     .social-links {
@@ -80,58 +79,53 @@
     }
 
     .social-link {
-      color: #8e6c35;
+      color: #0b530b;
       font-size: 1.6rem;
       transition: all 0.3s ease;
     }
 
     .social-link:hover {
       transform: translateY(-4px);
-      color: #d4af37;
+      color: #17a317;
     }
 
     .countdown {
       margin-top: 1rem;
       font-size: 0.9rem;
-      color: #8e6c35;
+      color: #0a5c0a;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <img src="https://i.imgur.com/evt5hTW.png" alt="Agradecimento Pai Oxalá" class="banner-img">
+    <video class="banner-img" autoplay loop muted playsinline>
+        <source src="https://i.imgur.com/JirHZ3y.mp4" type="video/mp4">
+      </video>
 
-    <h1>🕊️ Gratidão pelo Comparecimento 🕊️</h1>
-    <div class="subtitle">Família Demacei agradece com carinho</div>
+    <h1>✨ Limpeza de Final de Ano ✨</h1>
+    <div class="subtitle">Pai Cristian d'Oxalá</div>
 
-    <div class="highlight">🕊️ Pai Oxalá Alufá Orumilaia 🕊️</div>
+    <div class="highlight">Ano regido por Ogum</div>
 
     <div class="message">
-      Nosso coração se enche de alegria e gratidão a todos que estiveram presentes no
-      <strong>Xirê em homenagem ao Pai Oxalá</strong>. <br><br>
-      Cada canto, cada sorriso e cada energia compartilhada tornaram esta noite inesquecível. 
-      Que a paz, a luz e a sabedoria de Oxalá estejam sempre com vocês.  
-      <br><br>
-      <em>Axé e muita luz a todos!</em> 🌿✨
+      Preparação espiritual para renovar caminhos, abrir estradas e fortalecer o axé antes da virada do ano.<br><br>
+      Valor da limpeza: <strong>R$ 97,00</strong> <br>
+      Realização: <strong>10 a 15 de Dezembro</strong> <br><br>
+      Agende seu horário e participe dessa força sagrada! ✨⚔️
     </div>
 
     <div class="social-links">
-      <a href="https://api.whatsapp.com/send/?phone=5551981053880&text=Olá,+quero+saber+mais+sobre+a+casa!" class="social-link"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://api.whatsapp.com/send/?phone=5551981053880&text=Olá,+quero+participar+da+limpeza!" class="social-link"><i class="fab fa-whatsapp"></i></a>
       <a href="https://www.instagram.com/pai.cristian" class="social-link"><i class="fab fa-instagram"></i></a>
       <a href="https://www.facebook.com/" class="social-link"><i class="fab fa-facebook"></i></a>
     </div>
 
-    <div class="countdown">🕊️ Retornando ao site principal em <span id="countdown">15</span> segundos...</div>
+    <div class="countdown">Retornando ao site em <span id="countdown">15</span> segundos...</div>
   </div>
-
-  <audio autoplay loop hidden>
-    <source src="https://www.example.com/audio.mp3" type="audio/mpeg">
-  </audio>
 
   <script>
     let seconds = 15;
     const countdownElement = document.getElementById('countdown');
-
     const timer = setInterval(() => {
       seconds--;
       countdownElement.textContent = seconds;
