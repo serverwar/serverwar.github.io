@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agenda 2026 - Ilê Oxalá Alufã Orumilaiá</title>
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bellota+Text:wght@300;400;700&family=Marcellus&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary-color: #7e4a13;
+      --secondary-color: #8a5a44;
+      --dark-color: #1a1a2e;
+      --light-color: #f8f9fa;
+      --accent-color: #fca311;
+      --highlight-bg: #fff9e6;
+    }
+
+    body {
+      font-family: 'Bellota Text', cursive;
+      background-color: var(--light-color);
+      color: var(--dark-color);
+    }
+
+    h1, h2, h3, h4, h5, .month-header {
+      font-family: 'Marcellus', serif;
+    }
+
+    /* Navbar Customizada */
+    .navbar-custom {
+      background-color: var(--primary-color);
+      padding: 15px 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+
+    /* Estilos do Calendário */
+    .month-card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      border: none;
+      height: 100%;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .month-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .month-header {
+      background-color: var(--primary-color);
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 1.25rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .event-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .event-list li {
+      padding: 12px 15px;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      align-items: center;
+      font-size: 0.95rem;
+    }
+
+    .event-list li:last-child {
+      border-bottom: none;
+    }
+
+    .event-date {
+      font-weight: bold;
+      color: var(--primary-color);
+      background: rgba(126, 74, 19, 0.1);
+      padding: 5px 10px;
+      border-radius: 6px;
+      margin-right: 15px;
+      min-width: 35px;
+      text-align: center;
+      font-family: 'Marcellus', serif;
+    }
+
+    /* Destaques (Sessões e Obrigações) */
+    .highlight-event {
+      background-color: var(--highlight-bg);
+      border-left: 4px solid var(--accent-color) !important;
+    }
+
+    .highlight-event .event-date {
+      background: var(--accent-color);
+      color: white;
+    }
+
+    .badge-custom {
+      background-color: var(--accent-color);
+      color: white;
+      font-size: 0.7em;
+      padding: 3px 8px;
+      border-radius: 12px;
+      margin-left: auto;
+      text-transform: uppercase;
+      font-family: 'Bellota Text', cursive;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    /* Seção de Informações */
+    .info-section {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      overflow: hidden;
+      margin-top: 50px;
+      margin-bottom: 50px;
+    }
+
+    .info-header {
+      background-color: var(--secondary-color);
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .info-body {
+      padding: 30px;
+    }
+
+    .info-box {
+      background: var(--light-color);
+      border-left: 4px solid var(--primary-color);
+      padding: 20px;
+      border-radius: 0 10px 10px 0;
+      margin-bottom: 20px;
+    }
+
+    .info-box.highlight-box {
+      border-left-color: var(--accent-color);
+      background-color: var(--highlight-bg);
+    }
+
+    .info-box h4 {
+      color: var(--primary-color);
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+
+    .info-box.highlight-box h4 {
+      color: #b37300; /* Tom escuro do accent */
+    }
+
+    /* Rodapé */
+    .footer-section {
+      background-color: var(--dark-color);
+      color: white;
+      padding: 30px 0 20px 0;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-custom navbar-dark">
+    <div class="container justify-content-center">
+      <span class="navbar-brand mb-0 h1" style="font-family: 'Marcellus', serif; font-size: 1.5rem;">
+        <i class="fas fa-dove me-2"></i> Ilê Oxalá Alufã Orumilaiá
+      </span>
+    </div>
+  </nav>
+
+  <div class="container mt-5">
+    
+    <div class="text-center mb-5">
+      <h1 style="color: var(--primary-color); font-weight: bold; font-size: 2.5rem;">Agenda 2026</h1>
+      <h3 class="mt-3 text-muted">Cacique Xangô da Pedreira | Exu Rei das 7 Encruzilhadas</h3>
+      <h5 class="text-secondary mt-2"><i class="fas fa-star me-2" style="color: var(--accent-color);"></i>Pai Cristian de Oxalá</h5>
+    </div>
+
+    <div class="row g-4">
+      
+      <div class="col-md-6 col-lg-4">
+        <div class="month-card">
+          <div class="month-header">Janeiro</div>
+          <ul class="event-list">
+            <li><span class="event-date">02</span><span class="event-desc">Aniversário Luciane Klazer</span></li>
+            <li><span class="event-date">06</span><span class="event-desc">Aniversário Oliver Oxalá</span></li>
+            <li><span class="event-date">15</span><span class="event-desc">Aniversário Daniel Oxum</span></li>
+            <li><span class="event-date">20</span><span class="event-desc">Aniversário Alana</span></li>
+            <li><span class="event-date">28</span><span class="event-desc">Aniversário Rodrigo Xangô</span></li>
+            <li><span class="event-date">29</span><span class="event-desc">Aniversário Jefferson Bará</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="month-card">
+          <div class="month-header">Fevereiro</div>
+          <ul class="event-list">
+            <li><span class="event-date">02</span><span class="event-desc">Aniversário Rodrigo Oxalá</span></li>
+            <li><span class="event-date">06</span><span class="event-desc">Aniversário Camila Obá</span></li>
+            <li><span class="event-date">16</span><span class="event-desc">Aniversário Elza Bará</span></li>
+            <li class="highlight-event"><span class="event-date">22</span><span class="event-desc">Gira de Exú</span> <span class="badge-custom">Sessão</span></li>
+            <li><span class="event-date">22</span><span class="event-desc">Aniversário Kaua Ogum</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="month-card">
+          <div class="month-header">Março</div>
+          <ul class="event-list">
+            <li><span class="event-date">05</span><span class="event-desc">Aniversário Marcos Xangô</span></li>
+            <li><span class="event-date">09</span><span class="event-desc">Aniversário Leila</span></li>
+            <li><span class="event-date">15</span><span class="event-desc">Aniversário João Xangô</span></li>
+            <li><span class="event-date">20</span><span class="event-desc">Aniversário Gabriela Ossanha</span></li>
+            <li><span class="event-date">20</span><span class="event-desc">Aniversário Gustavo Ogum</span></li>
+            <li class="highlight-event"><span class="event-date">22</span><span class="event-desc">Sessão de Caboclo</span> <span class="badge-custom">Sessão</span></li>
+            <li><span class="event-date">24</span><span class="event-desc">Aniversário Alex Odé</span></li>
+            <li><span class="event-date">24</span><span class="event-desc">Aniversário Mano Xapanã</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="month-card">
+          <div class="month-header">Abril</div>
+          <ul class="event-list">
+            <li><span class="event-date">09</span><span class="event-desc">Aniversário Gustavo Bará</span></li>
+            <li><span class="event-date">10</span><span class="event-desc">Aniversário Raisa Obá</span></li>
+            <li><span class="event-date">11</span><span class="event-desc">Aniversário Andreia Gonçalves Iansã</span></li>
+            <li class="highlight-event"><span class="event-date">12</span><span class="event-desc">Sessão Homenagem ao Pai Ogum</span> <span class="badge-custom">Sessão</span></li>
+            <li><span class="event-date">19</span><span class="event-desc">Aniversário Carol Oxum</span></li>
+            <li class="highlight-event"><span class="event-date">26</span><span class="event-desc">Sessão de Preto Velho</span> <span class="badge-custom">Sessão</span></li>
+            <li><span class="event-date">27</span><span class="event-desc">Aniversário Alan Ogum</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="month-card">
+          <div class="month-header">Maio</div>
+          <ul class="event-list">
+            <li><span class="event-date">02</span><span class="event-desc">Aniversário Seu Adão</span></li>
+            <li><span class="event-date">02</span><span class="event-desc">Aniversário Margareth Xangô</span></li>
+            <li><span class="event-date">06</span><span class="event-desc">Aniversário Ericá Ossanha</span></li>
+            <li><span class="event-date">10</span><span class="event-desc">Aniversário Lucas Ogum</span></li>
+            <li class="highlight-event"><span class="event-date">17</span><span class="event-desc">Cruzamento Mata, Cachoeira, Pedreira</span> <span class="badge-custom">Obrigação</span></li>
+            <li><span class="event-date">19</span><span class="event-desc">Aniversário Duda Oxalá</span></li>
+            <li><span class="event-date">20</span><span class="event-desc">Aniversário Ana Praia</span></li>
+            <li><span class="event-date">28</span><span class="event-desc">Aniversário Diônatan Odé</span></li>
+            <li class="highlight-event"><span class="event-date">30</span><span class="event-desc">Sessão em Homenagem às Mães</span> <span class="badge-custom">Sessão</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="month-card">
+          <div class="month-header">Junho</div>
+          <ul class="event-list">
+            <li class="highlight-event"><span class="event-date">07</span><span class="event-desc">Sessão Desenvolvimento Povo Cigano</span> <span class="badge-custom">Sessão</span></li>
+            <li><span class="event-date">10</span><span class="event-desc">Aniversário Jean Ogum</span></li>
+            <li><span class="event-date">21</span><span class="event-desc">Aniversário Giovana Xangô</span></li>
+            <li><span class="event-date">22</span><span class="event-desc">Aniversário João Oxalá</span></li>
+            <li><span class="event-date">22</span><span class="event-desc">Aniversário Roselaine Iansã</span></li>
+            <li><span class="event-date">29</span><span class="event-desc">Aniversário Carol Oyá</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="month-card">
+          <div class="month-header">Julho</div>
+          <ul class="event-list">
+            <li class="highlight-event"><span class="event-date">01</span><span class="event-desc">Corte Nação</span> <span class="badge-custom">Obrigação</span></li>
+            <li><span class="event-date">05</span><span class="event-desc">Aniversário Nicolas</span></li>
+            <li><span class="event-date">22</span><span class="event-desc">Aniversário Luana Iemanjá</span></li>
+            <li><span class="event-date">22</span><span class="event-desc">Aniversário Katia Oxum</span></li>
+            <li><span class="event-date">24</span><span class="event-desc">Aniversário Suanne Obá</span></li>
+            <li><span class="event-date">26</span><span class="event-desc">Aniversário Carolina Machado</span></li>
+            <li><span class="event-date">30</span><span class="event-desc">Aniversário Maria Xangô</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="month-card">
+          <div class="month-header">Agosto</div>
+          <ul class="event-list">
+            <li class="highlight-event"><span class="event-date">08</span><span class="event-desc">Cruzamento Cruzeiro e Calunga</span> <span class="badge-custom">Obrigação</span></li>
+            <li class="highlight-event"><span class="event-date">15</span><span class="event-desc">Elebó Exu Rei</span> <span class="badge-custom">Obrigação</span></li>
+            <li><span class="event-date">19</span><span class="event-desc">Aniversário Lidiane Iemanjá</span></li>
+            <li><span class="event-date">22</span><span class="event-desc">Aniversário do Pai de Santo</span></li>
+            <li><span class="event-date">23</span><span class="event-desc">Aniversário Rita Iemanjá</span></li>
+            <li><span class="event-date">30</span><span class="event-desc">Aniversário Colônia Xapanã</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="month-card">
+          <div class="month-header">Setembro</div>
+          <ul class="event-list">
+            <li class="highlight-event"><span class="event-date">12</span><span class="event-desc">Sessão Homenagem Pai Xangô da Pedreira</span> <span class="badge-custom">Sessão</span></li>
+            <li><span class="event-date">18</span><span class="event-desc">Aniversário Dani Xapanã</span></li>
+            <li><span class="event-date">19</span><span class="event-desc">Aniversário Jussara Xapanã</span></li>
+            <li><span class="event-date">29</span><span class="event-desc">Aniversário Fernanda Xangô</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="month-card">
+          <div class="month-header">Outubro</div>
+          <ul class="event-list">
+            <li><span class="event-date">05</span><span class="event-desc">Aniversário Kevin Ogum</span></li>
+            <li><span class="event-date">08</span><span class="event-desc">Aniversário Rafaele Oxum</span></li>
+            <li class="highlight-event"><span class="event-date">10</span><span class="event-desc">Sessão Homenagem Cosme e Damião</span> <span class="badge-custom">Sessão</span></li>
+            <li><span class="event-date">11</span><span class="event-desc">Aniversário Júlia Ogum</span></li>
+            <li><span class="event-date">14</span><span class="event-desc">Aniversário Guaraci</span></li>
+            <li class="highlight-event"><span class="event-date">24</span><span class="event-desc">Gira de Exu</span> <span class="badge-custom">Obrigação</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="month-card">
+          <div class="month-header">Novembro</div>
+          <ul class="event-list">
+            <li><span class="event-date">02</span><span class="event-desc">Aniversário Andreia Oyá</span></li>
+            <li><span class="event-date">07</span><span class="event-desc">Aniversário Maria Luísa</span></li>
+            <li><span class="event-date">12</span><span class="event-desc">Aniversário Lucas Xapanã</span></li>
+            <li class="highlight-event"><span class="event-date">14</span><span class="event-desc">Batuque ao Pai Oxalá</span> <span class="badge-custom">Obrigação</span></li>
+            <li><span class="event-date">16</span><span class="event-desc">Aniversário Liscano Ossanha</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <div class="month-card">
+          <div class="month-header">Dezembro</div>
+          <ul class="event-list">
+            <li><span class="event-date">01</span><span class="event-desc">Aniversário Marcia Oxum</span></li>
+            <li><span class="event-date">07</span><span class="event-desc">Aniversário Helena Oxalá</span></li>
+            <li><span class="event-date">11</span><span class="event-desc">Aniversário Ingrid Oxalá</span></li>
+            <li class="highlight-event"><span class="event-date">13</span><span class="event-desc">Cruzamento Praia</span> <span class="badge-custom">Destaque Praia</span></li>
+            <li class="highlight-event"><span class="event-date">27</span><span class="event-desc">Encerramento: Entrega de Tabuleiro no Mar</span> <span class="badge-custom">Obrigação</span></li>
+            <li><span class="event-date">28</span><span class="event-desc">Aniversário Emanuele Iemanjá</span></li>
+            <li><span class="event-date">28</span><span class="event-desc">Aniversário Luh Iansa</span></li>
+          </ul>
+        </div>
+      </div>
+
+   
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div> <footer class="footer-section">
+    <div class="container text-center">
+      <p class="mb-0">© 2026 Cristian D'Oxalá - Todos os direitos reservados</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
