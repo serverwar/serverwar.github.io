@@ -118,56 +118,32 @@
       letter-spacing: 0.5px;
     }
 
-    /* Seção de Informações */
-    .info-section {
-      background: white;
-      border-radius: 15px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-      overflow: hidden;
-      margin-top: 50px;
-      margin-bottom: 50px;
-    }
-
-    .info-header {
-      background-color: var(--secondary-color);
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-
-    .info-body {
-      padding: 30px;
-    }
-
-    .info-box {
-      background: var(--light-color);
-      border-left: 4px solid var(--primary-color);
-      padding: 20px;
-      border-radius: 0 10px 10px 0;
-      margin-bottom: 20px;
-    }
-
-    .info-box.highlight-box {
-      border-left-color: var(--accent-color);
-      background-color: var(--highlight-bg);
-    }
-
-    .info-box h4 {
-      color: var(--primary-color);
-      margin-bottom: 15px;
-      font-weight: bold;
-    }
-
-    .info-box.highlight-box h4 {
-      color: #b37300; /* Tom escuro do accent */
-    }
-
-    /* Rodapé */
+    /* Rodapé e Botão */
     .footer-section {
-      background-color: var(--dark-color);
+      background-color: var(--primary-color); /* Mesma cor do menu */
       color: white;
-      padding: 30px 0 20px 0;
+      padding: 40px 0 20px 0;
       margin-top: 50px;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+    }
+
+    .btn-home {
+      background-color: var(--accent-color);
+      color: var(--dark-color);
+      font-family: 'Marcellus', serif;
+      font-weight: bold;
+      padding: 10px 25px;
+      border-radius: 30px;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .btn-home:hover {
+      background-color: #e69500;
+      color: white;
+      transform: translateY(-2px);
     }
   </style>
 </head>
@@ -363,14 +339,10 @@
         </div>
       </div>
 
-   
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div> <footer class="footer-section">
+    </div> </div> <footer class="footer-section">
     <div class="container text-center">
+      <a href="index.html" class="btn-home mb-4"><i class="fas fa-home me-2"></i> Voltar para Home</a>
+      
       <p class="mb-0">© 2026 Cristian D'Oxalá - Todos os direitos reservados</p>
     </div>
   </footer>
