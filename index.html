@@ -631,6 +631,163 @@
       }
     }
 
+    .consultation-popup {
+      position: fixed;
+      inset: 0;
+      z-index: 2200;
+      display: grid;
+      place-items: center;
+      padding: clamp(1rem, 3vw, 2rem);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 0.25s ease, visibility 0.25s ease;
+    }
+
+    .consultation-popup.is-visible {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    body.consultation-popup-open {
+      overflow: hidden;
+    }
+
+    .consultation-popup-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(18, 12, 9, 0.76);
+      backdrop-filter: blur(4px);
+    }
+
+    .consultation-popup-dialog {
+      position: relative;
+      z-index: 1;
+      width: min(960px, 100%);
+      max-height: calc(100vh - 2rem);
+      display: grid;
+      grid-template-columns: minmax(260px, 0.95fr) minmax(280px, 1fr);
+      overflow: auto;
+      background: #fffdf8;
+      border: 1px solid rgba(126, 74, 19, 0.2);
+      border-radius: 8px;
+      box-shadow: 0 28px 80px rgba(0, 0, 0, 0.45);
+      outline: none;
+    }
+
+    .consultation-popup-video-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 390px;
+      background: #080807;
+    }
+
+    .consultation-popup-video {
+      display: block;
+      width: 100%;
+      max-height: min(72vh, 620px);
+      background: #000000;
+      object-fit: contain;
+    }
+
+    .consultation-popup-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1rem;
+      padding: clamp(1.5rem, 4vw, 3rem);
+      color: #2b2118;
+    }
+
+    .consultation-popup-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      gap: 0.45rem;
+      border: 1px solid rgba(126, 74, 19, 0.22);
+      border-radius: 999px;
+      padding: 0.4rem 0.75rem;
+      color: var(--primary-color);
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0;
+      background: rgba(252, 163, 17, 0.1);
+    }
+
+    .consultation-popup-title {
+      margin: 0;
+      color: var(--primary-color);
+      font-family: 'Marcellus', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.08;
+    }
+
+    .consultation-popup-text {
+      margin: 0;
+      color: #594334;
+      font-size: 1.12rem;
+      line-height: 1.55;
+    }
+
+    .consultation-popup-highlight {
+      margin: 0;
+      color: #2f241a;
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .consultation-popup-whatsapp {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      width: fit-content;
+      min-height: 48px;
+      margin-top: 0.25rem;
+      padding: 0.85rem 1.25rem;
+      border-radius: 999px;
+      background: #25D366;
+      color: #ffffff;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .consultation-popup-whatsapp:hover,
+    .consultation-popup-whatsapp:focus {
+      background: #128C7E;
+      color: #ffffff;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px rgba(18, 140, 126, 0.25);
+    }
+
+    .consultation-popup-close {
+      position: absolute;
+      top: 0.75rem;
+      right: 0.75rem;
+      z-index: 2;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border: 0;
+      border-radius: 50%;
+      background: rgba(26, 26, 46, 0.78);
+      color: #ffffff;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .consultation-popup-close:hover,
+    .consultation-popup-close:focus {
+      background: var(--primary-color);
+      transform: scale(1.04);
+      outline: none;
+    }
+
     @media (max-width: 576px) {
       .social-float-container {
         right: 16px;
@@ -656,6 +813,42 @@
       .social-agenda-content {
         grid-template-columns: 1fr;
         max-height: calc(100vh - 16rem);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .consultation-popup {
+        padding: 0.75rem;
+      }
+
+      .consultation-popup-dialog {
+        grid-template-columns: 1fr;
+      }
+
+      .consultation-popup-video-wrap {
+        min-height: 0;
+      }
+
+      .consultation-popup-video {
+        max-height: 42vh;
+      }
+
+      .consultation-popup-card {
+        padding: 1.35rem;
+      }
+
+      .consultation-popup-whatsapp {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .consultation-popup-title {
+        font-size: 1.75rem;
+      }
+
+      .consultation-popup-text {
+        font-size: 1rem;
       }
     }
 
@@ -739,6 +932,33 @@
   </style>
 </head>
 <body>
+
+  <div class="consultation-popup" id="consultationPopup" role="dialog" aria-modal="true" aria-labelledby="consultationPopupTitle" aria-hidden="true">
+    <div class="consultation-popup-backdrop" id="consultationPopupBackdrop"></div>
+    <div class="consultation-popup-dialog" id="consultationPopupDialog" tabindex="-1">
+      <button class="consultation-popup-close" id="consultationPopupClose" type="button" aria-label="Fechar aviso de consulta">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="consultation-popup-video-wrap">
+        <video class="consultation-popup-video" id="consultationPopupVideo" controls muted autoplay playsinline loop preload="metadata" poster="assets/images/criss.jpeg">
+          <source src="assets/videos/crisscasanova.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="consultation-popup-card">
+        <span class="consultation-popup-eyebrow">
+          <i class="fas fa-star-and-crescent"></i>
+          Atendimento espiritual
+        </span>
+        <h2 class="consultation-popup-title" id="consultationPopupTitle">Consultas com jogo de b&uacute;zios e cartas</h2>
+        <p class="consultation-popup-text">Consulta online e presencial por meio do jogo de b&uacute;zios e cartas.</p>
+        <p class="consultation-popup-highlight">Agende seu hor&aacute;rio pelo nosso WhatsApp!</p>
+        <a class="consultation-popup-whatsapp" id="consultationPopupWhatsapp" href="https://wa.me/5551981053880?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20online%20ou%20presencial%20por%20meio%20do%20jogo%20de%20b%C3%BAzios%20e%20cartas." target="_blank" rel="noopener">
+          <i class="fab fa-whatsapp"></i>
+          <span>Agendar pelo WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </div>
 
 
     <!-- Menu -->
@@ -1192,7 +1412,76 @@ document.addEventListener("DOMContentLoaded", () => {
     const instagramButton = document.getElementById('instagramButton');
     const facebookButton = document.getElementById('facebookButton');
     const whatsappPhone = '5551981053880';
+    const consultationPopup = document.getElementById('consultationPopup');
+    const consultationPopupDialog = document.getElementById('consultationPopupDialog');
+    const consultationPopupBackdrop = document.getElementById('consultationPopupBackdrop');
+    const consultationPopupClose = document.getElementById('consultationPopupClose');
+    const consultationPopupVideo = document.getElementById('consultationPopupVideo');
+    const consultationPopupWhatsapp = document.getElementById('consultationPopupWhatsapp');
+    const consultationPopupStorageKey = 'criss-consultation-popup-dismissed';
     let agendaLoaded = false;
+
+    function hasDismissedConsultationPopup() {
+      try {
+        return sessionStorage.getItem(consultationPopupStorageKey) === 'true';
+      } catch (error) {
+        return false;
+      }
+    }
+
+    function rememberConsultationPopupDismissed() {
+      try {
+        sessionStorage.setItem(consultationPopupStorageKey, 'true');
+      } catch (error) {
+        return;
+      }
+    }
+
+    function openConsultationPopup() {
+      if (!consultationPopup) return;
+
+      consultationPopup.classList.add('is-visible');
+      consultationPopup.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('consultation-popup-open');
+
+      if (consultationPopupVideo) {
+        consultationPopupVideo.muted = true;
+        const playPromise = consultationPopupVideo.play();
+
+        if (playPromise) {
+          playPromise.catch(() => {});
+        }
+      }
+
+      if (consultationPopupDialog) {
+        setTimeout(() => consultationPopupDialog.focus(), 50);
+      }
+    }
+
+    function closeConsultationPopup() {
+      if (!consultationPopup) return;
+
+      consultationPopup.classList.remove('is-visible');
+      consultationPopup.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('consultation-popup-open');
+      rememberConsultationPopupDismissed();
+
+      if (consultationPopupVideo) {
+        consultationPopupVideo.pause();
+      }
+    }
+
+    if (consultationPopup) {
+      window.addEventListener('load', function() {
+        if (!hasDismissedConsultationPopup()) {
+          setTimeout(openConsultationPopup, 500);
+        }
+      });
+
+      consultationPopupClose.addEventListener('click', closeConsultationPopup);
+      consultationPopupBackdrop.addEventListener('click', closeConsultationPopup);
+      consultationPopupWhatsapp.addEventListener('click', closeConsultationPopup);
+    }
 
     function setSocialPanel(open) {
       mainButton.classList.toggle('active', open);
@@ -1316,6 +1605,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') {
+        closeConsultationPopup();
         closeSocialPanel();
       }
     });
