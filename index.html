@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Site dedicado às tradições espirituais afro-brasileiras. Axé, Oxalá, Nação, Quimbanda e Umbanda">
   <meta name="keywords" content="Oxalá, Nação, Quimbanda, Umbanda, axé, orixás, espiritualidade afro-brasileira">
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
 
   <title>Cristian D'Oxalá - Nação, Umbanda e Quimbanda</title>
 
@@ -231,11 +231,149 @@
       transform: translateY(-10px);
     }
 
+    .services-section {
+      position: relative;
+      scroll-margin-top: 110px;
+      padding: 3rem 0 5rem;
+      background: #fffdf8;
+      overflow: hidden;
+    }
+
+    .services-label {
+      width: fit-content;
+      margin: 0 auto 2rem;
+      border-radius: 8px;
+      background: #05bd6b;
+      color: #ffffff;
+      box-shadow: 0 0 0 9px rgba(5, 189, 107, 0.18);
+      padding: 0.45rem 1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0;
+      line-height: 1;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.25rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .service-card {
+      min-height: 455px;
+      display: flex;
+      align-items: flex-end;
+      border-radius: 16px;
+      overflow: hidden;
+      background-image:
+        linear-gradient(to bottom, rgba(12, 8, 6, 0.18) 0%, rgba(18, 12, 8, 0.42) 42%, rgba(18, 12, 8, 0.86) 100%),
+        var(--service-image);
+      background-position: var(--service-position, center top);
+      background-size: cover;
+      box-shadow: 0 18px 36px rgba(95, 58, 21, 0.14);
+    }
+
+    .service-card-body {
+      width: 100%;
+      padding: 0 1.35rem 1.5rem;
+      color: #ffffff;
+      text-align: center;
+      text-shadow: 0 1px 2px rgba(88, 53, 18, 0.45);
+    }
+
+    .service-card h3 {
+      margin: 0 0 1rem;
+      color: #ffffff;
+      font-family: 'Bellota Text', sans-serif;
+      font-size: clamp(2rem, 3vw, 2.55rem);
+      font-weight: 700;
+      line-height: 0.98;
+    }
+
+    .service-card h3 em {
+      display: block;
+      color: #f8e6b1;
+      font-family: 'Marcellus', serif;
+      font-size: 0.95em;
+      font-style: italic;
+      font-weight: 400;
+      text-shadow: 0 1px 2px rgba(36, 22, 10, 0.55);
+    }
+
+    .service-card p {
+      min-height: 6.4rem;
+      margin: 0;
+      color: #ffffff;
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+
+    .service-card-action {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-height: 58px;
+      margin-top: 1.3rem;
+      border: 0;
+      border-radius: 999px;
+      background: #05bd6b;
+      color: #ffffff;
+      font-size: 0.95rem;
+      font-weight: 800;
+      line-height: 1.05;
+      text-decoration: none;
+      text-transform: uppercase;
+      box-shadow: 0 0 0 4px rgba(5, 189, 107, 0.22);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+    }
+
+    .service-card-action:hover,
+    .service-card-action:focus {
+      background: #049e5a;
+      color: #ffffff;
+      transform: translateY(-2px);
+      box-shadow: 0 0 0 4px rgba(5, 189, 107, 0.3), 0 10px 18px rgba(4, 126, 73, 0.18);
+    }
+
+    @media (max-width: 992px) {
+      .services-grid {
+        grid-template-columns: 1fr;
+        max-width: 520px;
+        margin: 0 auto;
+      }
+
+      .service-card {
+        min-height: 520px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .services-section {
+        padding: 3rem 0;
+      }
+
+      .service-card {
+        min-height: 500px;
+      }
+
+      .service-card-body {
+        padding: 0 1.15rem 1.35rem;
+      }
+
+      .service-card p {
+        min-height: auto;
+      }
+    }
+
     /* Botão Flutuante de Redes Sociais */
     .social-float-container {
       position: fixed;
       bottom: 24px;
-      right: 24px;
+      right: 10px;
       z-index: 1000;
     }
 
@@ -508,6 +646,8 @@
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 0.75rem;
+      align-content: start;
+      align-items: start;
       max-height: min(520px, calc(100vh - 15rem));
       overflow-y: auto;
       padding-right: 0.15rem;
@@ -517,6 +657,7 @@
       background: #ffffff;
       border: 1px solid rgba(139, 69, 19, 0.14);
       border-radius: 8px;
+      height: auto;
       overflow: hidden;
     }
 
@@ -807,12 +948,35 @@
       }
 
       .social-buttons.is-agenda-open {
-        max-height: calc(100vh - 6.5rem);
+        position: fixed;
+        top: 86px;
+        right: 12px;
+        bottom: 88px;
+        left: 12px;
+        width: auto;
+        max-height: none;
+        overflow: hidden;
       }
 
       .social-agenda-content {
-        grid-template-columns: 1fr;
-        max-height: calc(100vh - 16rem);
+        display: block;
+        max-height: none;
+        min-height: 0;
+        overflow-y: auto;
+      }
+
+      .social-buttons.is-agenda-open .social-agenda-view {
+        height: 100%;
+        min-height: 0;
+        grid-template-rows: auto auto minmax(0, 1fr) auto;
+      }
+
+      .social-agenda-content .month-card {
+        margin-bottom: 0.75rem;
+      }
+
+      .social-agenda-content .month-card:last-child {
+        margin-bottom: 0;
       }
     }
 
@@ -982,7 +1146,7 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
               <li class="nav-item"><a class="nav-link active" href="index.html" data-translate="menu_home">Início</a></li>
-              <li class="nav-item"><a class="nav-link" href="index.html#features12-6" data-translate="menu_history">História</a></li>
+              <li class="nav-item"><a class="nav-link" href="historia.html" data-translate="menu_history">História</a></li>
               <li class="nav-item"><a class="nav-link" href="registros_fe.html">Registros da Fé</a></li>
               <li class="nav-item"><a class="nav-link" href="album.html" data-translate="menu_album">Álbum</a></li>
 			  <li class="nav-item"><a class="nav-link" href="agradecimento.html" data-translate="Agradecimentos">Agradecimentos</a></li>
@@ -1257,58 +1421,44 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
-
-    <div class="container">
-      <!-- Seção Nação -->
-      <section class="content-section card p-4 mb-4" id="features12-6">
-        <div class="row align-items-center">
-          <div class="col-lg-8">
-            <h2 class="section-title text-center text-lg-start" data-translate="section_nation_title">NAÇÃO</h2>
-            <div class="section-content text-center text-lg-start">
-              <p data-translate="nation_paragraph1"><strong>Babalorixá Cristian d'Oxalá teve seu início religioso em 2005, quando teve o primeiro contato com a Umbanda, dando início à sua jornada espiritual.</strong></p>
-              <p data-translate="nation_paragraph2"><strong>No mesmo ano, ingressou na Quimbanda e também na Nação de Oyó, onde foi iniciado pela Iyálorixá Irede de Oxum docô, vinculada à Bacia da Vó Olga de Xapanã Onibarú.</strong></p>
-              <p data-translate="nation_paragraph3"><strong>Na Nação de Oyó, ele recebeu importantes fundamentos e ensinamentos ritualísticos, consolidando sua formação. Ao longo de sua trajetória, seu Orixá o conduziu por outros axés, onde absorveu conhecimentos e experiências enriquecedoras, ampliando sua sabedoria e conexão espiritual.</strong></p>
-            </div>
-          </div>
-          <div class="col-lg-4 mt-4 mt-lg-0 d-flex justify-content-center">
-            <img src="assets/images/486574925-694731536847220-5955591081140017417-n.jpg" alt="Nação de Oyó" class="img-fluid section-image rounded">
-          </div>
+    <section class="services-section" id="consultas">
+      <div class="container">
+        <div class="services-label">
+          <span>Consultas online e presenciais</span>
         </div>
-      </section>
-
-      <!-- Seção Umbanda -->
-      <section class="content-section card p-4 mb-4">
-        <div class="row align-items-center">
-          <div class="col-lg-8 order-lg-1 order-2">
-            <h2 class="section-title text-center text-lg-start" data-translate="section_umbanda_title">UMBANDA</h2>
-            <div class="section-content text-center text-lg-start">
-              <p data-translate="umbanda_paragraph1">Na <strong>Umbanda</strong>, meu cacicamento ocorreu em 28/01/2008, marcando um momento importante na minha caminhada espiritual. Minha coroação foi realizada sob a vibração de Pai Xangô da Pedreira, que guia e fortalece minha missão.</p>
-              <p data-translate="umbanda_paragraph2">Sou filho de <strong>Preto Velho</strong>, com a bênção e sabedoria de <strong>Vovô Benedito</strong> das Almas, que me ensina a humildade e a cura. Também sou filho de <strong>Cosme</strong>, representado pela inocência e alegria de Luizinho - 3 anos, e filho de Cigano, sob a orientação de <strong>Cigano Cortez</strong> e <strong>Cigana Carmensita</strong>, que trazem luz e direção em minha jornada.</p>
-              <p data-translate="umbanda_paragraph3">Essas entidades, cada uma em sua essência, formam a base do meu trabalho espiritual, equilibrando conhecimento, amor e firmeza na prática da Umbanda.</p>
+        <div class="services-grid">
+          <article class="service-card" style="--service-image: url('assets/images/consulta-presencial-cristian.png'); --service-position: left center;">
+            <div class="service-card-body">
+              <h3>Consultas <em>Presenciais</em></h3>
+              <p>No atendimento presencial com Cristian D'Oxalá, você é recebido com respeito, acolhimento e orientação espiritual para iluminar seus caminhos.</p>
+              <a class="service-card-action" href="https://wa.me/5551981053880?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20presencial%20com%20Cristian%20D%27Oxal%C3%A1." target="_blank" rel="noopener">
+                Agendar presencial
+              </a>
             </div>
-          </div>
-          <div class="col-lg-4 order-lg-2 order-1 mb-4 mb-lg-0 d-flex justify-content-center">
-            <img src="assets/images/screenshot-1.png" alt="Umbanda" class="img-fluid section-image rounded">
-          </div>
-        </div>
-      </section>
+          </article>
 
-      <!-- Seção Quimbanda -->
-      <section class="content-section card p-4 mb-4">
-        <div class="row align-items-center">
-          <div class="col-lg-8">
-            <h2 class="section-title text-center text-lg-start" data-translate="section_quimbanda_title">QUIMBANDA</h2>
-            <div class="section-content text-center text-lg-start">
-              <p data-translate="quimbanda_paragraph1"><strong>Na Quimbanda, recebi o Abassê de Exu Rei das 7 Encruzilhadas e Rainha das 7 Encruzilhadas, entidades poderosas que regem os caminhos e abrem os mistérios da vida.</strong></p>
-              <p data-translate="quimbanda_paragraph2"><strong>Minha feitura foi realizada em 30/07/2007, um marco sagrado que consagrou minha ligação com as forças da esquerda e minha missão dentro dessa corrente espiritual.</strong></p>
+          <article class="service-card" style="--service-image: url('assets/images/consulta-cristian.png');">
+            <div class="service-card-body">
+              <h3>Consultas <em>Online</em></h3>
+              <p>Mesmo à distância, Cristian D'Oxalá realiza consultas online com atenção, seriedade e conexão espiritual por WhatsApp ou chamada.</p>
+              <a class="service-card-action" href="https://wa.me/5551981053880?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20online%20com%20Cristian%20D%27Oxal%C3%A1." target="_blank" rel="noopener">
+                Agendar online
+              </a>
             </div>
-          </div>
-          <div class="col-lg-4 mt-4 mt-lg-0 d-flex justify-content-center">
-            <img src="assets/images/481263616-677203905266650-4580296693924310123-n.jpeg" alt="Quimbanda" class="img-fluid section-image rounded">
-          </div>
+          </article>
+
+          <article class="service-card" style="--service-image: url('assets/images/consulta-buzios-cristian.png');">
+            <div class="service-card-body">
+              <h3>Jogo de <em>Búzios</em></h3>
+              <p>O jogo de búzios com Cristian D'Oxalá busca trazer orientação, clareza e direcionamento espiritual para cada momento da sua vida.</p>
+              <a class="service-card-action" href="https://wa.me/5551981053880?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta%20com%20jogo%20de%20b%C3%BAzios%20com%20Cristian%20D%27Oxal%C3%A1." target="_blank" rel="noopener">
+                Agendar búzios
+              </a>
+            </div>
+          </article>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
 
 
     <!-- Rodapé -->
@@ -1418,53 +1568,76 @@ document.addEventListener("DOMContentLoaded", () => {
     const consultationPopupClose = document.getElementById('consultationPopupClose');
     const consultationPopupVideo = document.getElementById('consultationPopupVideo');
     const consultationPopupWhatsapp = document.getElementById('consultationPopupWhatsapp');
-    const consultationPopupStorageKey = 'criss-consultation-popup-dismissed';
+    let consultationPopupAutoCloseTimer;
     let agendaLoaded = false;
 
-    function hasDismissedConsultationPopup() {
-      try {
-        return sessionStorage.getItem(consultationPopupStorageKey) === 'true';
-      } catch (error) {
-        return false;
+    function enableConsultationPopupAudio(fallbackToMuted = false) {
+      if (!consultationPopupVideo) return;
+
+      consultationPopupVideo.volume = 0.1;
+      consultationPopupVideo.muted = false;
+
+      const audioPlayPromise = consultationPopupVideo.play();
+
+      if (audioPlayPromise) {
+        audioPlayPromise.catch(() => {
+          if (fallbackToMuted) {
+            consultationPopupVideo.muted = true;
+            consultationPopupVideo.play().catch(() => {});
+          }
+        });
       }
     }
 
-    function rememberConsultationPopupDismissed() {
-      try {
-        sessionStorage.setItem(consultationPopupStorageKey, 'true');
-      } catch (error) {
-        return;
+    function unlockConsultationPopupAudio() {
+      if (consultationPopup && consultationPopup.classList.contains('is-visible')) {
+        enableConsultationPopupAudio(true);
       }
     }
 
     function openConsultationPopup() {
       if (!consultationPopup) return;
 
+      clearTimeout(consultationPopupAutoCloseTimer);
       consultationPopup.classList.add('is-visible');
       consultationPopup.setAttribute('aria-hidden', 'false');
       document.body.classList.add('consultation-popup-open');
+      document.addEventListener('pointerdown', unlockConsultationPopupAudio, { once: true });
+      document.addEventListener('keydown', unlockConsultationPopupAudio, { once: true });
 
       if (consultationPopupVideo) {
+        consultationPopupVideo.volume = 0.1;
         consultationPopupVideo.muted = true;
+        consultationPopupVideo.currentTime = 0;
         const playPromise = consultationPopupVideo.play();
 
         if (playPromise) {
-          playPromise.catch(() => {});
+          playPromise.then(() => {
+            setTimeout(() => enableConsultationPopupAudio(true), 250);
+          }).catch(() => {
+            enableConsultationPopupAudio();
+          });
+        } else {
+          setTimeout(() => enableConsultationPopupAudio(true), 250);
         }
       }
 
       if (consultationPopupDialog) {
         setTimeout(() => consultationPopupDialog.focus(), 50);
       }
+
+      consultationPopupAutoCloseTimer = setTimeout(closeConsultationPopup, 10000);
     }
 
     function closeConsultationPopup() {
       if (!consultationPopup) return;
 
+      clearTimeout(consultationPopupAutoCloseTimer);
       consultationPopup.classList.remove('is-visible');
       consultationPopup.setAttribute('aria-hidden', 'true');
       document.body.classList.remove('consultation-popup-open');
-      rememberConsultationPopupDismissed();
+      document.removeEventListener('pointerdown', unlockConsultationPopupAudio);
+      document.removeEventListener('keydown', unlockConsultationPopupAudio);
 
       if (consultationPopupVideo) {
         consultationPopupVideo.pause();
@@ -1473,9 +1646,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (consultationPopup) {
       window.addEventListener('load', function() {
-        if (!hasDismissedConsultationPopup()) {
-          setTimeout(openConsultationPopup, 500);
-        }
+        setTimeout(openConsultationPopup, 500);
       });
 
       consultationPopupClose.addEventListener('click', closeConsultationPopup);
@@ -1502,6 +1673,8 @@ document.addEventListener("DOMContentLoaded", () => {
       socialMenuView.classList.remove('is-active');
       socialAgendaView.classList.add('is-active');
       socialAgendaView.setAttribute('aria-hidden', 'false');
+      socialButtons.scrollTop = 0;
+      agendaContent.scrollTop = 0;
       loadAgendaFromSite();
     }
 
@@ -1541,6 +1714,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         agendaContent.replaceChildren(...monthCards.map(card => card.cloneNode(true)));
+        agendaContent.scrollTop = 0;
         agendaLoaded = true;
       } catch (error) {
         agendaContent.innerHTML = `
