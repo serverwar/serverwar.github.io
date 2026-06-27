@@ -10,7 +10,7 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
   
   
-  <title>localizacao</title>
+  <title>Cristian D'Oxal&aacute; - Localiza&ccedil;&atilde;o</title>
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
@@ -256,6 +256,64 @@
       height: 100%;
       border: none;
     }
+
+    .location-house-card {
+      display: grid;
+      grid-template-columns: minmax(260px, 0.85fr) minmax(280px, 1fr);
+      overflow: hidden;
+      margin: 0 auto 2rem;
+      border-radius: 15px;
+      background: #ffffff;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+    }
+
+    .location-house-photo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f6efe7;
+    }
+
+    .location-house-photo img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      max-height: 540px;
+      object-fit: contain;
+    }
+
+    .location-house-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(1.5rem, 4vw, 3rem);
+    }
+
+    .location-house-copy h3 {
+      margin-bottom: 1rem;
+      color: var(--primary-color);
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-weight: 700;
+    }
+
+    .location-house-copy p {
+      color: #5d5148;
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+
+    .location-house-note {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      width: fit-content;
+      border-radius: 999px;
+      background: rgba(126, 74, 19, 0.1);
+      color: var(--primary-color);
+      padding: 0.55rem 0.9rem;
+      font-weight: 700;
+    }
     
     footer {
       background: linear-gradient(135deg, var(--dark-color) 0%, var(--primary-color) 100%);
@@ -280,6 +338,14 @@
       
       .mbr-section-title {
         font-size: 1.8rem;
+      }
+
+      .location-house-card {
+        grid-template-columns: 1fr;
+      }
+
+      .location-house-photo img {
+        max-height: 470px;
       }
     }
   </style>
@@ -326,6 +392,21 @@
         <p class="mbr-section-subtitle">Rua Monza, 227<br>Condomínio Figueira<br>Viamão</p>
       </div>
       
+      <div class="location-house-card">
+        <div class="location-house-photo">
+          <img src="assets/images/localizacao-casa.png" alt="Fachada da casa na Rua Monza, 227">
+        </div>
+        <div class="location-house-copy">
+          <h3>Fachada do local</h3>
+          <p>Para facilitar sua chegada, essa &eacute; a frente da casa de atendimento. Ao chegar na Rua Monza, procure pelo port&atilde;o azul e pelo n&uacute;mero 227.</p>
+          <p>A foto foi ajustada para melhorar a visualiza&ccedil;&atilde;o da fachada e ajudar na identifica&ccedil;&atilde;o do endere&ccedil;o.</p>
+          <span class="location-house-note">
+            <i class="fas fa-location-dot"></i>
+            Rua Monza, 227
+          </span>
+        </div>
+      </div>
+
       <div class="row justify-content-center">
         <div class="col-lg-5 col-md-6 mb-4 mb-md-0">
           <div class="card h-100">
