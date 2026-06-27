@@ -7,9 +7,9 @@
   <meta name="description" content="Site dedicado às tradições espirituais afro-brasileiras. Axé, Oxalá, Nação, Quimbanda e Umbanda">
   <meta name="keywords" content="Oxalá, Nação, Quimbanda, Umbanda, axé, orixás, espiritualidade afro-brasileira">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
-  
+
   <title>Cristian D'Oxalá - Nação, Umbanda e Quimbanda</title>
-  
+
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Font Awesome -->
@@ -18,7 +18,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bellota+Text:wght@300;400;700&family=Marcellus&display=swap" rel="stylesheet">
-  
+
   <style>
     :root {
       --primary-color: #7e4a13;
@@ -27,7 +27,7 @@
       --light-color: #f8f9fa;
       --accent-color: #fca311;
     }
-    
+
     body {
       font-family: 'Bellota Text', sans-serif;
       background-color: #f5f5f5;
@@ -45,14 +45,14 @@
       backdrop-filter: blur(5px);
       min-height: 100vh;
     }
-    
+
     /* Navbar */
     .navbar {
       background: linear-gradient(135deg, var(--dark-color) 0%, var(--primary-color) 100%);
       box-shadow: 0 4px 20px rgba(0,0,0,0.1);
       padding: 1rem 0;
     }
-    
+
     .navbar-brand a {
       font-family: 'Marcellus', serif;
       font-weight: 700;
@@ -62,14 +62,14 @@
       -webkit-text-fill-color: transparent;
       text-decoration: none;
     }
-    
+
     .nav-link {
       font-weight: 500;
       margin: 0 0.5rem;
       position: relative;
       color: white !important;
     }
-    
+
     .nav-link:after {
       content: '';
       position: absolute;
@@ -80,19 +80,19 @@
       background-color: var(--accent-color);
       transition: width 0.3s ease;
     }
-    
+
     .nav-link:hover:after {
       width: 100%;
     }
-    
+
     .nav-link.active {
       color: var(--accent-color) !important;
     }
-    
+
     .nav-link.active:after {
       width: 100%;
     }
-    
+
     .hamburger span {
       background-color: white;
       height: 3px;
@@ -101,19 +101,19 @@
       display: block;
       transition: all 0.3s ease;
     }
-    
+
     .navbar-toggler[aria-expanded="true"] .hamburger span:nth-child(1) {
       transform: rotate(45deg) translate(5px, 5px);
     }
-    
+
     .navbar-toggler[aria-expanded="true"] .hamburger span:nth-child(2) {
       opacity: 0;
     }
-    
+
     .navbar-toggler[aria-expanded="true"] .hamburger span:nth-child(3) {
       transform: rotate(-45deg) translate(7px, -6px);
     }
-    
+
     .btn-primary {
       background-color: var(--primary-color);
       border: none;
@@ -122,13 +122,13 @@
       font-weight: 500;
       transition: all 0.3s ease;
     }
-    
+
     .btn-primary:hover {
       background-color: var(--dark-color);
       transform: translateY(-2px);
       box-shadow: 0 4px 15px rgba(106, 76, 147, 0.3);
     }
-    
+
     .btn-white-outline {
       border: 2px solid white;
       color: white;
@@ -137,13 +137,13 @@
       font-weight: 500;
       transition: all 0.3s ease;
     }
-    
+
     .btn-white-outline:hover {
       background-color: white;
       color: var(--dark-color);
       transform: translateY(-2px);
     }
-    
+
     /* Hero Section */
     .hero-section {
       position: relative;
@@ -157,12 +157,12 @@
       background-size: cover;
       margin-bottom: 3rem;
     }
-    
+
     .hero-content {
       position: relative;
       z-index: 2;
     }
-    
+
     .hero-title {
       font-family: 'Marcellus', serif;
       font-size: 3.5rem;
@@ -170,13 +170,13 @@
       margin-bottom: 1rem;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     }
-    
+
     .hero-subtitle {
       font-size: 1.8rem;
       margin-bottom: 2rem;
       text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
     }
-    
+
     /* Content Sections */
     .content-section {
       padding: 5rem 0;
@@ -186,7 +186,7 @@
       margin: 2rem 0;
       box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     }
-    
+
     .section-title {
       font-family: 'Marcellus', serif;
       font-size: 2.5rem;
@@ -196,7 +196,7 @@
       position: relative;
       display: inline-block;
     }
-    
+
     .section-title:after {
       content: '';
       position: absolute;
@@ -207,18 +207,18 @@
       background: linear-gradient(to right, var(--primary-color), var(--accent-color));
       border-radius: 2px;
     }
-    
+
     .section-content {
       font-size: 1.1rem;
       line-height: 1.8;
       color: #555;
     }
-    
+
     .section-highlight {
       color: var(--primary-color);
       font-weight: 600;
     }
-    
+
     .section-image {
       border-radius: 15px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.1);
@@ -226,101 +226,395 @@
       max-height: 400px;
       object-fit: cover;
     }
-    
+
     .section-image:hover {
       transform: translateY(-10px);
     }
-    
+
     /* Botão Flutuante de Redes Sociais */
     .social-float-container {
       position: fixed;
-      bottom: 30px;
-      right: 30px;
+      bottom: 24px;
+      right: 24px;
       z-index: 1000;
-      display: flex;
-      flex-direction: column-reverse;
-      align-items: flex-end;
-      gap: 15px;
     }
-    
+
     .social-main-button {
-      width: 70px;
-      height: 70px;
+      width: 64px;
+      height: 64px;
       background-color: #25D366;
       color: white;
+      border: 0;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
       cursor: pointer;
-      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      transition: transform 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
       position: relative;
       overflow: hidden;
       animation: pulse 2s infinite;
     }
-    
+
     @keyframes pulse {
       0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
       70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
       100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
     }
-    
+
     .social-main-button i {
-      font-size: 30px;
-      transition: all 0.3s;
+      font-size: 28px;
+      transition: transform 0.25s ease;
     }
-    
+
     .social-main-button.active {
-      transform: rotate(45deg);
+      background-color: #128C7E;
+      box-shadow: 0 10px 24px rgba(18, 140, 126, 0.35);
       animation: none;
     }
-    
-    .social-button {
-      width: 55px;
-      height: 55px;
-      border-radius: 50%;
+
+    .social-main-button.active i {
+      transform: rotate(90deg);
+    }
+
+    .social-buttons {
+      position: absolute;
+      right: 0;
+      bottom: 80px;
+      width: min(360px, calc(100vw - 2rem));
+      padding: 1rem;
+      background: #fffaf4;
+      border: 1px solid rgba(139, 69, 19, 0.16);
+      border-radius: 8px;
+      box-shadow: 0 18px 45px rgba(31, 20, 10, 0.22);
+      opacity: 0;
+      transform: translateY(12px) scale(0.98);
+      pointer-events: none;
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+
+    .social-buttons.active {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      pointer-events: auto;
+    }
+
+    .social-buttons.is-agenda-open {
+      width: min(760px, calc(100vw - 2rem));
+      max-height: calc(100vh - 7rem);
+      overflow: hidden;
+    }
+
+    .social-panel-header {
       display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+      padding-bottom: 0.75rem;
+      margin-bottom: 0.75rem;
+      border-bottom: 1px solid rgba(139, 69, 19, 0.14);
+    }
+
+    .social-panel-title {
+      display: block;
+      color: var(--primary-color);
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      line-height: 1.2;
+    }
+
+    .social-panel-subtitle {
+      display: block;
+      margin-top: 0.15rem;
+      color: #6b5a48;
+      font-size: 0.9rem;
+      line-height: 1.35;
+    }
+
+    .social-panel-close {
+      width: 34px;
+      height: 34px;
+      flex: 0 0 34px;
+      border: 1px solid rgba(139, 69, 19, 0.14);
+      border-radius: 50%;
+      background: #ffffff;
+      color: #5d3a1a;
+      display: inline-flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
       cursor: pointer;
-      transform: scale(0);
-      opacity: 0;
-      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       position: relative;
       overflow: hidden;
     }
-    
-    .social-button.whatsapp {
-      background-color: #25D366;
-      transition-delay: 0.1s;
+
+    .social-menu {
+      display: grid;
+      gap: 0.65rem;
     }
-    
-    .social-button.instagram {
-      background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
-      transition-delay: 0.2s;
+
+    .social-panel-view {
+      display: none;
     }
-    
-    .social-button.facebook {
-      background-color: #1877F2;
-      transition-delay: 0.3s;
+
+    .social-panel-view.is-active {
+      display: grid;
     }
-    
-    .social-button i {
-      font-size: 24px;
-      color: white;
+
+    .social-menu-item {
+      width: 100%;
+      min-height: 62px;
+      border: 1px solid rgba(139, 69, 19, 0.16);
+      border-radius: 8px;
+      background: #ffffff;
+      color: #3f2814;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.75rem;
+      text-align: left;
+      text-decoration: none;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
     }
-    
-    .social-button:hover {
-      transform: scale(1.1) !important;
+
+    .social-menu-item:hover,
+    .social-menu-item:focus {
+      color: #3f2814;
+      border-color: rgba(139, 69, 19, 0.34);
+      box-shadow: 0 8px 18px rgba(31, 20, 10, 0.08);
+      transform: translateY(-1px);
+      text-decoration: none;
+      outline: none;
     }
-    
-    .social-buttons.active .social-button {
-      transform: scale(1);
-      opacity: 1;
+
+    .social-menu-icon {
+      width: 42px;
+      height: 42px;
+      flex: 0 0 42px;
+      border-radius: 50%;
+      color: #ffffff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
     }
-    
+
+    .social-menu-copy {
+      min-width: 0;
+    }
+
+    .social-menu-copy strong,
+    .social-menu-copy span {
+      display: block;
+    }
+
+    .social-menu-copy strong {
+      font-size: 0.98rem;
+      line-height: 1.2;
+    }
+
+    .social-menu-copy span {
+      margin-top: 0.15rem;
+      color: #6b5a48;
+      font-size: 0.83rem;
+      line-height: 1.25;
+    }
+
+    .social-menu-item.whatsapp .social-menu-icon {
+      background: #25D366;
+    }
+
+    .social-menu-item.agenda .social-menu-icon {
+      background: var(--primary-color);
+    }
+
+    .social-menu-item.whatsapp.alt .social-menu-icon {
+      background: #128C7E;
+    }
+
+    .social-menu-item.instagram .social-menu-icon {
+      background: linear-gradient(45deg, #405DE6, #C13584, #FD1D1D);
+    }
+
+    .social-menu-item.facebook .social-menu-icon {
+      background: #1877F2;
+    }
+
+    .social-menu-item.contact .social-menu-icon {
+      background: var(--secondary-color);
+    }
+
+    .social-agenda-view {
+      gap: 0.75rem;
+    }
+
+    .social-agenda-toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .social-agenda-back,
+    .social-agenda-full,
+    .social-agenda-whatsapp {
+      border: 1px solid rgba(139, 69, 19, 0.18);
+      border-radius: 8px;
+      background: #ffffff;
+      color: #3f2814;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      padding: 0.6rem 0.75rem;
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .social-agenda-back:hover,
+    .social-agenda-full:hover {
+      color: #3f2814;
+      text-decoration: none;
+      border-color: rgba(139, 69, 19, 0.35);
+    }
+
+    .social-agenda-heading strong,
+    .social-agenda-heading span {
+      display: block;
+    }
+
+    .social-agenda-heading strong {
+      color: var(--primary-color);
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      line-height: 1.2;
+    }
+
+    .social-agenda-heading span {
+      color: #6b5a48;
+      font-size: 0.88rem;
+      line-height: 1.35;
+      margin-top: 0.15rem;
+    }
+
+    .social-agenda-content {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.75rem;
+      max-height: min(520px, calc(100vh - 15rem));
+      overflow-y: auto;
+      padding-right: 0.15rem;
+    }
+
+    .social-agenda-content .month-card {
+      background: #ffffff;
+      border: 1px solid rgba(139, 69, 19, 0.14);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .social-agenda-content .month-header {
+      background: var(--primary-color);
+      color: #ffffff;
+      text-align: center;
+      padding: 0.6rem 0.75rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      text-transform: uppercase;
+    }
+
+    .social-agenda-content .event-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .social-agenda-content .event-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.55rem;
+      padding: 0.55rem 0.65rem;
+      border-bottom: 1px solid rgba(139, 69, 19, 0.1);
+      color: #3f2814;
+      font-size: 0.83rem;
+      line-height: 1.25;
+    }
+
+    .social-agenda-content .event-list li:last-child {
+      border-bottom: 0;
+    }
+
+    .social-agenda-content .event-date {
+      flex: 0 0 32px;
+      border-radius: 6px;
+      background: rgba(139, 69, 19, 0.1);
+      color: var(--primary-color);
+      font-weight: 700;
+      text-align: center;
+      padding: 0.25rem 0.2rem;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .social-agenda-content .event-desc {
+      min-width: 0;
+      flex: 1;
+    }
+
+    .social-agenda-content .highlight-event {
+      background: #fff7df;
+      border-left: 3px solid var(--secondary-color);
+    }
+
+    .social-agenda-content .highlight-event .event-date {
+      background: var(--secondary-color);
+      color: #ffffff;
+    }
+
+    .social-agenda-content .badge-custom {
+      align-self: flex-start;
+      border-radius: 999px;
+      background: var(--secondary-color);
+      color: #ffffff;
+      font-size: 0.64rem;
+      font-weight: 700;
+      padding: 0.18rem 0.45rem;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .social-agenda-loading,
+    .social-agenda-empty {
+      grid-column: 1 / -1;
+      margin: 0;
+      border-radius: 8px;
+      background: #ffffff;
+      border: 1px solid rgba(139, 69, 19, 0.14);
+      color: #6b5a48;
+      padding: 0.9rem;
+      text-align: center;
+    }
+
+    .social-agenda-whatsapp {
+      width: 100%;
+      border: 0;
+      background: #25D366;
+      color: #ffffff;
+    }
+
+    .social-agenda-whatsapp:hover,
+    .social-agenda-whatsapp:focus {
+      background: #128C7E;
+      color: #ffffff;
+      outline: none;
+    }
+
     .ripple {
       position: absolute;
       border-radius: 50%;
@@ -329,71 +623,42 @@
       animation: ripple 0.6s linear;
       pointer-events: none;
     }
-    
+
     @keyframes ripple {
       to {
         transform: scale(4);
         opacity: 0;
       }
     }
-    
-    .chat-bubble {
-      position: absolute;
-      bottom: 120px;
-      right: 0;
-      width: 250px;
-      padding: 15px;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      pointer-events: none;
+
+    @media (max-width: 576px) {
+      .social-float-container {
+        right: 16px;
+        bottom: 16px;
+      }
+
+      .social-main-button {
+        width: 58px;
+        height: 58px;
+      }
+
+      .social-buttons {
+        bottom: 72px;
+        width: calc(100vw - 2rem);
+        max-height: calc(100vh - 6.5rem);
+        overflow-y: auto;
+      }
+
+      .social-buttons.is-agenda-open {
+        max-height: calc(100vh - 6.5rem);
+      }
+
+      .social-agenda-content {
+        grid-template-columns: 1fr;
+        max-height: calc(100vh - 16rem);
+      }
     }
-    
-    .chat-bubble:after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      right: 20px;
-      width: 0;
-      height: 0;
-      border-left: 10px solid transparent;
-      border-right: 10px solid transparent;
-      border-top: 10px solid white;
-    }
-    
-    .chat-bubble.active {
-      opacity: 1;
-      transform: translateY(0);
-      pointer-events: auto;
-    }
-    
-    .chat-bubble p {
-      margin: 0 0 15px 0;
-      color: #333;
-    }
-    
-    .chat-bubble button {
-      width: 100%;
-      padding: 10px;
-      border: none;
-      border-radius: 6px;
-      color: white;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s;
-    }
-    
-    .whatsapp-chat-btn {
-      background-color: #25D366;
-    }
-    
-    .whatsapp-chat-btn:hover {
-      background-color: #128C7E;
-    }
-    
+
     /* Footer */
     footer {
       background: linear-gradient(135deg, var(--dark-color) 0%, var(--primary-color) 100%);
@@ -402,7 +667,7 @@
       text-align: center;
       margin-top: 3rem;
     }
-    
+
     footer p {
       margin: 0;
       font-size: 0.9rem;
@@ -435,29 +700,29 @@
       border: 2px solid #fca311;
       box-shadow: 0 0 5px rgba(252, 163, 17, 0.5);
     }
-    
+
     /* Responsividade */
     @media (max-width: 768px) {
       .navbar-brand a {
         font-size: 1.5rem;
       }
-      
+
       .hero-title {
         font-size: 2.5rem;
       }
-      
+
       .hero-subtitle {
         font-size: 1.3rem;
       }
-      
+
       .content-section {
         padding: 3rem 0;
       }
-      
+
       .section-title {
         font-size: 2rem;
       }
-      
+
       body {
         background-attachment: scroll;
       }
@@ -474,7 +739,7 @@
   </style>
 </head>
 <body>
- 
+
 
     <!-- Menu -->
     <header class="sticky-top">
@@ -492,7 +757,7 @@
               <span></span>
               <span></span>
             </div>
-			
+
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
@@ -505,12 +770,12 @@
 			  <li class="nav-item"><a class="nav-link" href="agenda.html">Agenda</a></li>
             </ul>
 
-            
+
             <div class="d-flex ms-lg-3 mt-3 mt-lg-0">
               <a class="btn btn-primary me-2" href="contato.html" data-translate="menu_contact">Contato</a>
               <a class="btn btn-white-outline" href="localizacao.html" data-translate="menu_location">Localização</a>
             </div>
-			
+
             <div class="language-selector-nav">
               <div class="language-dropdown">
                 <div class="language-current" id="currentLanguage">
@@ -534,11 +799,11 @@
               </div>
             </div>
         </div>
-		
+
       </nav>
     </header>
 <div class="content-wrapper">
-    
+
   <style>
     /* Novo Seletor de Idiomas */
 .language-selector-nav {
@@ -635,17 +900,17 @@
     margin-top: 15px;
     justify-content: center;
   }
-  
+
   .language-dropdown-content {
     right: auto;
     left: 0;
   }
 }
   </style>
-  
+
 
     <!-- Hero Section -->
-    
+
 <!-- SLIDER PROFISSIONAL SEM CORTAR CABEÇA -->
 <style>
   .cinema-slider {
@@ -790,7 +1055,7 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
         </div>
       </section>
-    
+
       <!-- Seção Umbanda -->
       <section class="content-section card p-4 mb-4">
         <div class="row align-items-center">
@@ -807,7 +1072,7 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
         </div>
       </section>
-    
+
       <!-- Seção Quimbanda -->
       <section class="content-section card p-4 mb-4">
         <div class="row align-items-center">
@@ -824,7 +1089,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
       </section>
     </div>
-	
+
 
     <!-- Rodapé -->
     <footer>
@@ -839,28 +1104,74 @@ document.addEventListener("DOMContentLoaded", () => {
   </div>
 
   <!-- Botão Flutuante de Redes Sociais -->
-  <div class="social-float-container">
-    <div class="social-main-button" id="mainButton">
+  <div class="social-float-container" id="socialFloat">
+    <button class="social-main-button" id="mainButton" type="button" aria-label="Abrir atendimento" aria-controls="socialButtons" aria-expanded="false">
       <i class="fas fa-comment-dots"></i>
-    </div>
-    
-    <div class="social-buttons" id="socialButtons">
-      <div class="social-button whatsapp" id="whatsappButton">
-        <i class="fab fa-whatsapp"></i>
+    </button>
+
+    <div class="social-buttons" id="socialButtons" aria-hidden="true">
+      <div class="social-panel-header">
+        <div>
+          <strong class="social-panel-title">Atendimento</strong>
+          <span class="social-panel-subtitle">Agenda de 2026 e redes sociais.</span>
+        </div>
+        <button class="social-panel-close" id="socialPanelClose" type="button" aria-label="Fechar atendimento">
+          <i class="fas fa-times"></i>
+        </button>
       </div>
-      <div class="social-button instagram" id="instagramButton">
-        <i class="fab fa-instagram"></i>
+      <div class="social-menu social-panel-view is-active" id="socialMenuView">
+        <button class="social-menu-item agenda" id="openAgendaButton" type="button">
+          <span class="social-menu-icon"><i class="fas fa-calendar-days"></i></span>
+          <span class="social-menu-copy">
+            <strong>Agenda 2026</strong>
+            <span>Ver datas e agendar consulta</span>
+          </span>
+        </button>
+        <button class="social-menu-item instagram" id="instagramButton" type="button">
+          <span class="social-menu-icon"><i class="fab fa-instagram"></i></span>
+          <span class="social-menu-copy">
+            <strong>Instagram</strong>
+            <span>Ver fotos, agenda e novidades</span>
+          </span>
+        </button>
+        <button class="social-menu-item facebook" id="facebookButton" type="button">
+          <span class="social-menu-icon"><i class="fab fa-facebook-f"></i></span>
+          <span class="social-menu-copy">
+            <strong>Facebook</strong>
+            <span>Acompanhar a página oficial</span>
+          </span>
+        </button>
+        <a class="social-menu-item contact" href="contato.html">
+          <span class="social-menu-icon"><i class="fas fa-address-book"></i></span>
+          <span class="social-menu-copy">
+            <strong>Contato</strong>
+            <span>Endereço e informações de atendimento</span>
+          </span>
+        </a>
       </div>
-      <div class="social-button facebook" id="facebookButton">
-        <i class="fab fa-facebook-f"></i>
+      <div class="social-agenda-view social-panel-view" id="socialAgendaView" aria-hidden="true">
+        <div class="social-agenda-toolbar">
+          <button class="social-agenda-back" id="agendaBackButton" type="button">
+            <i class="fas fa-arrow-left"></i>
+            <span>Menu</span>
+          </button>
+          <a class="social-agenda-full" href="agenda.html">
+            <i class="fas fa-up-right-from-square"></i>
+            <span>Completa</span>
+          </a>
+        </div>
+        <div class="social-agenda-heading">
+          <strong>Agenda 2026</strong>
+          <span>Datas da agenda oficial do site.</span>
+        </div>
+        <div class="social-agenda-content" id="agendaContent">
+          <p class="social-agenda-loading">Carregando agenda...</p>
+        </div>
+        <button class="social-agenda-whatsapp" id="agendaWhatsappButton" type="button">
+          <i class="fab fa-whatsapp"></i>
+          <span>Agendar pelo WhatsApp</span>
+        </button>
       </div>
-    </div>
-    
-    <div class="chat-bubble" id="chatBubble">
-      <p data-translate="chat_message">Oi! Filho Como posso te ajudar?</p>
-      <button class="whatsapp-chat-btn" id="startChat">
-        <i class="fab fa-whatsapp"></i> <span data-translate="chat_button">Iniciar Conversa</span>
-      </button>
     </div>
   </div>
 
@@ -870,80 +1181,160 @@ document.addEventListener("DOMContentLoaded", () => {
     // Configuração do botão de redes sociais
     const mainButton = document.getElementById('mainButton');
     const socialButtons = document.getElementById('socialButtons');
-    const whatsappButton = document.getElementById('whatsappButton');
+    const socialFloat = document.getElementById('socialFloat');
+    const socialPanelClose = document.getElementById('socialPanelClose');
+    const socialMenuView = document.getElementById('socialMenuView');
+    const socialAgendaView = document.getElementById('socialAgendaView');
+    const openAgendaButton = document.getElementById('openAgendaButton');
+    const agendaBackButton = document.getElementById('agendaBackButton');
+    const agendaContent = document.getElementById('agendaContent');
+    const agendaWhatsappButton = document.getElementById('agendaWhatsappButton');
     const instagramButton = document.getElementById('instagramButton');
     const facebookButton = document.getElementById('facebookButton');
-    const chatBubble = document.getElementById('chatBubble');
-    const startChat = document.getElementById('startChat');
-    
-    // Toggle dos botões sociais
+    const whatsappPhone = '5551981053880';
+    let agendaLoaded = false;
+
+    function setSocialPanel(open) {
+      mainButton.classList.toggle('active', open);
+      socialButtons.classList.toggle('active', open);
+      mainButton.setAttribute('aria-expanded', String(open));
+      socialButtons.setAttribute('aria-hidden', String(!open));
+    }
+
+    function showSocialMenu() {
+      socialButtons.classList.remove('is-agenda-open');
+      socialMenuView.classList.add('is-active');
+      socialAgendaView.classList.remove('is-active');
+      socialAgendaView.setAttribute('aria-hidden', 'true');
+    }
+
+    function showAgendaView() {
+      socialButtons.classList.add('is-agenda-open');
+      socialMenuView.classList.remove('is-active');
+      socialAgendaView.classList.add('is-active');
+      socialAgendaView.setAttribute('aria-hidden', 'false');
+      loadAgendaFromSite();
+    }
+
+    function closeSocialPanel() {
+      setSocialPanel(false);
+      showSocialMenu();
+    }
+
+    function openWhatsApp(message) {
+      window.open(`https://wa.me/${whatsappPhone}?text=${encodeURIComponent(message)}`, '_blank');
+      closeSocialPanel();
+    }
+
+    function getScheduleMessage() {
+      return currentLanguage === 'pt'
+        ? 'Olá, gostaria de agendar uma consulta na agenda de 2026.'
+        : 'Hola, me gustaría agendar una consulta en la agenda de 2026.';
+    }
+
+    async function loadAgendaFromSite() {
+      if (agendaLoaded) return;
+
+      agendaContent.innerHTML = '<p class="social-agenda-loading">Carregando agenda...</p>';
+
+      try {
+        const response = await fetch('agenda.html');
+        if (!response.ok) {
+          throw new Error('Agenda indisponível');
+        }
+
+        const html = await response.text();
+        const doc = new DOMParser().parseFromString(html, 'text/html');
+        const monthCards = Array.from(doc.querySelectorAll('.month-card'));
+
+        if (!monthCards.length) {
+          throw new Error('Agenda vazia');
+        }
+
+        agendaContent.replaceChildren(...monthCards.map(card => card.cloneNode(true)));
+        agendaLoaded = true;
+      } catch (error) {
+        agendaContent.innerHTML = `
+          <p class="social-agenda-empty">
+            Não foi possível carregar a agenda aqui.
+            <a href="agenda.html">Abrir agenda completa</a>
+          </p>
+        `;
+      }
+    }
+
+    // Toggle do painel social
     mainButton.addEventListener('click', function(e) {
       createRipple(e);
-      this.classList.toggle('active');
-      socialButtons.classList.toggle('active');
-      
-      if (chatBubble.classList.contains('active')) {
-        chatBubble.classList.remove('active');
+      if (socialButtons.classList.contains('active')) {
+        closeSocialPanel();
+      } else {
+        setSocialPanel(true);
       }
     });
-    
-    // WhatsApp - mostra o balão de chat
-    whatsappButton.addEventListener('click', function(e) {
+
+    socialPanelClose.addEventListener('click', function(e) {
       createRipple(e);
-      chatBubble.classList.toggle('active');
-      mainButton.classList.remove('active');
-      socialButtons.classList.remove('active');
+      closeSocialPanel();
     });
-    
+
+    openAgendaButton.addEventListener('click', function(e) {
+      createRipple(e);
+      showAgendaView();
+    });
+
+    agendaBackButton.addEventListener('click', function(e) {
+      createRipple(e);
+      showSocialMenu();
+    });
+
+    agendaWhatsappButton.addEventListener('click', function(e) {
+      createRipple(e);
+      openWhatsApp(getScheduleMessage());
+    });
+
     // Instagram - redireciona
     instagramButton.addEventListener('click', function(e) {
       createRipple(e);
       window.open('https://www.instagram.com/pai.cristian?igsh=MWNjcmRmNmwwbnFw', '_blank');
-      mainButton.classList.remove('active');
-      socialButtons.classList.remove('active');
+      closeSocialPanel();
     });
-    
+
     // Facebook - redireciona
     facebookButton.addEventListener('click', function(e) {
       createRipple(e);
       window.open('https://www.facebook.com/profile.php?id=61578714110966&locale=pt_BR', '_blank');
-      mainButton.classList.remove('active');
-      socialButtons.classList.remove('active');
+      closeSocialPanel();
     });
-    
-    // Iniciar chat no WhatsApp
-    startChat.addEventListener('click', function(e) {
-      createRipple(e);
-      const phone = '5551981053880';
-      const message = getTranslation('whatsapp_message', currentLanguage);
-      window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, '_blank');
-      chatBubble.classList.remove('active');
-    });
-    
+
     // Fecha ao clicar fora
     document.addEventListener('click', function(e) {
-      if (!e.target.closest('.social-float-container')) {
-        mainButton.classList.remove('active');
-        socialButtons.classList.remove('active');
-        chatBubble.classList.remove('active');
+      if (!socialFloat.contains(e.target)) {
+        closeSocialPanel();
       }
     });
-    
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeSocialPanel();
+      }
+    });
+
     // Efeito ripple
     function createRipple(event) {
       const btn = event.currentTarget;
       const circle = document.createElement('span');
       circle.classList.add('ripple');
-      
+
       const diameter = Math.max(btn.clientWidth, btn.clientHeight);
       const radius = diameter / 2;
-      
+
       circle.style.width = circle.style.height = `${diameter}px`;
       circle.style.left = `${event.clientX - btn.getBoundingClientRect().left - radius}px`;
       circle.style.top = `${event.clientY - btn.getBoundingClientRect().top - radius}px`;
-      
+
       btn.appendChild(circle);
-      
+
       setTimeout(() => {
         circle.remove();
       }, 600);
@@ -1045,7 +1436,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const key = element.getAttribute('data-translate');
         element.textContent = getTranslation(key, lang);
       });
-      
+
       // Atualizar a classe ativa das bandeiras
       document.querySelectorAll('.language-flag').forEach(flag => {
         if (flag.getAttribute('data-lang') === lang) {
@@ -1061,7 +1452,7 @@ document.querySelectorAll('.language-option').forEach(option => {
   option.addEventListener('click', function() {
     const lang = this.getAttribute('data-lang');
     translatePage(lang);
-    
+
     // Atualiza o seletor atual
     const flagImg = this.querySelector('img').src;
     const langText = this.querySelector('span').textContent;
@@ -1078,7 +1469,7 @@ function translatePage(lang) {
     const key = element.getAttribute('data-translate');
     element.textContent = getTranslation(key, lang);
   });
-  
+
   // Atualizar a bandeira atual baseada no idioma
   const currentLangElement = document.getElementById('currentLanguage');
   const flagMap = {
@@ -1086,7 +1477,7 @@ function translatePage(lang) {
     'es-uy': { src: 'https://flagcdn.com/w20/uy.png', text: 'ES' },
     'es-py': { src: 'https://flagcdn.com/w20/py.png', text: 'ES' }
   };
-  
+
   if (flagMap[lang]) {
     currentLangElement.querySelector('img').src = flagMap[lang].src;
     currentLangElement.querySelector('span').textContent = flagMap[lang].text;
