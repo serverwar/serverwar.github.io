@@ -54,13 +54,18 @@
 
     .agenda-hero {
       position: relative;
+      isolation: isolate;
       overflow: hidden;
-      padding: clamp(3.5rem, 8vw, 5.5rem) 0 2.5rem;
+      padding: clamp(3rem, 7vw, 4.8rem) 0 2.4rem;
       background:
-        linear-gradient(90deg, rgba(18, 10, 6, 0.9) 0%, rgba(18, 10, 6, 0.62) 52%, rgba(18, 10, 6, 0.24) 100%),
-        linear-gradient(180deg, rgba(18, 10, 6, 0.08), rgba(18, 10, 6, 0.74)),
-        url('assets/images/consulta-cristian.png') center 40%/cover no-repeat;
+        radial-gradient(circle at 78% 18%, rgba(252, 163, 17, 0.28), transparent 30%),
+        radial-gradient(circle at 18% 88%, rgba(5, 189, 107, 0.16), transparent 28%),
+        linear-gradient(135deg, #160d08 0%, #2b1a11 48%, #74420e 100%);
       color: #ffffff;
+    }
+
+    .agenda-hero::before {
+      display: none;
     }
 
     .agenda-hero::after {
@@ -70,11 +75,36 @@
       height: 30%;
       background: linear-gradient(180deg, transparent, #fffaf1);
       pointer-events: none;
+      z-index: 1;
+    }
+
+    .agenda-hero-figure {
+      position: absolute;
+      right: clamp(1rem, 7vw, 7rem);
+      bottom: -0.6rem;
+      width: min(30vw, 360px);
+      max-width: 38%;
+      height: auto;
+      z-index: 1;
+      pointer-events: none;
+      filter: drop-shadow(0 28px 42px rgba(0, 0, 0, 0.36));
+      animation: agendaFigureFloat 6.5s ease-in-out infinite;
     }
 
     .agenda-hero .container {
       position: relative;
-      z-index: 1;
+      z-index: 2;
+    }
+
+    @keyframes agendaFigureFloat {
+      0%,
+      100% {
+        transform: translate3d(0, 0, 0) rotate(-1deg);
+      }
+
+      50% {
+        transform: translate3d(0, -12px, 0) rotate(1deg);
+      }
     }
 
     .agenda-kicker {
@@ -97,7 +127,7 @@
       margin: 0;
       color: #ffffff;
       font-family: 'Marcellus', serif;
-      font-size: clamp(3rem, 8vw, 6rem);
+      font-size: clamp(2.85rem, 6vw, 5rem);
       line-height: 0.95;
       text-shadow: 0 10px 35px rgba(0, 0, 0, 0.55);
     }
@@ -117,7 +147,7 @@
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 0.85rem;
       margin-top: 1.6rem;
-      max-width: 920px;
+      max-width: 860px;
     }
 
     .agenda-meta-card {
@@ -150,6 +180,20 @@
       z-index: 2;
       margin-top: -1rem;
       padding-top: 2rem;
+    }
+
+    @media (min-width: 769px) and (max-width: 1199.98px) {
+      .agenda-hero-figure {
+        right: -2.8rem;
+        bottom: 0.2rem;
+        width: 260px;
+        max-width: none;
+        opacity: 0.32;
+      }
+
+      .agenda-subtitle {
+        max-width: 610px;
+      }
     }
 
     /* Navbar Customizada */
@@ -277,6 +321,20 @@
         padding: 3.8rem 0 2.6rem;
       }
 
+      .agenda-hero::before {
+        right: -5rem;
+        width: 210px;
+        opacity: 0.2;
+      }
+
+      .agenda-hero-figure {
+        right: -3.8rem;
+        bottom: 0.3rem;
+        width: 210px;
+        max-width: none;
+        opacity: 0.28;
+      }
+
       .agenda-meta-grid {
         grid-template-columns: 1fr;
       }
@@ -332,6 +390,7 @@
 
   <main class="agenda-page">
     <section class="agenda-hero">
+      <img class="agenda-hero-figure" src="assets/images/agenda-oxala-pedras.png" alt="" aria-hidden="true">
       <div class="container">
         <span class="agenda-kicker"><i class="fas fa-calendar-days"></i> Calendário da casa</span>
         <h1 class="agenda-title">Agenda 2026</h1>
