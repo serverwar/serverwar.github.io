@@ -37,14 +37,15 @@
 
     body {
       font-family: 'Bellota Text', sans-serif;
-      background: #f5f2ee url('assets/images/loxefotografia-205.jpg') center/cover fixed no-repeat;
+      background: #fffaf1;
       color: var(--dark-color);
     }
 
     .page-shell {
       min-height: 100vh;
-      background: rgba(255, 255, 255, 0.9);
-      backdrop-filter: blur(5px);
+      background:
+        radial-gradient(circle at 8% 8%, rgba(252, 163, 17, 0.1), transparent 28%),
+        linear-gradient(180deg, #fffaf1 0%, #f7efe5 100%);
     }
 
     .navbar {
@@ -125,43 +126,175 @@
     }
 
     .history-hero {
-      min-height: 46vh;
+      position: relative;
+      min-height: 560px;
       display: grid;
       align-items: end;
-      padding: 6rem 0 4rem;
+      padding: 7rem 0 5rem;
       color: #ffffff;
+      overflow: hidden;
       background:
-        linear-gradient(rgba(20, 12, 8, 0.55), rgba(20, 12, 8, 0.78)),
-        url('assets/images/loxefotografia-18.jpg') top center/cover no-repeat;
+        linear-gradient(90deg, rgba(20, 12, 8, 0.92) 0%, rgba(20, 12, 8, 0.62) 48%, rgba(20, 12, 8, 0.22) 100%),
+        linear-gradient(180deg, rgba(20, 12, 8, 0.12) 0%, rgba(20, 12, 8, 0.72) 100%),
+        url('assets/images/consulta-presencial-cristian.png') center 38%/cover no-repeat;
+    }
+
+    .history-hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 34%;
+      background: linear-gradient(180deg, transparent, #fffaf1);
+      pointer-events: none;
+    }
+
+    .history-hero .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .history-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+      padding: 0.52rem 0.9rem;
+      border-radius: 999px;
+      background: rgba(5, 189, 107, 0.18);
+      color: #ffffff;
+      font-size: 0.9rem;
+      font-weight: 900;
+      line-height: 1;
+      text-transform: uppercase;
+      box-shadow: inset 0 0 0 1px rgba(5, 189, 107, 0.34);
     }
 
     .history-hero h1 {
+      max-width: 820px;
       font-family: 'Marcellus', serif;
-      font-size: clamp(2.6rem, 6vw, 4.8rem);
-      line-height: 1;
-      margin-bottom: 0.75rem;
-      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.45);
+      font-size: clamp(3rem, 7vw, 6.5rem);
+      line-height: 0.95;
+      margin: 0;
+      text-shadow: 0 10px 35px rgba(0, 0, 0, 0.5);
     }
 
     .history-hero p {
-      max-width: 660px;
-      margin: 0;
+      max-width: 760px;
+      margin: 1rem 0 0;
       color: #f8e6b1;
-      font-size: 1.2rem;
+      font-size: clamp(1.08rem, 2vw, 1.35rem);
+      font-weight: 800;
       line-height: 1.55;
-      text-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+      text-shadow: 0 5px 20px rgba(0, 0, 0, 0.6);
+    }
+
+    .history-hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 1.6rem;
+    }
+
+    .history-hero-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      min-height: 50px;
+      padding: 0.85rem 1.25rem;
+      border-radius: 999px;
+      background: #05bd6b;
+      color: #ffffff;
+      font-weight: 900;
+      text-decoration: none;
+      text-transform: uppercase;
+      box-shadow: 0 0 0 5px rgba(5, 189, 107, 0.2);
+    }
+
+    .history-hero-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 0.85rem 1.15rem;
+      border-radius: 999px;
+      color: #ffffff;
+      font-weight: 900;
+      text-decoration: none;
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.28);
+      background: rgba(255, 255, 255, 0.1);
     }
 
     .history-content {
-      padding: 4rem 0;
+      padding: 0 0 4rem;
+    }
+
+    .history-overview {
+      position: relative;
+      z-index: 2;
+      margin-top: -3.2rem;
+      margin-bottom: 3rem;
+    }
+
+    .history-overview-panel {
+      padding: clamp(1.25rem, 3vw, 2rem);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.96);
+      box-shadow: 0 26px 70px rgba(64, 38, 18, 0.16);
+    }
+
+    .history-overview-title {
+      margin: 0 0 1rem;
+      color: var(--primary-color);
+      font-family: 'Marcellus', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.05;
+    }
+
+    .history-overview-text {
+      margin: 0;
+      color: #5a4737;
+      font-size: 1.08rem;
+      font-weight: 800;
+      line-height: 1.75;
+    }
+
+    .history-timeline {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0.85rem;
+      margin-top: 1.35rem;
+    }
+
+    .history-step {
+      padding: 1rem;
+      border-left: 3px solid #05bd6b;
+      border-radius: 12px;
+      background: #fffaf1;
+    }
+
+    .history-step strong {
+      display: block;
+      color: var(--primary-color);
+      font-family: 'Marcellus', serif;
+      font-size: 1.45rem;
+      line-height: 1;
+    }
+
+    .history-step span {
+      display: block;
+      margin-top: 0.55rem;
+      color: #5a4737;
+      font-weight: 800;
+      line-height: 1.45;
     }
 
     .history-card {
-      background: rgba(255, 255, 255, 0.92);
+      background: rgba(255, 255, 255, 0.96);
       border: 1px solid rgba(126, 74, 19, 0.12);
-      border-radius: 8px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-      margin-bottom: 2rem;
+      border-radius: 18px;
+      box-shadow: 0 22px 56px rgba(64, 38, 18, 0.12);
+      margin-bottom: 1.6rem;
       overflow: hidden;
     }
 
@@ -177,6 +310,20 @@
       font-family: 'Marcellus', serif;
       font-size: clamp(2rem, 4vw, 2.8rem);
       font-weight: 700;
+    }
+
+    .history-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      margin-bottom: 0.75rem;
+      padding: 0.45rem 0.75rem;
+      border-radius: 999px;
+      background: rgba(5, 189, 107, 0.12);
+      color: #047c49;
+      font-size: 0.84rem;
+      font-weight: 900;
+      text-transform: uppercase;
     }
 
     .history-title:after {
@@ -195,13 +342,24 @@
       font-size: 1.08rem;
       line-height: 1.8;
       margin-bottom: 1rem;
+      font-weight: 700;
     }
 
     .history-image {
       width: 100%;
       height: 100%;
-      min-height: 320px;
+      min-height: 380px;
       object-fit: cover;
+      object-position: center top;
+      filter: saturate(1.06) contrast(1.04);
+    }
+
+    .history-card:nth-of-type(2) .history-image {
+      object-position: center 20%;
+    }
+
+    .history-card:nth-of-type(3) .history-image {
+      object-position: center center;
     }
 
     footer {
@@ -226,26 +384,57 @@
       }
 
       .history-hero {
-        min-height: 38vh;
-        padding: 4rem 0 3rem;
+        min-height: 520px;
+        padding: 4rem 0 4rem;
+        background-position: center top;
       }
 
       .history-content {
-        padding: 2rem 0;
+        padding: 0 0 2.5rem;
+      }
+
+      .history-timeline {
+        grid-template-columns: 1fr;
       }
 
       .history-image {
-        min-height: 260px;
+        min-height: 300px;
+      }
+
+      .history-hero-actions {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .history-hero-button,
+      .history-hero-link {
+        width: 100%;
       }
     }
   </style>
   <link rel="stylesheet" href="assets/theme/css/site-menu.css">
   <link rel="stylesheet" href="assets/theme/css/site-polish.css">
+  <style>
+    .history-hero p {
+      color: #fff3c4;
+      font-size: clamp(1.08rem, 2vw, 1.35rem);
+      font-weight: 900;
+      line-height: 1.55;
+      text-shadow: 0 5px 20px rgba(0, 0, 0, 0.7);
+    }
+
+    @media (max-width: 768px) {
+      .history-hero p {
+        color: #fff6d4;
+        font-size: 1.03rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="page-shell">
         <header class="site-header sticky-top">
-    <nav class="navbar navbar-expand-xl site-nav" aria-label="Menu principal">
+    <nav class="navbar navbar-expand-md site-nav" aria-label="Menu principal">
       <div class="container-fluid px-3 px-lg-4">
         <a class="site-brand" href="index.html" aria-label="Cristian D'Oxal&aacute; - In&iacute;cio">
           <span class="site-brand-mark"><i class="fas fa-dove"></i></span>
@@ -255,7 +444,7 @@
           <span class="site-menu-toggle-bars" aria-hidden="true"><span></span><span></span><span></span></span>
         </button>
         <div class="collapse navbar-collapse site-menu-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav site-menu-list ms-auto mb-2 mb-xl-0">
+          <ul class="navbar-nav site-menu-list ms-auto mb-2 mb-md-0">
               <li class="nav-item"><a class="nav-link site-menu-link" href="index.html"><i class="fas fa-house"></i><span>In&iacute;cio</span></a></li>
               <li class="nav-item"><a class="nav-link site-menu-link active" href="historia.html" aria-current="page"><i class="fas fa-book-open"></i><span>Hist&oacute;ria</span></a></li>
               <li class="nav-item"><a class="nav-link site-menu-link" href="registros_fe.html"><i class="fas fa-hands-praying"></i><span>Registros da F&eacute;</span></a></li>
@@ -276,21 +465,43 @@
     <main>
       <section class="history-hero">
         <div class="container">
-          <h1>Hist&oacute;ria</h1>
-          <p>A caminhada espiritual de Cristian D'Oxal&aacute; na Na&ccedil;&atilde;o, Umbanda e Quimbanda.</p>
+          <span class="history-kicker"><i class="fas fa-dove"></i> Cristian D'Oxal&aacute;</span>
+          <h1>Hist&oacute;ria de f&eacute; e fundamento</h1>
+          <p>A caminhada espiritual de Cristian D'Oxal&aacute; na Na&ccedil;&atilde;o, Umbanda e Quimbanda, marcada por ax&eacute;, aprendizado e compromisso com a orienta&ccedil;&atilde;o espiritual.</p>
+          <div class="history-hero-actions">
+            <a class="history-hero-button" href="https://wa.me/5551981053880?text=Ol%C3%A1%2C%20gostaria%20de%20conhecer%20mais%20sobre%20a%20hist%C3%B3ria%20e%20agendar%20uma%20consulta%20com%20Cristian%20D%27Oxal%C3%A1." target="_blank" rel="noopener">
+              <i class="fab fa-whatsapp"></i>
+              Agendar consulta
+            </a>
+            <a class="history-hero-link" href="#trajetoria">Conhecer a trajet&oacute;ria</a>
+          </div>
         </div>
       </section>
 
       <section class="history-content">
         <div class="container">
+          <div class="history-overview" id="trajetoria">
+            <div class="history-overview-panel">
+              <h2 class="history-overview-title">Uma trajet&oacute;ria guiada pelo ax&eacute;</h2>
+              <p class="history-overview-text">A hist&oacute;ria de Cristian D'Oxal&aacute; re&uacute;ne viv&ecirc;ncias, inicia&ccedil;&otilde;es e compromissos espirituais constru&iacute;dos ao longo dos anos. Cada etapa fortaleceu sua miss&atilde;o de acolher, orientar e trabalhar com seriedade dentro da Na&ccedil;&atilde;o, Umbanda e Quimbanda.</p>
+              <div class="history-timeline" aria-label="Linha do tempo da caminhada espiritual">
+                <div class="history-step"><strong>2005</strong><span>Primeiro contato com a Umbanda e in&iacute;cio da caminhada religiosa.</span></div>
+                <div class="history-step"><strong>2007</strong><span>Consagra&ccedil;&atilde;o na Quimbanda com Exu Rei e Rainha das 7 Encruzilhadas.</span></div>
+                <div class="history-step"><strong>2008</strong><span>Cacicamento na Umbanda sob a vibra&ccedil;&atilde;o de Pai Xang&ocirc; da Pedreira.</span></div>
+                <div class="history-step"><strong>Hoje</strong><span>Atendimento espiritual presencial e online com jogo de b&uacute;zios e cartas.</span></div>
+              </div>
+            </div>
+          </div>
+
           <article class="history-card" id="nacao">
             <div class="row g-0 align-items-stretch">
               <div class="col-lg-8">
                 <div class="history-copy">
+                  <span class="history-label"><i class="fas fa-drum"></i> Fundamento ancestral</span>
                   <h2 class="history-title">Na&ccedil;&atilde;o</h2>
-                  <p><strong>Babalorix&aacute; Cristian d'Oxal&aacute; teve seu in&iacute;cio religioso em 2005, quando teve o primeiro contato com a Umbanda, dando in&iacute;cio &agrave; sua jornada espiritual.</strong></p>
-                  <p><strong>No mesmo ano, ingressou na Quimbanda e tamb&eacute;m na Na&ccedil;&atilde;o de Oy&oacute;, onde foi iniciado pela Iy&aacute;lorix&aacute; Irede de Oxum doc&ocirc;, vinculada &agrave; Bacia da V&oacute; Olga de Xapan&atilde; Onibar&uacute;.</strong></p>
-                  <p><strong>Na Na&ccedil;&atilde;o de Oy&oacute;, ele recebeu importantes fundamentos e ensinamentos ritual&iacute;sticos, consolidando sua forma&ccedil;&atilde;o. Ao longo de sua trajet&oacute;ria, seu Orix&aacute; o conduziu por outros ax&eacute;s, onde absorveu conhecimentos e experi&ecirc;ncias enriquecedoras, ampliando sua sabedoria e conex&atilde;o espiritual.</strong></p>
+                  <p>Babalorix&aacute; Cristian d'Oxal&aacute; teve seu in&iacute;cio religioso em 2005, quando teve o primeiro contato com a Umbanda, dando in&iacute;cio &agrave; sua jornada espiritual.</p>
+                  <p>No mesmo ano, ingressou na Quimbanda e tamb&eacute;m na Na&ccedil;&atilde;o de Oy&oacute;, onde foi iniciado pela Iy&aacute;lorix&aacute; Irede de Oxum doc&ocirc;, vinculada &agrave; Bacia da V&oacute; Olga de Xapan&atilde; Onibar&uacute;.</p>
+                  <p>Na Na&ccedil;&atilde;o de Oy&oacute;, recebeu importantes fundamentos e ensinamentos ritual&iacute;sticos, consolidando sua forma&ccedil;&atilde;o. Ao longo de sua trajet&oacute;ria, seu Orix&aacute; o conduziu por outros ax&eacute;s, ampliando sua sabedoria e conex&atilde;o espiritual.</p>
                 </div>
               </div>
               <div class="col-lg-4">
@@ -306,6 +517,7 @@
               </div>
               <div class="col-lg-8 order-lg-2 order-1">
                 <div class="history-copy">
+                  <span class="history-label"><i class="fas fa-hands-praying"></i> Coroa e miss&atilde;o</span>
                   <h2 class="history-title">Umbanda</h2>
                   <p>Na <strong>Umbanda</strong>, meu cacicamento ocorreu em 28/01/2008, marcando um momento importante na minha caminhada espiritual. Minha coroa&ccedil;&atilde;o foi realizada sob a vibra&ccedil;&atilde;o de Pai Xang&ocirc; da Pedreira, que guia e fortalece minha miss&atilde;o.</p>
                   <p>Sou filho de <strong>Preto Velho</strong>, com a b&ecirc;n&ccedil;&atilde;o e sabedoria de <strong>Vov&ocirc; Benedito</strong> das Almas, que me ensina a humildade e a cura. Tamb&eacute;m sou filho de <strong>Cosme</strong>, representado pela inoc&ecirc;ncia e alegria de Luizinho - 3 anos, e filho de Cigano, sob a orienta&ccedil;&atilde;o de <strong>Cigano Cortez</strong> e <strong>Cigana Carmensita</strong>, que trazem luz e dire&ccedil;&atilde;o em minha jornada.</p>
@@ -319,9 +531,10 @@
             <div class="row g-0 align-items-stretch">
               <div class="col-lg-8">
                 <div class="history-copy">
+                  <span class="history-label"><i class="fas fa-road"></i> For&ccedil;a e caminhos</span>
                   <h2 class="history-title">Quimbanda</h2>
-                  <p><strong>Na Quimbanda, recebi o Abass&ecirc; de Exu Rei das 7 Encruzilhadas e Rainha das 7 Encruzilhadas, entidades poderosas que regem os caminhos e abrem os mist&eacute;rios da vida.</strong></p>
-                  <p><strong>Minha feitura foi realizada em 30/07/2007, um marco sagrado que consagrou minha liga&ccedil;&atilde;o com as for&ccedil;as da esquerda e minha miss&atilde;o dentro dessa corrente espiritual.</strong></p>
+                  <p>Na Quimbanda, recebi o Abass&ecirc; de Exu Rei das 7 Encruzilhadas e Rainha das 7 Encruzilhadas, entidades poderosas que regem os caminhos e abrem os mist&eacute;rios da vida.</p>
+                  <p>Minha feitura foi realizada em 30/07/2007, um marco sagrado que consagrou minha liga&ccedil;&atilde;o com as for&ccedil;as da esquerda e minha miss&atilde;o dentro dessa corrente espiritual.</p>
                 </div>
               </div>
               <div class="col-lg-4">

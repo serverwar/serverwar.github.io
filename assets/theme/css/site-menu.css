@@ -185,7 +185,84 @@
   box-shadow: 0 0 0 4px rgba(5, 189, 107, 0.24);
 }
 
-@media (max-width: 1199.98px) {
+@media (min-width: 768px) and (max-width: 1299.98px) {
+  .site-header .site-nav {
+    min-height: 70px;
+    padding: 0.55rem 0;
+  }
+
+  .site-header .site-brand {
+    gap: 0.55rem;
+    font-size: 1.35rem;
+  }
+
+  .site-header .site-brand-mark {
+    width: 34px;
+    height: 34px;
+  }
+
+  .site-header .site-menu-collapse {
+    gap: 0.45rem;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .site-header .site-menu-list {
+    gap: 0.12rem;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .site-header .site-menu-link {
+    min-height: 36px;
+    padding: 0.45rem 0.48rem !important;
+    font-size: 0.82rem;
+  }
+
+  .site-header .site-menu-link i {
+    font-size: 0.78rem;
+  }
+
+  .site-header .site-menu-actions {
+    gap: 0.35rem;
+    margin-left: 0.15rem;
+  }
+
+  .site-header .site-action-link {
+    min-height: 38px;
+    padding: 0.55rem 0.7rem;
+    font-size: 0.82rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1099.98px) {
+  .site-header .site-brand {
+    font-size: 1.2rem;
+  }
+
+  .site-header .site-brand-mark {
+    width: 32px;
+    height: 32px;
+  }
+
+  .site-header .site-menu-link {
+    min-height: 34px;
+    padding: 0.42rem 0.38rem !important;
+    font-size: 0.76rem;
+  }
+
+  .site-header .site-menu-link i {
+    font-size: 0.72rem;
+  }
+
+  .site-header .site-action-link {
+    min-height: 36px;
+    padding: 0.48rem 0.58rem;
+    font-size: 0.76rem;
+  }
+}
+
+@media (max-width: 767.98px) {
   .site-header .site-nav {
     min-height: 72px;
   }

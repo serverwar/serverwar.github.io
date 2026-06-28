@@ -27,6 +27,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bellota+Text:wght@300;400;700&family=Marcellus&display=swap" rel="stylesheet">
+
   <style>
     :root {
       --primary-color: #7e4a13;
@@ -34,217 +35,276 @@
       --dark-color: #1a1a2e;
       --light-color: #f8f9fa;
       --accent-color: #fca311;
+      --green-color: #05bd6b;
     }
-    
+
     body {
       font-family: 'Bellota Text', sans-serif;
-      background-color: #f5f5f5;
+      background: #fffaf1;
       color: var(--dark-color);
       scroll-behavior: smooth;
     }
-    
-    /* Navbar */
-    .navbar {
-      background: linear-gradient(135deg, var(--dark-color) 0%, var(--primary-color) 100%);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-      padding: 1rem 0;
-    }
-    
-    .navbar-brand a {
-      font-family: 'Marcellus', serif;
-      font-weight: 700;
-      font-size: 1.8rem;
-      background: linear-gradient(to right, #fff 0%, var(--accent-color) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-decoration: none;
-    }
-    
-    .nav-link {
-      font-weight: 500;
-      margin: 0 0.5rem;
+
+    .thanks-hero {
       position: relative;
-      color: white !important;
+      min-height: 460px;
+      display: grid;
+      align-items: end;
+      padding: 6rem 0 4rem;
+      color: #ffffff;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(22, 13, 7, 0.9) 0%, rgba(22, 13, 7, 0.64) 48%, rgba(22, 13, 7, 0.32) 100%),
+        url('assets/images/consulta-presencial-cristian.png') center 36%/cover no-repeat;
     }
-    
-    .nav-link:after {
-      content: '';
+
+    .thanks-hero::after {
+      content: "";
       position: absolute;
-      width: 0;
-      height: 2px;
-      bottom: 0;
-      left: 0;
-      background-color: var(--accent-color);
-      transition: width 0.3s ease;
+      inset: auto 0 0;
+      height: 42%;
+      background: linear-gradient(180deg, transparent, rgba(255, 250, 241, 1));
+      pointer-events: none;
     }
-    
-    .nav-link:hover:after {
-      width: 100%;
+
+    .thanks-hero .container {
+      position: relative;
+      z-index: 1;
     }
-    
-    .hamburger span {
-      background-color: white;
-      height: 3px;
-      width: 25px;
-      margin: 4px 0;
-      display: block;
-      transition: all 0.3s ease;
+
+    .thanks-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      margin-bottom: 1rem;
+      padding: 0.5rem 0.85rem;
+      border-radius: 999px;
+      background: rgba(5, 189, 107, 0.18);
+      color: #ffffff;
+      font-size: 0.9rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      box-shadow: inset 0 0 0 1px rgba(5, 189, 107, 0.34);
     }
-    
-    .navbar-toggler[aria-expanded="true"] .hamburger span:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px);
+
+    .thanks-hero h1 {
+      max-width: 760px;
+      margin: 0;
+      font-family: 'Marcellus', serif;
+      font-size: clamp(3rem, 7vw, 6.2rem);
+      line-height: 0.95;
+      text-shadow: 0 10px 35px rgba(0, 0, 0, 0.45);
     }
-    
-    .navbar-toggler[aria-expanded="true"] .hamburger span:nth-child(2) {
-      opacity: 0;
+
+    .thanks-hero p {
+      max-width: 720px;
+      margin: 1rem 0 0;
+      color: #f8e6b1;
+      font-size: clamp(1.08rem, 2vw, 1.35rem);
+      font-weight: 800;
+      line-height: 1.55;
+      text-shadow: 0 5px 20px rgba(0, 0, 0, 0.55);
     }
-    
-    .navbar-toggler[aria-expanded="true"] .hamburger span:nth-child(3) {
-      transform: rotate(-45deg) translate(7px, -6px);
-    }
-    
-    .btn-primary {
-      background-color: var(--primary-color);
-      border: none;
-      padding: 0.6rem 1.5rem;
-      border-radius: 50px;
-      font-weight: 500;
-      transition: all 0.3s ease;
-    }
-    
-    .btn-primary:hover {
-      background-color: var(--dark-color);
-      transform: translateY(-2px);
-      box-shadow: 0 4px 15px rgba(106, 76, 147, 0.3);
-    }
-    
-    .btn-white-outline {
-      border: 2px solid white;
-      color: white;
-      padding: 0.6rem 1.5rem;
-      border-radius: 50px;
-      font-weight: 500;
-      transition: all 0.3s ease;
-    }
-    
-    .btn-white-outline:hover {
-      background-color: white;
-      color: var(--dark-color);
-      transform: translateY(-2px);
-    }
-    
-    /* Estilo dos Cards de Agradecimento */
+
     .thanks-section {
-      padding: 5rem 0;
-      background-color: white;
+      padding: 4rem 0;
+      background: #fffaf1;
     }
-    
-    .thanks-card {
-      background-color: var(--light-color);
-      border-radius: 15px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      padding: 2rem;
-      margin-bottom: 2rem;
-      position: relative;
-      overflow: hidden;
-      border: 1px solid rgba(0,0,0,0.05);
+
+    .thanks-section.alt {
+      background: #f7efe5;
     }
-    
-    .profile-img {
-      width: 200px;
-      height: 200px;
-      border-radius: 50px;
-      object-fit: cover;
-      border: 10px solid white;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.2);
-      margin-right: 1.5rem;
-      float: left;
-    }
-    
-    .thanks-text {
-      overflow: hidden;
-    }
-    
-    .thanks-text h3 {
-      color: var(--primary-color);
-      margin-top: 0;
-      font-family: 'Marcellus', serif;
-      font-size: 1.5rem;
-    }
-    
-    .thanks-text p {
-      line-height: 1.8;
-      margin-bottom: 0;
-    }
-    
-    .section-title {
-      font-family: 'Marcellus', serif;
-      font-weight: 700;
-      color: var(--dark-color);
-      margin-bottom: 3rem;
-      position: relative;
+
+    .thanks-heading {
+      max-width: 840px;
+      margin: 0 auto 2.5rem;
       text-align: center;
     }
-    
-    .section-title:after {
-      content: '';
-      position: absolute;
-      width: 100px;
-      height: 4px;
-      bottom: -15px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: linear-gradient(to right, var(--primary-color), var(--accent-color));
-      border-radius: 2px;
+
+    .thanks-heading h2 {
+      margin: 0;
+      color: var(--primary-color);
+      font-family: 'Marcellus', serif;
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      line-height: 1.05;
     }
-    
-    /* Footer */
+
+    .thanks-heading p {
+      margin: 0.85rem auto 0;
+      color: #5a4737;
+      font-size: 1.08rem;
+      font-weight: 800;
+      line-height: 1.7;
+    }
+
+    .thanks-feature {
+      display: grid;
+      grid-template-columns: 260px minmax(0, 1fr);
+      gap: 2rem;
+      align-items: center;
+      max-width: 980px;
+      margin: -5.5rem auto 3.5rem;
+      padding: 1.1rem;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.96);
+      box-shadow: 0 28px 70px rgba(64, 38, 18, 0.18);
+      position: relative;
+      z-index: 2;
+    }
+
+    .thanks-feature img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      border-radius: 14px;
+    }
+
+    .thanks-feature-copy {
+      padding: 1rem 1rem 1rem 0;
+    }
+
+    .thanks-feature-copy h2 {
+      margin: 0 0 0.85rem;
+      color: var(--primary-color);
+      font-family: 'Marcellus', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.05;
+    }
+
+    .thanks-feature-copy p {
+      margin: 0 0 0.85rem;
+      color: #4f3d2f;
+      font-size: 1.08rem;
+      font-weight: 700;
+      line-height: 1.75;
+    }
+
+    .signature {
+      color: var(--primary-color) !important;
+      font-family: 'Marcellus', serif;
+      font-size: 1.18rem !important;
+      font-weight: 900 !important;
+    }
+
+    .thanks-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.25rem;
+    }
+
+    .thanks-card {
+      display: grid;
+      grid-template-columns: 136px minmax(0, 1fr);
+      align-items: stretch;
+      min-height: 100%;
+      overflow: hidden;
+      border: 1px solid rgba(126, 74, 19, 0.12);
+      border-radius: 16px;
+      background: #ffffff;
+      box-shadow: 0 18px 42px rgba(64, 38, 18, 0.1);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .thanks-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 24px 54px rgba(64, 38, 18, 0.16);
+    }
+
+    .thanks-card img {
+      width: 136px;
+      height: 100%;
+      min-height: 178px;
+      object-fit: contain;
+      object-position: center center;
+      padding: 0.45rem;
+      filter: saturate(1.05) contrast(1.04);
+      background: #f7efe5;
+    }
+
+    .thanks-card-body {
+      display: flex;
+      flex-direction: column;
+      padding: 1.25rem;
+    }
+
+    .thanks-card-body h3 {
+      margin: 0 0 0.7rem;
+      color: var(--primary-color);
+      font-family: 'Marcellus', serif;
+      font-size: 1.35rem;
+      line-height: 1.18;
+    }
+
+    .thanks-card-body p {
+      margin: 0;
+      color: #5a4737;
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 1.65;
+    }
+
+    .nation {
+      display: inline-flex;
+      width: fit-content;
+      margin-top: 1rem !important;
+      padding: 0.45rem 0.75rem;
+      border-radius: 999px;
+      background: rgba(5, 189, 107, 0.12);
+      color: #047c49 !important;
+      font-size: 0.88rem !important;
+      font-weight: 900 !important;
+    }
+
     footer {
       background: linear-gradient(135deg, var(--dark-color) 0%, var(--primary-color) 100%);
       color: white;
       padding: 2rem 0;
       text-align: center;
     }
-    
+
     footer p {
       margin: 0;
-      font-size: 0.9rem;
+      font-size: 0.92rem;
+      font-weight: 700;
     }
-    
-    .social-icons {
-      margin-top: 1rem;
+
+    @media (max-width: 992px) {
+      .thanks-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
     }
-    
-    .social-icons a {
-      color: white;
-      font-size: 1.5rem;
-      margin: 0 0.5rem;
-      transition: all 0.3s ease;
-    }
-    
-    .social-icons a:hover {
-      color: var(--accent-color);
-      transform: translateY(-3px);
-    }
-    
-    /* Responsividade */
+
     @media (max-width: 768px) {
-      .navbar-brand a {
-        font-size: 1.5rem;
+      .thanks-hero {
+        min-height: 410px;
+        padding: 4rem 0 3rem;
       }
-      
-      .profile-img {
-        float: none;
-        display: block;
-        margin: 0 auto 1rem;
+
+      .thanks-feature {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        margin-top: -3rem;
       }
-      
-      .thanks-section {
-        padding: 5rem 0;
+
+      .thanks-feature-copy {
+        padding: 0.35rem;
       }
-      
+
+      .thanks-grid {
+        grid-template-columns: 1fr;
+      }
+
       .thanks-card {
-        text-align: center;
+        grid-template-columns: 1fr;
+      }
+
+      .thanks-card img {
+        width: min(180px, 72%);
+        height: auto;
+        min-height: 0;
+        aspect-ratio: 1;
+        margin: 1rem auto 0;
+        border-radius: 16px;
       }
     }
   </style>
@@ -252,10 +312,9 @@
   <link rel="stylesheet" href="assets/theme/css/site-polish.css">
 </head>
 <body>
-  
-  <!-- Menu -->
-      <header class="site-header sticky-top">
-    <nav class="navbar navbar-expand-xl site-nav" aria-label="Menu principal">
+
+<header class="site-header sticky-top">
+    <nav class="navbar navbar-expand-md site-nav" aria-label="Menu principal">
       <div class="container-fluid px-3 px-lg-4">
         <a class="site-brand" href="index.html" aria-label="Cristian D'Oxal&aacute; - In&iacute;cio">
           <span class="site-brand-mark"><i class="fas fa-dove"></i></span>
@@ -265,7 +324,7 @@
           <span class="site-menu-toggle-bars" aria-hidden="true"><span></span><span></span><span></span></span>
         </button>
         <div class="collapse navbar-collapse site-menu-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav site-menu-list ms-auto mb-2 mb-xl-0">
+          <ul class="navbar-nav site-menu-list ms-auto mb-2 mb-md-0">
               <li class="nav-item"><a class="nav-link site-menu-link" href="index.html"><i class="fas fa-house"></i><span>In&iacute;cio</span></a></li>
               <li class="nav-item"><a class="nav-link site-menu-link" href="historia.html"><i class="fas fa-book-open"></i><span>Hist&oacute;ria</span></a></li>
               <li class="nav-item"><a class="nav-link site-menu-link" href="registros_fe.html"><i class="fas fa-hands-praying"></i><span>Registros da F&eacute;</span></a></li>
@@ -283,488 +342,181 @@
     </nav>
   </header>
 
-  <!-- Seção de Agradecimentos -->
-<section class="thanks-section">
-  <div class="container">
-    <h2 class="section-title">Agradecimentos I<br><small>Aos meus mentores espirituais, minha eterna gratidão.</small></h2>
-    <p class="page-support-text text-center">Uma homenagem aos mentores, familiares, irmãos de fé e a todos que fortalecem essa caminhada espiritual em Nação, Umbanda e Quimbanda.</p>
-    
-    <!-- Card de Agradecimento Principal -->
-    <div class="thanks-card principal">
-      <img src="assets/images/screenshot-1.png" alt="Cristian D'Oxalá" class="profile-img">
-      <div class="thanks-text">
-        <h3>Minha Gratidão</h3>
-        <p>Aos meus guias e mentores espirituais, que me conduzem com sabedoria e proteção em minha jornada. Aos meus irmãos de fé, que compartilham desse caminho com amor e respeito. Aos meus familiares, pelo apoio incondicional.</p>
-        <p>Que Oxalá continue abençoando a todos nós, iluminando nossos caminhos e fortalecendo nossos laços. Axé!</p>
-        <p class="signature">- Pai Cristian D'Oxalá</p>
+  <main>
+    <section class="thanks-hero">
+      <div class="container">
+        <span class="thanks-kicker"><i class="fas fa-heart"></i> Caminhada de f&#233;</span>
+        <h1>Agradecimentos</h1>
+        <p>Uma homenagem aos mentores, familiares, irm&#227;os de f&#233; e a todos que fortalecem essa caminhada espiritual em Na&#231;&#227;o, Umbanda e Quimbanda.</p>
       </div>
-    </div>
-    
-    <!-- Cards de Agradecimento Específicos -->
-    <div class="row">
-      <!-- Card 1 -->
-      <div class="col-lg-4 col-md-6">
-        <div class="thanks-card">
-          <img src="assets/images/1.jpg" alt="Yálorixá Irene" class="profile-img">
-          <div class="thanks-text">
-            <h3>Yálorixá Irene de Oxum Docô</h3>
-            <p>Minha primeira Mãe de Santo, foi através do seu axé que meu caminho religioso começou.</p>
-            <p class="nation">Nação: Oyó</p>
+    </section>
+
+    <section class="thanks-section">
+      <div class="container">
+        <div class="thanks-feature">
+          <img src="assets/images/screenshot-1.png" alt="Cristian D&#x27;Oxal&#225;">
+          <div class="thanks-feature-copy">
+            <h2>Minha Gratid&#227;o</h2>
+            <p>Aos meus guias e mentores espirituais, que me conduzem com sabedoria e prote&#231;&#227;o em minha jornada. Aos meus irm&#227;os de f&#233;, que compartilham desse caminho com amor e respeito. Aos meus familiares, pelo apoio incondicional.</p>
+            <p>Que Oxal&#225; continue aben&#231;oando a todos n&#243;s, iluminando nossos caminhos e fortalecendo nossos la&#231;os. Ax&#233;!</p>
+            <p class="signature">- Pai Cristian D&#x27;Oxal&#225;</p>
           </div>
         </div>
-      </div>
-      
-      <!-- Card 2 -->
-      <div class="col-lg-4 col-md-6">
-        <div class="thanks-card">
-          <img src="assets/images/2.jpg" alt="Yálorixá Carla" class="profile-img">
-          <div class="thanks-text">
-            <h3>Yálorixá Carla de Xangô Aganjú</h3>
-            <p>Minha eterna gratidão pelo apoio incondicional em todos os momentos da minha jornada espiritual.</p>
-            <p class="nation">Nação: Jeje</p>
-          </div>
+
+        <div class="thanks-heading">
+          <h2>Agradecimentos I</h2>
+          <p>Aos meus mentores espirituais, minha eterna gratid&#227;o.</p>
+        </div>
+        <div class="thanks-grid">
+          <article class="thanks-card">
+            <img src="assets/images/1.jpg" alt="Y&#225;lorix&#225; Irene de Oxum Doc&#244;">
+            <div class="thanks-card-body">
+              <h3>Y&#225;lorix&#225; Irene de Oxum Doc&#244;</h3>
+              <p>Minha primeira M&#227;e de Santo. Foi atrav&#233;s do seu ax&#233; que meu caminho religioso come&#231;ou.</p>
+            <p class="nation">Na&#231;&#227;o: Oy&#243;</p>
+            </div>
+          </article>
+          <article class="thanks-card">
+            <img src="assets/images/2.jpg" alt="Y&#225;lorix&#225; Carla de Xang&#244; Aganj&#250;">
+            <div class="thanks-card-body">
+              <h3>Y&#225;lorix&#225; Carla de Xang&#244; Aganj&#250;</h3>
+              <p>Minha eterna gratid&#227;o pelo apoio incondicional em todos os momentos da minha jornada espiritual.</p>
+            <p class="nation">Na&#231;&#227;o: Jeje</p>
+            </div>
+          </article>
+          <article class="thanks-card">
+            <img src="assets/images/4.jpg" alt="Iy&#225;lorix&#225; Ivaina de Oxal&#225; Bocum">
+            <div class="thanks-card-body">
+              <h3>Iy&#225;lorix&#225; Ivaina de Oxal&#225; Bocum</h3>
+              <p>Reconhe&#231;o sua sabedoria e ax&#233; que iluminam meu caminho. Seu legado &#233; honra e inspira&#231;&#227;o.</p>
+            <p class="nation">Na&#231;&#227;o: Cabinda</p>
+            </div>
+          </article>
+          <article class="thanks-card">
+            <img src="assets/images/5.jpg" alt="Iy&#225;lorix&#225; Inay&#225; de Oxum Pand&#225;">
+            <div class="thanks-card-body">
+              <h3>Iy&#225;lorix&#225; Inay&#225; de Oxum Pand&#225;</h3>
+              <p>Com profunda gratid&#227;o, celebro sua luz e seu ax&#233;, que fortalecem e guiam meu caminho.</p>
+            <p class="nation">Na&#231;&#227;o: Jej&#234; Ijex&#225;</p>
+            </div>
+          </article>
+          <article class="thanks-card">
+            <img src="assets/images/3.jpg" alt="Meu Babalorix&#225; P&#243;stumo - Jorge Verardi de Xang&#244;">
+            <div class="thanks-card-body">
+              <h3>Meu Babalorix&#225; P&#243;stumo - Jorge Verardi de Xang&#244;</h3>
+              <p>Com eterna gratid&#227;o e respeito, honro sua mem&#243;ria e o ax&#233; que me guiou. Seu legado vive em meu cora&#231;&#227;o.</p>
+            <p class="nation">Na&#231;&#227;o: Jej&#234;</p>
+            </div>
+          </article>
         </div>
       </div>
-      
-      <!-- Card 3 -->
-      <div class="col-lg-4 col-md-6">
-        <div class="thanks-card">
-          <img src="assets/images/4.jpg" alt="Iyálorixá Ivaina" class="profile-img">
-          <div class="thanks-text">
-            <h3>Iyálorixá Ivaina de Oxalá Bocum</h3>
-            <p>Reconheço sua sabedoria e axé que iluminam meu caminho. Seu legado é honra e inspiração.</p>
-            <p class="nation">Nação: Cabinda</p>
-          </div>
+    </section>
+
+    <section class="thanks-section alt">
+      <div class="container">
+        <div class="thanks-heading">
+          <h2>Agradecimentos II</h2>
+          <p>Aos meus amigos e irm&#227;os de f&#233;, minha eterna gratid&#227;o.</p>
+        </div>
+        <div class="thanks-grid">
+          <article class="thanks-card">
+            <img src="assets/images/6.jpg" alt="Minha Dinda - M&#227;e Lourdes de Bar&#225;">
+            <div class="thanks-card-body">
+              <h3>Minha Dinda - M&#227;e Lourdes de Bar&#225;</h3>
+              <p>Sou muito grato pelos seus conselhos e parceria nos momentos mais importantes da minha caminhada espiritual.</p>
+            </div>
+          </article>
+          <article class="thanks-card">
+            <img src="assets/images/7.jpg" alt="Iy&#225;lorix&#225; Gina de Bar&#225; Agel&#250;">
+            <div class="thanks-card-body">
+              <h3>Iy&#225;lorix&#225; Gina de Bar&#225; Agel&#250;</h3>
+              <p>Muitos anos de amizade, respeito e sabedoria. Minha gratid&#227;o eterna pelo ax&#233; compartilhado.</p>
+            </div>
+          </article>
+          <article class="thanks-card">
+            <img src="assets/images/8.jpg" alt="Babalorix&#225; Raul de Xang&#244; e Iy&#225;lorix&#225; F&#225;tima de Bar&#225;">
+            <div class="thanks-card-body">
+              <h3>Babalorix&#225; Raul de Xang&#244; e Iy&#225;lorix&#225; F&#225;tima de Bar&#225;</h3>
+              <p>Por sua for&#231;a e determina&#231;&#227;o, que sempre inspiraram minha pr&#243;pria caminhada.</p>
+            </div>
+          </article>
+          <article class="thanks-card">
+            <img src="assets/images/9.jpg" alt="M&#227;e Lourdes de Iemanj&#225; e Pai Ivo de Xang&#244;">
+            <div class="thanks-card-body">
+              <h3>M&#227;e Lourdes de Iemanj&#225; e Pai Ivo de Xang&#244;</h3>
+              <p>Com profunda gratid&#227;o, celebro sua luz e seu ax&#233;, que fortalecem e guiam nossos caminhos.</p>
+            </div>
+          </article>
+          <article class="thanks-card">
+            <img src="assets/images/10.jpg" alt="Babalorix&#225; Rog&#233;rio de Xang&#244;">
+            <div class="thanks-card-body">
+              <h3>Babalorix&#225; Rog&#233;rio de Xang&#244;</h3>
+              <p>Com eterna gratid&#227;o e respeito, honro sua amizade e presen&#231;a na minha hist&#243;ria.</p>
+            <p class="nation">Na&#231;&#227;o: Oy&#243;</p>
+            </div>
+          </article>
+          <article class="thanks-card">
+            <img src="assets/images/11.jpg" alt="Babalorix&#225; Andr&#233; de Oxal&#225;">
+            <div class="thanks-card-body">
+              <h3>Babalorix&#225; Andr&#233; de Oxal&#225;</h3>
+              <p>Por compartilhar seus conhecimentos e me acolher como irm&#227;o em momentos decisivos.</p>
+            </div>
+          </article>
+          <article class="thanks-card">
+            <img src="assets/images/12.jpg" alt="Querido Babalorix&#225; Dinarte de Oxum (p&#243;stumo)">
+            <div class="thanks-card-body">
+              <h3>Querido Babalorix&#225; Dinarte de Oxum (p&#243;stumo)</h3>
+              <p>Por sua paci&#234;ncia ao me ensinar os fundamentos mais profundos da nossa f&#233;.</p>
+            </div>
+          </article>
+          <article class="thanks-card">
+            <img src="assets/images/13.jpg" alt="Iy&#225;lorix&#225; Neneca de Xang&#244;">
+            <div class="thanks-card-body">
+              <h3>Iy&#225;lorix&#225; Neneca de Xang&#244;</h3>
+              <p>Por sua energia transformadora, que sempre renovou minhas for&#231;as espirituais. &#205;cone do nosso Batuque.</p>
+            <p class="nation">Na&#231;&#227;o: Oy&#243;</p>
+            </div>
+          </article>
+          <article class="thanks-card">
+            <img src="assets/images/14.jpg" alt="Babalorix&#225; Diego de Xang&#244; Ibeji">
+            <div class="thanks-card-body">
+              <h3>Babalorix&#225; Diego de Xang&#244; Ibeji</h3>
+              <p>Por compartilhar sua grande f&#233; e fortalecer essa caminhada com respeito e ax&#233;.</p>
+            </div>
+          </article>
+          <article class="thanks-card">
+            <img src="assets/images/15.jpg" alt="Babalorix&#225; Cezinha de Oxal&#225;">
+            <div class="thanks-card-body">
+              <h3>Babalorix&#225; Cezinha de Oxal&#225;</h3>
+              <p>Querido amigo, gratid&#227;o por sua sabedoria ancestral e por me ensinar o valor da amizade.</p>
+            </div>
+          </article>
+          <article class="thanks-card">
+            <img src="assets/images/16.jpg" alt="Iy&#225;lorix&#225; Fernanda de Xapan&#227; Sapat&#225;">
+            <div class="thanks-card-body">
+              <h3>Iy&#225;lorix&#225; Fernanda de Xapan&#227; Sapat&#225;</h3>
+              <p>Por sua coragem e determina&#231;&#227;o, que sempre me inspiraram a seguir em frente.</p>
+            <p class="nation">Na&#231;&#227;o: Oy&#243;</p>
+            </div>
+          </article>
+          <article class="thanks-card">
+            <img src="assets/images/17.jpg" alt="Iy&#225;lorix&#225; Luiza de Bar&#225; Agel&#250;">
+            <div class="thanks-card-body">
+              <h3>Iy&#225;lorix&#225; Luiza de Bar&#225; Agel&#250;</h3>
+              <p>Minha irm&#227; de santo, gratid&#227;o pelo amor e acolhimento que sempre renovaram minhas energias espirituais.</p>
+            </div>
+          </article>
         </div>
       </div>
-      
-      <!-- Card 4 -->
-      <div class="col-lg-4 col-md-6">
-        <div class="thanks-card">
-          <img src="assets/images/5.jpg" alt="Babá Erick" class="profile-img">
-          <div class="thanks-text">
-            <h3>Iyálorixá Inayá de Oxum Pandá</h3>
-            <p>Com profunda gratidão, celebro sua luz e seu axé, que fortalecem e guiam meu caminho. Seu legado é eterno!.</p>
-            <p class="nation">Nação: Jejê Ijexá</p>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Card 5 -->
-      <div class="col-lg-4 col-md-6">
-        <div class="thanks-card">
-          <img src="assets/images/3.jpg" alt="Mãe Rita" class="profile-img">
-          <div class="thanks-text">
-            <h3>Meu Babalorixá Póstumo - Jorge Verardi de Xangô</h3>
-            <p>Com eterna gratidão e respeito, honro sua memória e o axé que me guiou. Seu legado vive em meu coração.</p>
-            <p class="nation">Nação: Jejê</p>
-          </div>
-        </div>
-      </div>
-</section>
+    </section>
+  </main>
 
-<style>
-.thanks-section {
-  padding: 60px 0;
-  background-color: #f9f5f0;
-}
-
-.section-title {
-  text-align: center;
-  margin-bottom: 40px;
-  color: #7e4a13;
-  font-family: 'Marcellus', serif;
-}
-
-.section-title small {
-  display: block;
-  font-size: 18px;
-  color: #8a5a44;
-  margin-top: 10px;
-}
-
-.thanks-card {
-  background: white;
-  border-radius: 12px;
-  padding: 25px;
-  margin-bottom: 30px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-  display: flex;
-  transition: transform 0.3s ease;
-  height: 100%;
-}
-
-.thanks-card:hover {
-  transform: translateY(-5px);
-}
-
-.thanks-card.principal {
-  max-width: 800px;
-  margin: 0 auto 50px;
-  border: 2px solid #fca311;
-}
-
-.profile-img {
-  width: 120px;
-  height: 120px;
-  border-radius: 12px;
-  object-fit: cover;
-  border: 4px solid #f8f9fa;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-  margin-right: 20px;
-}
-
-.thanks-text {
-  flex: 1;
-}
-
-.thanks-text h3 {
-  color: #7e4a13;
-  margin-top: 0;
-  margin-bottom: 10px;
-  font-family: 'Marcellus', serif;
-}
-
-.thanks-text p {
-  color: #555;
-  line-height: 1.6;
-  margin-bottom: 5px;
-}
-
-.nation {
-  font-style: italic;
-  color: #8a5a44;
-  font-weight: 500;
-  margin-top: 10px;
-}
-
-.signature {
-  text-align: right;
-  font-style: italic;
-  color: #1a1a2e;
-  margin-top: 15px;
-  font-weight: 500;
-}
-
-@media (max-width: 768px) {
-  .thanks-card {
-    flex-direction: column;
-    text-align: center;
-    padding: 20px;
-  }
-  
-  .profile-img {
-    margin-right: 0;
-    margin-bottom: 15px;
-    width: 100px;
-    height: 100px;
-  }
-  
-  .thanks-card.principal {
-    margin-bottom: 30px;
-  }
-}
-</style>
-
-     
-  <!-- Rodapé -->
   <footer>
     <div class="container">
-      <div class="social-icons">
-         <!-- Seção de Agradecimentos II -->
-<section class="thanks-section">
-  <div class="container">
-    <h2 class="section-title">Agradecimentos II<br><small>Aos meus amigos e irmãos de fé, minha eterna gratidão.</small></h2>
-    
-    <!-- Cards de Agradecimento Específicos -->
-    <div class="row">
-      <!-- Card 6 -->
-      <div class="col-lg-4 col-md-6">
-        <div class="thanks-card">
-          <img src="assets/images/6.jpg" alt="Irmão de Fé" class="profile-img">
-          <div class="thanks-text">
-            <h3>Minha Dinda - Mãe Lourdes de Bará</h3>
-            <p>Que sou muito grato pelos seus conselhos e parceria nos momentos mais importantes da minha caminhada espiritual.</p>
-            
-          </div>
-        </div>
-      </div>
-      
-      <!-- Card 7 -->
-      <div class="col-lg-4 col-md-6">
-        <div class="thanks-card">
-          <img src="assets/images/7.jpg" alt="Irmã de Fé" class="profile-img">
-          <div class="thanks-text">
-            <h3>Iyálorixá Gina de Bará agelú</h3>
-            <p>Muitos anos de amizade e respeito e sabedoria gratidão eterna.</p>
-            
-          </div>
-        </div>
-      </div>
-      
-      <!-- Card 8 -->
-      <div class="col-lg-4 col-md-6">
-        <div class="thanks-card">
-          <img src="assets/images/8.jpg" alt="Irmão de Fé" class="profile-img">
-          <div class="thanks-text">
-            <h3>Babalorixá RAUL DE XANGÔ - Iyálorixá  FATIMA DE BARÁ </h3>
-            <p>Por sua força e determinação que sempre inspiraram minha própria caminhada.</p>
-            
-          </div>
-        </div>
-      </div>
-      
-      <!-- Card 9 -->
-      <div class="col-lg-4 col-md-6">
-        <div class="thanks-card">
-          <img src="assets/images/9.jpg" alt="Iyálorixá Inayá" class="profile-img">
-          <div class="thanks-text">
-            <h3>Mãe Lurdes de Iemanjá - Pai Ivo de xangô</h3>
-            <p>Com profunda gratidão, celebro sua luz e seu axé, que fortalecem e guiam nossos caminhos.</p>
-            
-          </div>
-        </div>
-      </div>
-      
-      <!-- Card 10 -->
-      <div class="col-lg-4 col-md-6">
-        <div class="thanks-card">
-          <img src="assets/images/10.jpg" alt="Babalorixá Jorge" class="profile-img">
-          <div class="thanks-text">
-            <h3>Babalorixá Rogério de xangô</h3>
-            <p>Com eterna gratidão e respeito, honro sua amizade.</p>
-            <p class="nation">Nação: Oyó</p>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Card 11 -->
-      <div class="col-lg-4 col-md-6">
-        <div class="thanks-card">
-          <img src="assets/images/11.jpg" alt="Ialorixá Márcia" class="profile-img">
-          <div class="thanks-text">
-            <h3>Babalorixá André de Oxalá</h3>
-            <p>Por compartilhar seus conhecimentos e me acolher como irmão em momentos decisivos.</p>
-            
-          </div>
-        </div>
-      </div>
-      
-      <!-- Card 12 -->
-      <div class="col-lg-4 col-md-6">
-        <div class="thanks-card">
-          <img src="assets/images/12.jpg" alt="Babá Wilson" class="profile-img">
-          <div class="thanks-text">
-            <h3>Querido Babalorixá Dinarte de oxum ( póstumo )</h3>
-            <p>Por sua paciência ao me ensinar os fundamentos mais profundos da nossa fé.</p>
-            
-          </div>
-        </div>
-      </div>
-      
-      <!-- Card 13 -->
-      <div class="col-lg-4 col-md-6">
-        <div class="thanks-card">
-          <img src="assets/images/13.jpg" alt="Mãe Cristina" class="profile-img">
-          <div class="thanks-text">
-            <h3>IYÁLORIXÁ  
- NENECA DE XANGÔ </h3>
-            <p>Por sua energia transformadora que sempre renovou minhas forças espirituais, Ícone do nosso batuque ( póstuma).</p>
-            <p class="nation">Nação: Oyó</p>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Card 14 -->
-      <div class="col-lg-4 col-md-6">
-        <div class="thanks-card">
-          <img src="assets/images/14.jpg" alt="Pai Ronaldo" class="profile-img">
-          <div class="thanks-text">
-            <h3>Babalorixá  Diego de Xangô ibeji</h3>
-            <p>Por compartilhar a sua grande fé</p>
-
-          </div>
-        </div>
-      </div>
-      
-      <!-- Card 15 -->
-      <div class="col-lg-4 col-md-6">
-        <div class="thanks-card">
-          <img src="assets/images/15.jpg" alt="Ialorixá Sandra" class="profile-img">
-          <div class="thanks-text">
-            <h3>Babalorixá  Cezinha de Oxalá</h3>
-            <p>Querido amigo, sua sabedoria ancestral e por me ensinar o valor da amizade.</p>
-            
-          </div>
-        </div>
-      </div>
-      
-      <!-- Card 16 -->
-      <div class="col-lg-4 col-md-6">
-        <div class="thanks-card">
-          <img src="assets/images/16.jpg" alt="Babá Jorge" class="profile-img">
-          <div class="thanks-text">
-            <h3>IYÁLORIXÁ FERNANDA DE XAPANÃ SAPATÁ</h3>
-            <p>Por sua coragem e determinação que sempre me inspiraram a seguir em frente.</p>
-            <p class="nation">Nação: Oyó</p>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Card 17 -->
-      <div class="col-lg-4 col-md-6">
-        <div class="thanks-card">
-          <img src="assets/images/17.jpg" alt="Mãe Lucia" class="profile-img">
-          <div class="thanks-text">
-            <h3>Iyálorixá LUIZA DE BARÁ AGELÚ</h3>
-            <p>MINHA IRMÃ DE SANTO seu amor e acolhimento que sempre renovaram minhas energias espirituais.</p>
-            
-          </div>
-        </div>
-      </div>
+      <p>&#169; 2025 Cristian D&#x27;Oxal&#225; - Todos os direitos reservados</p>
     </div>
-  </div>
-</section>
+  </footer>
 
-
-   
-</footer>
-
-<style>
-.thanks-section {
-  padding: 60px 0;
-  background-color: #f9f5f0;
-}
-
-.section-title {
-  text-align: center;
-  margin-bottom: 40px;
-  color: #7e4a13;
-  font-family: 'Marcellus', serif;
-}
-
-.section-title small {
-  display: block;
-  font-size: 18px;
-  color: #8a5a44;
-  margin-top: 10px;
-}
-
-.thanks-card {
-  background: white;
-  border-radius: 12px;
-  padding: 25px;
-  margin-bottom: 30px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-  display: flex;
-  transition: transform 0.3s ease;
-  height: 100%;
-}
-
-.thanks-card:hover {
-  transform: translateY(-5px);
-}
-
-.profile-img {
-  width: 120px;
-  height: 120px;
-  border-radius: 12px;
-  object-fit: cover;
-  border: 4px solid #f8f9fa;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-  margin-right: 20px;
-}
-
-.thanks-text {
-  flex: 1;
-}
-
-.thanks-text h3 {
-  color: #7e4a13;
-  margin-top: 0;
-  margin-bottom: 10px;
-  font-family: 'Marcellus', serif;
-}
-
-.thanks-text p {
-  color: #555;
-  line-height: 1.6;
-  margin-bottom: 5px;
-}
-
-.nation {
-  font-style: italic;
-  color: #8a5a44;
-  font-weight: 500;
-  margin-top: 10px;
-}
-
-.footer-section {
-  background: linear-gradient(135deg, #1a1a2e 0%, #7e4a13 100%);
-  color: white;
-  padding: 30px 0;
-  margin-top: 50px;
-}
-
-.footer-section p {
-  margin-bottom: 20px;
-}
-
-.social-icons a {
-  color: white;
-  font-size: 24px;
-  margin: 0 10px;
-  transition: all 0.3s ease;
-}
-
-.social-icons a:hover {
-  color: #fca311;
-  transform: translateY(-3px);
-}
-
-@media (max-width: 768px) {
-  .thanks-card {
-    flex-direction: column;
-    text-align: center;
-    padding: 20px;
-  }
-  
-  .profile-img {
-    margin-right: 0;
-    margin-bottom: 15px;
-    width: 100px;
-    height: 100px;
-  }
-}
-</style>
-
-    
-</div>
-<!-- Rodapé -->
-<footer class="footer-section">
-  <div class="container text-center">
-    <p>© 2023 Cristian D'Oxalá - Todos os direitos reservados</p>
-  </div>
-</footer>
-
-  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    // Inicializa os tooltips
-    const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-    const tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-      return new bootstrap.Tooltip(tooltipTriggerEl)
-    });
-
-    // Animação suave para links internos
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
-      });
-    });
-  </script>
 </body>
 </html>

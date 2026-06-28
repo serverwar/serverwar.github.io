@@ -38,12 +38,118 @@
 
     body {
       font-family: 'Bellota Text', cursive;
-      background-color: var(--light-color);
+      background:
+        radial-gradient(circle at 12% 0%, rgba(252, 163, 17, 0.1), transparent 30%),
+        linear-gradient(180deg, #fffaf1 0%, #f7efe5 100%);
       color: var(--dark-color);
     }
 
     h1, h2, h3, h4, h5, .month-header {
       font-family: 'Marcellus', serif;
+    }
+
+    .agenda-page {
+      padding-bottom: 1rem;
+    }
+
+    .agenda-hero {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(3.5rem, 8vw, 5.5rem) 0 2.5rem;
+      background:
+        linear-gradient(90deg, rgba(18, 10, 6, 0.9) 0%, rgba(18, 10, 6, 0.62) 52%, rgba(18, 10, 6, 0.24) 100%),
+        linear-gradient(180deg, rgba(18, 10, 6, 0.08), rgba(18, 10, 6, 0.74)),
+        url('assets/images/consulta-cristian.png') center 40%/cover no-repeat;
+      color: #ffffff;
+    }
+
+    .agenda-hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 30%;
+      background: linear-gradient(180deg, transparent, #fffaf1);
+      pointer-events: none;
+    }
+
+    .agenda-hero .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .agenda-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+      padding: 0.52rem 0.9rem;
+      border-radius: 999px;
+      background: rgba(5, 189, 107, 0.18);
+      box-shadow: inset 0 0 0 1px rgba(5, 189, 107, 0.34);
+      color: #ffffff;
+      font-size: 0.88rem;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .agenda-title {
+      max-width: 760px;
+      margin: 0;
+      color: #ffffff;
+      font-family: 'Marcellus', serif;
+      font-size: clamp(3rem, 8vw, 6rem);
+      line-height: 0.95;
+      text-shadow: 0 10px 35px rgba(0, 0, 0, 0.55);
+    }
+
+    .agenda-subtitle {
+      max-width: 780px;
+      margin: 1rem 0 0;
+      color: #fff3c4;
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+      font-weight: 900;
+      line-height: 1.6;
+      text-shadow: 0 5px 20px rgba(0, 0, 0, 0.62);
+    }
+
+    .agenda-meta-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.85rem;
+      margin-top: 1.6rem;
+      max-width: 920px;
+    }
+
+    .agenda-meta-card {
+      min-height: 86px;
+      padding: 1rem;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.14);
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.22);
+      backdrop-filter: blur(8px);
+    }
+
+    .agenda-meta-card strong {
+      display: block;
+      color: #ffffff;
+      font-size: 0.9rem;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .agenda-meta-card span {
+      display: block;
+      margin-top: 0.35rem;
+      color: #fff3c4;
+      font-weight: 800;
+      line-height: 1.35;
+    }
+
+    .agenda-grid-section {
+      position: relative;
+      z-index: 2;
+      margin-top: -1rem;
+      padding-top: 2rem;
     }
 
     /* Navbar Customizada */
@@ -55,24 +161,25 @@
 
     /* Estilos do Calendário */
     .month-card {
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-      border: none;
+      background: rgba(255, 255, 255, 0.96);
+      border-radius: 14px;
+      box-shadow: 0 18px 42px rgba(64, 38, 18, 0.1);
+      border: 1px solid rgba(126, 74, 19, 0.12);
       height: 100%;
       overflow: hidden;
-      transition: transform 0.3s ease;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
 
     .month-card:hover {
       transform: translateY(-5px);
+      box-shadow: 0 24px 52px rgba(64, 38, 18, 0.16);
     }
 
     .month-header {
-      background-color: var(--primary-color);
+      background: linear-gradient(135deg, var(--dark-color) 0%, var(--primary-color) 100%);
       color: white;
       text-align: center;
-      padding: 15px;
+      padding: 16px;
       font-size: 1.25rem;
       letter-spacing: 1px;
       text-transform: uppercase;
@@ -86,9 +193,10 @@
 
     .event-list li {
       padding: 12px 15px;
-      border-bottom: 1px solid #eee;
+      border-bottom: 1px solid rgba(126, 74, 19, 0.1);
       display: flex;
-      align-items: center;
+      align-items: flex-start;
+      gap: 0.7rem;
       font-size: 0.95rem;
     }
 
@@ -102,10 +210,14 @@
       background: rgba(126, 74, 19, 0.1);
       padding: 5px 10px;
       border-radius: 6px;
-      margin-right: 15px;
       min-width: 35px;
       text-align: center;
       font-family: 'Marcellus', serif;
+      flex: 0 0 auto;
+    }
+
+    .event-desc {
+      line-height: 1.42;
     }
 
     /* Destaques (Sessões e Obrigações) */
@@ -120,12 +232,12 @@
     }
 
     .badge-custom {
-      background-color: var(--accent-color);
+      background-color: #05bd6b;
       color: white;
       font-size: 0.7em;
       padding: 3px 8px;
       border-radius: 12px;
-      margin-left: auto;
+      margin-left: 0.4rem;
       text-transform: uppercase;
       font-family: 'Bellota Text', cursive;
       font-weight: 700;
@@ -134,7 +246,7 @@
 
     /* Rodapé e Botão */
     .footer-section {
-      background-color: var(--primary-color); /* Mesma cor do menu */
+      background: linear-gradient(135deg, var(--dark-color) 0%, var(--primary-color) 100%);
       color: white;
       padding: 40px 0 20px 0;
       margin-top: 50px;
@@ -159,6 +271,30 @@
       color: white;
       transform: translateY(-2px);
     }
+
+    @media (max-width: 768px) {
+      .agenda-hero {
+        padding: 3.8rem 0 2.6rem;
+      }
+
+      .agenda-meta-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .agenda-grid-section {
+        margin-top: 0;
+      }
+
+      .event-list li {
+        padding: 11px 12px;
+      }
+
+      .badge-custom {
+        display: inline-flex;
+        margin-top: 0.25rem;
+        margin-left: 0;
+      }
+    }
   </style>
   <link rel="stylesheet" href="assets/theme/css/site-menu.css">
   <link rel="stylesheet" href="assets/theme/css/site-polish.css">
@@ -166,7 +302,7 @@
 <body>
 
     <header class="site-header sticky-top">
-    <nav class="navbar navbar-expand-xl site-nav" aria-label="Menu principal">
+    <nav class="navbar navbar-expand-md site-nav" aria-label="Menu principal">
       <div class="container-fluid px-3 px-lg-4">
         <a class="site-brand" href="index.html" aria-label="Cristian D'Oxal&aacute; - In&iacute;cio">
           <span class="site-brand-mark"><i class="fas fa-dove"></i></span>
@@ -176,7 +312,7 @@
           <span class="site-menu-toggle-bars" aria-hidden="true"><span></span><span></span><span></span></span>
         </button>
         <div class="collapse navbar-collapse site-menu-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav site-menu-list ms-auto mb-2 mb-xl-0">
+          <ul class="navbar-nav site-menu-list ms-auto mb-2 mb-md-0">
               <li class="nav-item"><a class="nav-link site-menu-link" href="index.html"><i class="fas fa-house"></i><span>In&iacute;cio</span></a></li>
               <li class="nav-item"><a class="nav-link site-menu-link" href="historia.html"><i class="fas fa-book-open"></i><span>Hist&oacute;ria</span></a></li>
               <li class="nav-item"><a class="nav-link site-menu-link" href="registros_fe.html"><i class="fas fa-hands-praying"></i><span>Registros da F&eacute;</span></a></li>
@@ -194,16 +330,32 @@
     </nav>
   </header>
 
-  <div class="container mt-5">
-    
-    <div class="text-center mb-5">
-      <h1 style="color: var(--primary-color); font-weight: bold; font-size: 2.5rem;">Agenda 2026</h1>
-      <h3 class="mt-3 text-muted">Cacique Xangô da Pedreira | Exu Rei das 7 Encruzilhadas</h3>
-      <h5 class="text-secondary mt-2"><i class="fas fa-star me-2" style="color: var(--accent-color);"></i>Pai Cristian de Oxalá</h5>
-      <p class="page-support-text">Datas da casa, sessões, obrigações e aniversários ligados à caminhada espiritual de Nação, Umbanda e Quimbanda.</p>
-    </div>
+  <main class="agenda-page">
+    <section class="agenda-hero">
+      <div class="container">
+        <span class="agenda-kicker"><i class="fas fa-calendar-days"></i> Calendário da casa</span>
+        <h1 class="agenda-title">Agenda 2026</h1>
+        <p class="agenda-subtitle">Datas da casa, sessões, obrigações e aniversários ligados à caminhada espiritual de Nação, Umbanda e Quimbanda.</p>
+        <div class="agenda-meta-grid" aria-label="Informações da agenda">
+          <div class="agenda-meta-card">
+            <strong>Cacique</strong>
+            <span>Xangô da Pedreira</span>
+          </div>
+          <div class="agenda-meta-card">
+            <strong>Quimbanda</strong>
+            <span>Exu Rei das 7 Encruzilhadas</span>
+          </div>
+          <div class="agenda-meta-card">
+            <strong>Responsável</strong>
+            <span>Pai Cristian de Oxalá</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <div class="row g-4">
+    <section class="agenda-grid-section">
+      <div class="container">
+        <div class="row g-4">
       
       <div class="col-md-6 col-lg-4">
         <div class="month-card">
@@ -377,7 +529,12 @@
         </div>
       </div>
 
-    </div> </div> <footer class="footer-section">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer-section">
     <div class="container text-center">
       <a href="index.html" class="btn-home mb-4"><i class="fas fa-home me-2"></i> Voltar para Home</a>
       

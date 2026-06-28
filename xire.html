@@ -39,7 +39,7 @@
 
     body {
       font-family: 'Bellota Text', sans-serif;
-      background: linear-gradient(135deg, #f2f2f2 0%, #e8e6e3 100%);
+      background: #fffaf1;
       color: var(--dark-color);
       margin: 0;
       padding: 0;
@@ -77,29 +77,85 @@
 
     /* Hero */
     .hero-section {
-      text-align: center;
-      background: linear-gradient(120deg, var(--dark-color) 0%, var(--primary-color) 100%);
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(18, 10, 6, 0.92) 0%, rgba(18, 10, 6, 0.62) 52%, rgba(18, 10, 6, 0.22) 100%),
+        linear-gradient(180deg, rgba(18, 10, 6, 0.08), rgba(18, 10, 6, 0.78)),
+        url('assets/images/loxefotografia-18.jpg') center 34%/cover no-repeat;
       color: white;
-      padding: 5rem 1rem;
-      background-attachment: fixed;
-      box-shadow: inset 0 0 60px rgba(0,0,0,0.4);
+      padding: clamp(4.5rem, 10vw, 7rem) 1rem clamp(3rem, 7vw, 5rem);
+      box-shadow: inset 0 0 70px rgba(0,0,0,0.35);
+    }
+
+    .hero-section::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 34%;
+      background: linear-gradient(180deg, transparent, #fffaf1);
+      pointer-events: none;
+    }
+
+    .xire-hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 880px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .xire-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+      padding: 0.52rem 0.9rem;
+      border-radius: 999px;
+      background: rgba(5, 189, 107, 0.18);
+      color: #ffffff;
+      font-size: 0.88rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      box-shadow: inset 0 0 0 1px rgba(5, 189, 107, 0.34);
     }
 
     .hero-section h1 {
       font-family: 'Marcellus', serif;
-      font-size: 2.8rem;
-      margin-bottom: 1rem;
+      font-size: clamp(2.8rem, 7vw, 5.8rem);
+      line-height: 0.95;
+      margin: 0 0 1rem;
+      text-shadow: 0 10px 35px rgba(0,0,0,0.55);
     }
 
     .hero-section p {
-      font-size: 1.2rem;
-      color: #eee;
+      max-width: 780px;
+      margin: 0.75rem auto 0;
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+      color: #fff3c4;
+      font-weight: 900;
+      line-height: 1.6;
+      text-shadow: 0 5px 20px rgba(0,0,0,0.62);
+    }
+
+    .xire-date {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      margin: 1.1rem 0 0;
+      padding: 0.72rem 1rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.14);
+      color: #ffffff;
+      font-weight: 900;
+      backdrop-filter: blur(8px);
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.24);
     }
 
     /* Galeria */
     .gallery-section {
-      padding: 4rem 1rem;
-      background: linear-gradient(135deg, #ffffff 0%, #f6f6f6 100%);
+      padding: 4rem 1rem 5rem;
+      background: #fffaf1;
       position: relative;
       overflow: hidden;
     }
@@ -108,7 +164,7 @@
       text-align: center;
       font-family: 'Marcellus', serif;
       color: var(--primary-color);
-      font-size: 2.2rem;
+      font-size: clamp(2rem, 4vw, 3rem);
       margin: 3rem 0 1.5rem;
       position: relative;
       z-index: 1;
@@ -117,30 +173,29 @@
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-      gap: 20px;
+      gap: 1rem;
       position: relative;
       z-index: 1;
     }
 
     .gallery a {
       position: relative;
-      border-radius: 16px;
+      border-radius: 14px;
       overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
       height: 240px;
-      background: rgba(250, 248, 245, 0.8);
-      backdrop-filter: blur(8px);
-      border: 1px solid rgba(180,180,180,0.3);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-      transition: transform 0.35s ease, box-shadow 0.35s ease, background 0.3s ease;
+      background: #f3eadf;
+      border: 1px solid rgba(126, 74, 19, 0.12);
+      box-shadow: 0 18px 42px rgba(44, 31, 24, 0.12);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
     }
 
     .gallery a:hover {
-      transform: scale(1.04);
-      box-shadow: 0 12px 35px rgba(0,0,0,0.25);
-      background: rgba(255, 255, 255, 0.95);
+      transform: translateY(-4px);
+      box-shadow: 0 22px 48px rgba(44, 31, 24, 0.2);
+      background: #ffffff;
     }
 
     .gallery a img {
@@ -149,8 +204,8 @@
       object-fit: cover;
       object-position: top;
       background: #f7f7f7;
-      border-radius: 14px;
-      padding: 6px;
+      border-radius: 12px;
+      padding: 5px;
       transition: opacity 0.4s ease-in;
       z-index: 1;
     }
@@ -162,6 +217,7 @@
       position: absolute;
       background: url('assets/icons/pombo-oxala.svg') no-repeat center center;
       background-size: contain;
+      display: none;
       width: 45px;
       height: 45px;
       opacity: 0.7;
@@ -181,6 +237,34 @@
       transform: rotate(15deg);
     }
 
+    .xire-load-wrap {
+      display: flex;
+      justify-content: center;
+      margin: 1.5rem 0 0;
+    }
+
+    .xire-load-more {
+      border: 0;
+      border-radius: 999px;
+      min-height: 48px;
+      padding: 0.82rem 1.25rem;
+      background: #05bd6b;
+      color: #ffffff;
+      font-weight: 900;
+      text-transform: uppercase;
+      box-shadow: 0 0 0 5px rgba(5, 189, 107, 0.16);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .xire-load-more:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(5, 189, 107, 0.22);
+    }
+
+    .xire-load-more[hidden] {
+      display: none;
+    }
+
     footer {
       background: linear-gradient(135deg, var(--dark-color) 0%, var(--primary-color) 100%);
       color: white;
@@ -194,16 +278,24 @@
     @media (max-width: 576px) {
       .hero-section h1 { font-size: 1.9rem; }
 
+      .gallery-section {
+        padding: 3rem 1rem 4rem;
+      }
+
+      .gallery-section h2 {
+        margin: 2rem 0 1rem;
+      }
+
       .gallery a {
         height: auto;
         aspect-ratio: 3 / 4;
       }
 
       .gallery a img {
-        object-fit: contain;
-        object-position: center;
-        height: auto;
-        max-height: 100%;
+        object-fit: cover;
+        object-position: center top;
+        height: 100%;
+        max-height: none;
         padding: 4px;
       }
 
@@ -220,7 +312,7 @@
 <body>
   <!-- Navbar -->
       <header class="site-header sticky-top">
-    <nav class="navbar navbar-expand-xl site-nav" aria-label="Menu principal">
+    <nav class="navbar navbar-expand-md site-nav" aria-label="Menu principal">
       <div class="container-fluid px-3 px-lg-4">
         <a class="site-brand" href="index.html" aria-label="Cristian D'Oxal&aacute; - In&iacute;cio">
           <span class="site-brand-mark"><i class="fas fa-dove"></i></span>
@@ -230,7 +322,7 @@
           <span class="site-menu-toggle-bars" aria-hidden="true"><span></span><span></span><span></span></span>
         </button>
         <div class="collapse navbar-collapse site-menu-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav site-menu-list ms-auto mb-2 mb-xl-0">
+          <ul class="navbar-nav site-menu-list ms-auto mb-2 mb-md-0">
               <li class="nav-item"><a class="nav-link site-menu-link" href="index.html"><i class="fas fa-house"></i><span>In&iacute;cio</span></a></li>
               <li class="nav-item"><a class="nav-link site-menu-link" href="historia.html"><i class="fas fa-book-open"></i><span>Hist&oacute;ria</span></a></li>
               <li class="nav-item"><a class="nav-link site-menu-link" href="registros_fe.html"><i class="fas fa-hands-praying"></i><span>Registros da F&eacute;</span></a></li>
@@ -250,9 +342,14 @@
 
   <!-- Hero -->
   <section class="hero-section">
-    <h1>Xirê do Pai Oxalá Alufá Orumilaia</h1>
-    <p>08 de Novembro de 2025 — 21 horas</p>
-    <p>Nosso coração se enche de alegria e gratidão a todos que estiveram presentes no Xirê em homenagem ao Pai Oxalá, em uma caminhada de fé que une Nação, Umbanda e Quimbanda.</p>
+    <div class="container">
+      <div class="xire-hero-content">
+        <span class="xire-kicker"><i class="fas fa-drum"></i> Xirê da casa</span>
+        <h1>Xirê do Pai Oxalá Alufá Orumilaia</h1>
+        <div class="xire-date"><i class="fas fa-calendar-days"></i> 08 de Novembro de 2025 às 21 horas</div>
+        <p>Registros de fé, fundamento e gratidão em homenagem ao Pai Oxalá, reunindo Nação, Umbanda e Quimbanda na caminhada da casa.</p>
+      </div>
+    </div>
   </section>
 
   <!-- Galeria -->
@@ -260,9 +357,15 @@
     <div class="container">
       <h2>Dedicação & Amor - Xirê</h2>
       <div class="gallery" id="galeria-comidas"></div>
+      <div class="xire-load-wrap">
+        <button type="button" class="xire-load-more" data-xire-load="comidas">Carregar mais fotos</button>
+      </div>
 
       <h2>Filhos & Amigos - Xirê</h2>
       <div class="gallery" id="galeria-geral"></div>
+      <div class="xire-load-wrap">
+        <button type="button" class="xire-load-more" data-xire-load="geral">Carregar mais fotos</button>
+      </div>
     </div>
   </section>
 
@@ -282,27 +385,45 @@
     const totalFotos = 565;
     const removidas = [221,1,4,23,7,13,184,47,3,62,106,163,168,149,103,66,227,119,231,242,244,246,253,267,349,387,397,399,418,423,430,458,511,514,518,532,545,556,562,55,67,74,79,80,91,92,95,105,107,114,115,113,120,122,134,133,136,137,141,142,147,150,154,157,158,170,186,190,195,197,205,206,211,215,219,225,229,234,236,248,250,257,277,279,285,315,366,379,382,393,442,454,485,496,519,520,528,537,549,550,551,563,16,17];
 
-    for (let i = 1; i <= totalFotos; i++) {
-      if (removidas.includes(i)) continue;
+    const comidaIds = [19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,
+      35,36,37,38,39,40,41,42,43,44,49,50,18,51,52,53,54,55,56];
+    const validIds = Array.from({ length: totalFotos }, (_, index) => index + 1)
+      .filter(id => !removidas.includes(id));
+    const comidaFotos = validIds.filter(id => comidaIds.includes(id));
+    const geralFotos = validIds.filter(id => !comidaIds.includes(id));
+    const state = {
+      comidas: { index: 0, target: comidas, ids: comidaFotos, button: document.querySelector('[data-xire-load="comidas"]'), size: 36 },
+      geral: { index: 0, target: geral, ids: geralFotos, button: document.querySelector('[data-xire-load="geral"]'), size: 60 }
+    };
 
+    function createPhoto(id) {
       const link = document.createElement('a');
-      link.href = `assets/images/loxefotografia-${i}.jpg`;
+      link.href = `assets/images/loxefotografia-${id}.jpg`;
       link.setAttribute('data-lightbox', 'xire');
-      link.setAttribute('data-title', `Loxe Fotografia ${i}`);
-      const img = document.createElement('img');
-      img.src = `assets/images/loxefotografia-${i}.jpg`;
-      img.alt = `Loxe Fotografia ${i}`;
-      link.appendChild(img);
+      link.setAttribute('data-title', `Loxe Fotografia ${id}`);
 
-      // Separa as fotos específicas
-      if ([19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,
-           35,36,37,38,39,40,41,42,43,44,49,50,18,
-           51,52,53,54,55,56].includes(i)) {
-        comidas.appendChild(link);
-      } else {
-        geral.appendChild(link);
-      }
+      const img = document.createElement('img');
+      img.src = `assets/images/loxefotografia-${id}.jpg`;
+      img.alt = `Loxe Fotografia ${id}`;
+      img.loading = 'lazy';
+      img.decoding = 'async';
+
+      link.appendChild(img);
+      return link;
     }
+
+    function renderBatch(key) {
+      const group = state[key];
+      const nextIds = group.ids.slice(group.index, group.index + group.size);
+      nextIds.forEach(id => group.target.appendChild(createPhoto(id)));
+      group.index += nextIds.length;
+      group.button.hidden = group.index >= group.ids.length;
+    }
+
+    Object.keys(state).forEach(key => {
+      state[key].button.addEventListener('click', () => renderBatch(key));
+      renderBatch(key);
+    });
 
     lightbox.option({
       resizeDuration: 200,

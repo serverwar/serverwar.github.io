@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
@@ -347,8 +347,10 @@
       background-image:
         linear-gradient(to bottom, rgba(12, 8, 6, 0.18) 0%, rgba(18, 12, 8, 0.42) 42%, rgba(18, 12, 8, 0.86) 100%),
         var(--service-image);
-      background-position: var(--service-position, center top);
-      background-size: cover;
+      background-color: #6d5548;
+      background-position: center center, var(--service-position, center top);
+      background-repeat: no-repeat, no-repeat;
+      background-size: 100% 100%, var(--service-size, cover);
       box-shadow: 0 18px 36px rgba(95, 58, 21, 0.14);
     }
 
@@ -417,6 +419,112 @@
       color: #ffffff;
       transform: translateY(-2px);
       box-shadow: 0 0 0 4px rgba(5, 189, 107, 0.3), 0 10px 18px rgba(4, 126, 73, 0.18);
+    }
+
+    .home-flying-dove {
+      position: fixed;
+      top: clamp(88px, 16vh, 150px);
+      left: -72px;
+      z-index: 30;
+      width: clamp(82px, 10vw, 138px);
+      pointer-events: none;
+      opacity: 0;
+      filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.28));
+      will-change: transform, opacity;
+    }
+
+    .home-flying-dove img {
+      display: block;
+      width: 100%;
+      height: auto;
+      transform-origin: center;
+    }
+
+    .home-flying-dove.is-flying {
+      animation: homeDoveFlight 7.5s ease-in-out forwards;
+    }
+
+    .home-flying-dove.is-flying img {
+      animation: homeDoveGlide 0.55s ease-in-out infinite alternate;
+    }
+
+    @keyframes homeDoveFlight {
+      0% {
+        opacity: 0;
+        transform: translate3d(-18vw, 9vh, 0) scale(0.72) rotate(-8deg);
+      }
+
+      10% {
+        opacity: 1;
+        transform: translate3d(8vw, 4vh, 0) scale(0.88) rotate(-3deg);
+      }
+
+      34% {
+        transform: translate3d(36vw, -3vh, 0) scale(1) rotate(5deg);
+      }
+
+      62% {
+        transform: translate3d(74vw, 9vh, 0) scale(0.95) rotate(-4deg);
+      }
+
+      86% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 0;
+        transform: translate3d(128vw, 0, 0) scale(0.78) rotate(7deg);
+      }
+    }
+
+    @keyframes homeDoveFlightMobile {
+      0% {
+        opacity: 0;
+        transform: translate3d(-24vw, 7vh, 0) scale(0.72) rotate(-8deg);
+      }
+
+      10% {
+        opacity: 1;
+        transform: translate3d(6vw, 2vh, 0) scale(0.9) rotate(-3deg);
+      }
+
+      38% {
+        transform: translate3d(42vw, -3vh, 0) scale(1) rotate(5deg);
+      }
+
+      68% {
+        transform: translate3d(78vw, 8vh, 0) scale(0.92) rotate(-4deg);
+      }
+
+      86% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 0;
+        transform: translate3d(130vw, 0, 0) scale(0.78) rotate(7deg);
+      }
+    }
+
+    @keyframes homeDoveGlide {
+      from {
+        transform: translateY(-2px) rotate(-5deg) scaleX(1);
+      }
+
+      to {
+        transform: translateY(3px) rotate(6deg) scaleX(1.04);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .home-flying-dove {
+        top: 94px;
+        left: -58px;
+      }
+
+      .home-flying-dove.is-flying {
+        animation-name: homeDoveFlightMobile;
+      }
     }
 
     .booking-modal .modal-dialog {
@@ -1338,6 +1446,9 @@
   <link rel="stylesheet" href="assets/theme/css/site-polish.css">
 </head>
 <body>
+  <div class="home-flying-dove" aria-hidden="true">
+    <img src="assets/images/pombo-realista-voando.png" alt="">
+  </div>
 
   <div class="consultation-popup" id="consultationPopup" role="dialog" aria-modal="true" aria-labelledby="consultationPopupTitle" aria-hidden="true">
     <div class="consultation-popup-backdrop" id="consultationPopupBackdrop"></div>
@@ -1369,7 +1480,7 @@
 
     <!-- Menu -->
         <header class="site-header sticky-top">
-    <nav class="navbar navbar-expand-xl site-nav" aria-label="Menu principal">
+    <nav class="navbar navbar-expand-md site-nav" aria-label="Menu principal">
       <div class="container-fluid px-3 px-lg-4">
         <a class="site-brand" href="index.html" aria-label="Cristian D'Oxal&aacute; - In&iacute;cio">
           <span class="site-brand-mark"><i class="fas fa-dove"></i></span>
@@ -1379,7 +1490,7 @@
           <span class="site-menu-toggle-bars" aria-hidden="true"><span></span><span></span><span></span></span>
         </button>
         <div class="collapse navbar-collapse site-menu-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav site-menu-list ms-auto mb-2 mb-xl-0">
+          <ul class="navbar-nav site-menu-list ms-auto mb-2 mb-md-0">
               <li class="nav-item"><a class="nav-link site-menu-link active" href="index.html" aria-current="page"><i class="fas fa-house"></i><span>In&iacute;cio</span></a></li>
               <li class="nav-item"><a class="nav-link site-menu-link" href="historia.html"><i class="fas fa-book-open"></i><span>Hist&oacute;ria</span></a></li>
               <li class="nav-item"><a class="nav-link site-menu-link" href="registros_fe.html"><i class="fas fa-hands-praying"></i><span>Registros da F&eacute;</span></a></li>
@@ -1799,7 +1910,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <span>Consultas online e presenciais</span>
         </div>
         <div class="services-grid">
-          <article class="service-card" style="--service-image: url('assets/images/consulta-presencial-cristian.png'); --service-position: left center;">
+          <article class="service-card" style="--service-image: url('assets/images/consulta-presencial-home.png'); --service-position: center center;">
             <div class="service-card-body">
               <h3>Consultas <em>Presenciais</em></h3>
               <p>No atendimento presencial com Cristian D'Oxalá, você é recebido com respeito, acolhimento e orientação espiritual para iluminar seus caminhos.</p>
@@ -1819,7 +1930,7 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
           </article>
 
-          <article class="service-card" style="--service-image: url('assets/images/consulta-buzios-cristian.png');">
+          <article class="service-card" style="--service-image: url('assets/images/consulta-buzios-nova.png'); --service-position: center 18%; --service-size: 76% auto;">
             <div class="service-card-body">
               <h3>Jogo de <em>Búzios</em></h3>
               <p>O jogo de búzios com Cristian D'Oxalá busca trazer orientação, clareza e direcionamento espiritual para cada momento da sua vida.</p>
@@ -2027,8 +2138,27 @@ document.addEventListener("DOMContentLoaded", () => {
     const consultationPopupClose = document.getElementById('consultationPopupClose');
     const consultationPopupVideo = document.getElementById('consultationPopupVideo');
     const consultationPopupWhatsapp = document.getElementById('consultationPopupWhatsapp');
+    const homeFlyingDove = document.querySelector('.home-flying-dove');
     let consultationPopupAutoCloseTimer;
+    let homeDoveFlightTimer;
     let agendaLoaded = false;
+
+    function flyHomeDove() {
+      if (!homeFlyingDove) return;
+
+      clearTimeout(homeDoveFlightTimer);
+      homeFlyingDove.classList.remove('is-flying');
+      void homeFlyingDove.offsetWidth;
+      homeFlyingDove.classList.add('is-flying');
+      homeDoveFlightTimer = setTimeout(flyHomeDove, 11500);
+    }
+
+    function scheduleHomeDoveFlight(delay = 0) {
+      if (!homeFlyingDove) return;
+
+      clearTimeout(homeDoveFlightTimer);
+      homeDoveFlightTimer = setTimeout(flyHomeDove, delay);
+    }
 
     function enableConsultationPopupAudio(fallbackToMuted = false) {
       if (!consultationPopupVideo) return;
@@ -2058,6 +2188,10 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!consultationPopup) return;
 
       clearTimeout(consultationPopupAutoCloseTimer);
+      clearTimeout(homeDoveFlightTimer);
+      if (homeFlyingDove) {
+        homeFlyingDove.classList.remove('is-flying');
+      }
       consultationPopup.classList.add('is-visible');
       consultationPopup.setAttribute('aria-hidden', 'false');
       document.body.classList.add('consultation-popup-open');
@@ -2101,6 +2235,8 @@ document.addEventListener("DOMContentLoaded", () => {
       if (consultationPopupVideo) {
         consultationPopupVideo.pause();
       }
+
+      scheduleHomeDoveFlight(650);
     }
 
     if (consultationPopup) {
@@ -2111,6 +2247,8 @@ document.addEventListener("DOMContentLoaded", () => {
       consultationPopupClose.addEventListener('click', closeConsultationPopup);
       consultationPopupBackdrop.addEventListener('click', closeConsultationPopup);
       consultationPopupWhatsapp.addEventListener('click', closeConsultationPopup);
+    } else {
+      scheduleHomeDoveFlight(1200);
     }
 
     function setSocialPanel(open) {

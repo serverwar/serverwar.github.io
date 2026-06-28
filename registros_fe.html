@@ -40,7 +40,9 @@
     
     body {
       font-family: 'Bellota Text', sans-serif;
-      background-color: #f5f5f5;
+      background:
+        radial-gradient(circle at 12% 0%, rgba(252, 163, 17, 0.1), transparent 30%),
+        linear-gradient(180deg, #fffaf1 0%, #f7efe5 100%);
       color: var(--dark-color);
       scroll-behavior: smooth;
     }
@@ -134,20 +136,119 @@
       color: var(--dark-color);
       transform: translateY(-2px);
     }
+
+    .records-hero {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(4.5rem, 10vw, 7rem) 0 clamp(2.5rem, 6vw, 4rem);
+      background:
+        linear-gradient(90deg, rgba(18, 10, 6, 0.92) 0%, rgba(18, 10, 6, 0.64) 52%, rgba(18, 10, 6, 0.24) 100%),
+        linear-gradient(180deg, rgba(18, 10, 6, 0.08), rgba(18, 10, 6, 0.78)),
+        url('assets/images/loxefotografia-203.jpg') center 42%/cover no-repeat;
+      color: #ffffff;
+    }
+
+    .records-hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 32%;
+      background: linear-gradient(180deg, transparent, #fffaf1);
+      pointer-events: none;
+    }
+
+    .records-hero .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .records-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+      padding: 0.52rem 0.9rem;
+      border-radius: 999px;
+      background: rgba(5, 189, 107, 0.18);
+      color: #ffffff;
+      font-size: 0.88rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      box-shadow: inset 0 0 0 1px rgba(5, 189, 107, 0.34);
+    }
+
+    .records-hero h1 {
+      max-width: 820px;
+      margin: 0;
+      color: #ffffff;
+      font-family: 'Marcellus', serif;
+      font-size: clamp(3rem, 8vw, 6rem);
+      line-height: 0.95;
+      text-shadow: 0 10px 35px rgba(0, 0, 0, 0.55);
+    }
+
+    .records-hero p {
+      max-width: 760px;
+      margin: 1rem 0 0;
+      color: #fff3c4;
+      font-size: clamp(1.05rem, 2vw, 1.26rem);
+      font-weight: 900;
+      line-height: 1.6;
+      text-shadow: 0 5px 20px rgba(0, 0, 0, 0.62);
+    }
+
+    .records-meta-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.85rem;
+      max-width: 960px;
+      margin-top: 1.6rem;
+    }
+
+    .records-meta {
+      min-height: 92px;
+      padding: 1rem;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.14);
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.22);
+      backdrop-filter: blur(8px);
+    }
+
+    .records-meta strong {
+      display: block;
+      color: #ffffff;
+      font-size: 0.9rem;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .records-meta span {
+      display: block;
+      margin-top: 0.35rem;
+      color: #fff3c4;
+      font-weight: 800;
+      line-height: 1.4;
+    }
     
     /* Galeria */
     .gallery-section {
-      padding: 5rem 0;
-      background-color: white;
+      padding: 4.5rem 0;
+      background-color: #fffaf1;
+      position: relative;
+    }
+
+    .gallery-section.bg-light {
+      background: #f7efe5 !important;
     }
     
     .section-title {
       font-family: 'Marcellus', serif;
       font-weight: 700;
       color: var(--dark-color);
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.3rem;
       position: relative;
       display: inline-block;
+      font-size: clamp(2rem, 4vw, 3rem);
     }
     
     .section-title:after {
@@ -162,31 +263,32 @@
     }
     
     .section-subtitle {
-      color: #666;
-      font-weight: 400;
+      color: #5a4737;
+      font-weight: 800;
       margin-bottom: 2rem;
     }
     
     .gallery-container {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1rem;
     }
     
     .gallery-item {
       position: relative;
-      border-radius: 10px;
+      border: 1px solid rgba(126, 74, 19, 0.12);
+      border-radius: 14px;
       overflow: hidden;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
+      box-shadow: 0 18px 42px rgba(44, 31, 24, 0.12);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
       aspect-ratio: 1/1;
-      background-color: #f8f9fa;
+      background-color: #f3eadf;
       cursor: pointer;
     }
     
     .gallery-item:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+      transform: translateY(-4px);
+      box-shadow: 0 22px 48px rgba(44, 31, 24, 0.2);
     }
     
     .gallery-img-container {
@@ -196,6 +298,7 @@
       justify-content: center;
       align-items: center;
       overflow: hidden;
+      background: #f3eadf;
     }
     
     .gallery-item img {
@@ -214,11 +317,13 @@
       bottom: 0;
       left: 0;
       right: 0;
-      background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+      background: linear-gradient(to top, rgba(18, 10, 6, 0.86), transparent);
       color: white;
-      padding: 1rem;
+      padding: 2.3rem 1rem 1rem;
       opacity: 0;
       transition: opacity 0.3s ease;
+      font-weight: 900;
+      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
     }
     
     .gallery-item:hover .gallery-overlay {
@@ -229,12 +334,12 @@
       position: absolute;
       top: 1rem;
       right: 1rem;
-      background-color: var(--accent-color);
+      background-color: rgba(5, 189, 107, 0.95);
       color: white;
       padding: 0.3rem 0.8rem;
-      border-radius: 50px;
+      border-radius: 999px;
       font-size: 0.8rem;
-      font-weight: 600;
+      font-weight: 900;
     }
     
     /* Modal */
@@ -287,6 +392,31 @@
       margin: 0;
       font-size: 0.9rem;
     }
+
+    @media (max-width: 768px) {
+      .records-hero {
+        padding: 4rem 0 3rem;
+      }
+
+      .records-meta-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-section {
+        padding: 3rem 0;
+      }
+
+      .gallery-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.75rem;
+      }
+
+      .gallery-category {
+        top: 0.65rem;
+        right: 0.65rem;
+        font-size: 0.72rem;
+      }
+    }
   </style>
   <link rel="stylesheet" href="assets/theme/css/site-menu.css">
   <link rel="stylesheet" href="assets/theme/css/site-polish.css">
@@ -295,7 +425,7 @@
   
   <!-- Menu -->
       <header class="site-header sticky-top">
-    <nav class="navbar navbar-expand-xl site-nav" aria-label="Menu principal">
+    <nav class="navbar navbar-expand-md site-nav" aria-label="Menu principal">
       <div class="container-fluid px-3 px-lg-4">
         <a class="site-brand" href="index.html" aria-label="Cristian D'Oxal&aacute; - In&iacute;cio">
           <span class="site-brand-mark"><i class="fas fa-dove"></i></span>
@@ -305,7 +435,7 @@
           <span class="site-menu-toggle-bars" aria-hidden="true"><span></span><span></span><span></span></span>
         </button>
         <div class="collapse navbar-collapse site-menu-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav site-menu-list ms-auto mb-2 mb-xl-0">
+          <ul class="navbar-nav site-menu-list ms-auto mb-2 mb-md-0">
               <li class="nav-item"><a class="nav-link site-menu-link" href="index.html"><i class="fas fa-house"></i><span>In&iacute;cio</span></a></li>
               <li class="nav-item"><a class="nav-link site-menu-link" href="historia.html"><i class="fas fa-book-open"></i><span>Hist&oacute;ria</span></a></li>
               <li class="nav-item"><a class="nav-link site-menu-link active" href="registros_fe.html" aria-current="page"><i class="fas fa-hands-praying"></i><span>Registros da F&eacute;</span></a></li>
@@ -322,6 +452,28 @@
       </div>
     </nav>
   </header>
+
+  <section class="records-hero">
+    <div class="container">
+      <span class="records-kicker"><i class="fas fa-hands-praying"></i> Memórias da fé</span>
+      <h1>Registros da Fé</h1>
+      <p>Momentos de iniciação, obrigações e homenagens vividos na casa, preservando a caminhada espiritual em Nação, Umbanda e Quimbanda.</p>
+      <div class="records-meta-grid" aria-label="Destaques dos registros">
+        <div class="records-meta">
+          <strong>Fundamento</strong>
+          <span>Registros de obrigações e vivências espirituais da casa.</span>
+        </div>
+        <div class="records-meta">
+          <strong>Memória</strong>
+          <span>Galerias organizadas para rever cada momento com respeito.</span>
+        </div>
+        <div class="records-meta">
+          <strong>Caminhada</strong>
+          <span>Fotos de filhos, homenagens e etapas importantes da fé.</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Seção Júlia de Ogum -->
   <section class="gallery-section text-center">
